@@ -1,0 +1,8 @@
+{
+  "name": "rdf",
+  "main": "nwjs-dev.html",
+  "xmain": "nwjs-dev.html",
+  "dependencies": {
+    "jsdom": "^9.5.0"
+  }
+}

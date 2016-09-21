@@ -43,7 +43,10 @@
     {:id "dev"
       :source-paths ["src/" "util/src/"]
       :figwheel
-      {:websocket-host :js-client-host}
+      {
+       ;:websocket-host :js-client-host ; use this for web
+       :websocket-host "localhost" ; use this for nw-js server development
+       }
       :compiler
       {:main solsort.rdf.rdf
        :asset-path "out"
@@ -56,7 +59,8 @@
      {:output-to "index.js"
       :main solsort.rdf.rdf
       :externs ["util/externs.js"]
+      ;:optimizations :simple
       :optimizations :advanced
-      :pretty-print false}}
-    ]}
-)
+      ;:pretty-print true
+      :pretty-print false
+      }}]})
