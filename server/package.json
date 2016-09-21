@@ -1,6 +1,6 @@
 {
   "name": "rdf",
-  "main": "nwjs-dev.html",
+  "main": "electron-dev.js",
   "xmain": "nwjs-dev.html",
   "dependencies": {
     "jsdom": "^9.5.0"

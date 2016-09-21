@@ -22,7 +22,7 @@
 (defn handler [req res]
   (js/console.log req)
   (.setHeader res "type" "text/html")
-  (.end res (reagent/render-to-static-markup [:h1 "Hi from cljs"])))
+  (.end res (reagent/render-to-static-markup [:h1 "Hello from cljs"])))
 
 (defonce server
   (.listen (.createServer http

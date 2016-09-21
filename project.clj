@@ -44,8 +44,7 @@
       :source-paths ["src/" "util/src/"]
       :figwheel
       {
-       ;:websocket-host :js-client-host ; use this for web
-       :websocket-host "localhost" ; use this for nw-js server development
+       :websocket-host :js-client-host
        }
       :compiler
       {:main solsort.rdf.rdf
