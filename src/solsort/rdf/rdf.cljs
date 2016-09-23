@@ -73,7 +73,7 @@
         app (express)]
     (.get app "/object/:id.:type" #(show-object %1 %2))
     (.get app "/search/natmus/:query" #(natmus-search %1 %2))
-    (.listen app 8000 #(console.log "started express on port 8000"))
+    (.listen app 8888 #(console.log "started express on port 8888"))
     #_(.listen
      (.createServer
       http
