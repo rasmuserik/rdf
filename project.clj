@@ -4,8 +4,8 @@
   :dependencies
   [[org.clojure/clojure "1.8.0"]
    [org.clojure/clojurescript "1.8.51"]
-   [org.clojure/core.async "0.2.374"]
-   [reagent "0.6.0-rc"]
+   [org.clojure/core.async "0.2.391"]
+   [reagent "0.6.0"]
    [binaryage/devtools "0.6.1"]]
 
   :plugins
@@ -38,9 +38,7 @@
 
   :cljsbuild
   {:builds
-   [
-
-    {:id "dev"
+   [{:id "dev"
       :source-paths ["src/" "util/src/"]
       :figwheel
       {
@@ -58,8 +56,8 @@
      {:output-to "index.js"
       :main solsort.rdf.rdf
       :externs ["util/externs.js"]
-      ;:optimizations :simple
-      :optimizations :advanced
-      ;:pretty-print true
-      :pretty-print false
+      :optimizations :simple
+      ;:optimizations :advanced
+      :pretty-print true
+      ;:pretty-print false
       }}]})
