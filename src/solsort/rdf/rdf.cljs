@@ -21,53 +21,51 @@
   (.push (.-globalPaths (js/require "module")) (str (js/process.cwd) "/node_modules")))
 
 (when js/window.process
- (def process js/process)
- (def require js/require)
-(def http (require "http"))
+  (def process js/process)
+  (def require js/require)
+  (def http (require "http"))
 
-(defn show-object [req res]
-  (go
-    (let [id (.-id (.-params req))
-          kind (log (first (clojure.string/split id #":")))
-         obj (case kind
-               "natmus" (<! (natmus/<obj id))
-               "ting" (<! (ting/<obj id))
-               {:_id id})]
-     (.end res (prn-str obj)))))
+  (defn show-object [req res]
+    (go
+      (let [id (.-id (.-params req))
+            kind (log (first (clojure.string/split id #":")))
+            obj (case kind
+                  "natmus" (<! (natmus/<obj id))
+                  "ting" (<! (ting/<obj id))
+                  {:_id id})]
+        (.end res (prn-str obj)))))
 
-(defn search [req res]
-  (go
-    (let [query (.-query (.-params req))
-          natmus (log (<! (natmus/<search-ids query)))
-          ting (log (<! (ting/<search-ids query)))
-          results (sort-by hash (concat natmus ting))]
-     (.end res
-           (reagent/render-to-static-markup
-            [:html
-             [:head
-              [:meta {:charset "utf-8"}]]
-             [:body
-              [:p "\"" query "\" search results:"]
-              (into [:ul]
-                    (for [id results]
-                      [:li [:a {:href (str "/object/" id)}
-                       id]])
-                    )]])))))
-(defonce server
-  (let [express (require "express")
-        app (express)]
-    (.get app "/object/:id.:type" #(show-object %1 %2))
-    (.get app "/object/:id" #(show-object %1 %2))
-    (.get app "/search/:query/:page*?" #(search %1 %2))
-    (.use app (.static express "../"))
-    (.listen app 8888 #(js/console.log "started express on port 8888"))))
-)
+  (defn search [req res]
+    (go
+      (let [query (.-query (.-params req))
+            natmus (log (<! (natmus/<search-ids query)))
+            ting (log (<! (ting/<search-ids query)))
+            results (sort-by hash (concat natmus ting))]
+        (.end res
+              (reagent/render-to-static-markup
+               [:html
+                [:head
+                 [:meta {:charset "utf-8"}]]
+                [:body
+                 [:p "\"" query "\" search results:"]
+                 (into [:ul]
+                       (for [id results]
+                         [:li [:a {:href (str "/object/" id)}
+                               id]]))]])))))
+  (defonce server
+    (let [express (require "express")
+          app (express)]
+      (.get app "/object/:id.:type" #(show-object %1 %2))
+      (.get app "/object/:id" #(show-object %1 %2))
+      (.get app "/search/:query/:page*?" #(search %1 %2))
+      (.use app (.static express "../"))
+      (.listen app 8888 #(js/console.log "started express on port 8888")))))
 
 (render
  [:div.ui.container
   [:h1
    [:img {:src "assets/icon.png" :style {:height "1em" :margin-right "1ex"}}]
-   "Linked Data Endpoint" ]
+   "Linked Data Endpoint"]
   [:p
    "Made during " [:a {:href "http://hack4.dk"} "Hack4DK"]]
   [:div
@@ -76,10 +74,6 @@
     [:ul]
     (map
      (fn [s] [:li [:a {:href s} s]])
-     [
-      "search/nefertiti"
+     ["search/nefertiti"
       "search/blicher"
-      "search/ærø"
-      ]))
-   ]
-  ])
+      "search/ærø"]))]])

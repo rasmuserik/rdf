@@ -23,8 +23,8 @@
 (defn <http [url]
   (let [c (chan)]
     (request url
-    (fn [err res data]
-      (if err (do (log err data) (close! c)) (put! c data))))
+             (fn [err res data]
+               (if err (do (log err data) (close! c)) (put! c data))))
     c))
 
 (defn <ting [endpoint o]
@@ -40,54 +40,45 @@
                            (map #(str
                                   (js/encodeURIComponent (name (first %)))
                                   "="
-                                  (js/encodeURIComponent (second %))
-                                  )
+                                  (js/encodeURIComponent (second %)))
 
-                                (into o {:access_token access_token}))
-                           ))
-                     ))))]
+                                (into o {:access_token access_token}))))))))]
       (get result "data"))))
 
 (defn transform [obj]
   (let [obj (into obj
                   {"@context" ["http://rdf.solsort.com/schema/solsort.jsonld"
-                              "http://rdf.solsort.com/schema/natmus.jsonld"]
+                               "http://rdf.solsort.com/schema/natmus.jsonld"]
                    :_id (str "ting:" (:collection obj) ":" (:sourceId obj))
-                   :_title (or (:workDescription obj) )
-                   })]
+                   :_title (or (:workDescription obj))})]
     obj))
 
 (defn <obj [id]
   (go
     (let [pid (.slice id 5)
-         [[obj] [collection] recommend]
-            (<! (<seq<!
-                 [(<ting :work {:pids [pid]})
-                  (<ting :work {:pids [pid] :fields "collection"})
-                  (<ting :recommend {:like [pid]
-                                     :limit 20})]
-                 ))
-          obj (into obj {
-                         :tingRelated (map #(get % "pid") recommend)
-                         :collection (get collection "collection")
-                         })
+          [[obj] [collection] recommend]
+          (<! (<seq<!
+               [(<ting :work {:pids [pid]})
+                (<ting :work {:pids [pid] :fields "collection"})
+                (<ting :recommend {:like [pid]
+                                   :limit 20})]))
+          obj (into obj {:tingRelated (map #(get % "pid") recommend)
+                         :collection (get collection "collection")})
           obj (into obj
                     {"@context"
                      ["http://rdf.solsort.com/schema/solsort.jsonld"
-                     "http://rdf.solsort.com/schema/ting.jsonld"]
+                      "http://rdf.solsort.com/schema/ting.jsonld"]
                      :_id id
                      :_title (or (first (get obj "dcTitle" []))
-                                 (first (get obj "title" []))
-                                 )
+                                 (first (get obj "title" [])))
                      :_description
                      (or (first (get obj "abstract" []))
                          (first (get obj "description" [])))
                      :_creators
                      (distinct (concat
-                       (get obj "dcCreator" [])
-                       (get obj "contributer" [])))
-                     })]
-     obj)))
+                                (get obj "dcCreator" [])
+                                (get obj "contributer" [])))})]
+      obj)))
 
 (defn <search-ids [q]
   (go (map #(str "ting:" (first (get % "pid")))
