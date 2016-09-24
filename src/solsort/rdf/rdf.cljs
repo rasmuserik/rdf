@@ -6,6 +6,7 @@
    [cljs.reader]
    [solsort.rdf.natmus :as natmus]
    [solsort.rdf.ting :as ting]
+   [solsort.rdf.europeana :as europeana]
    [solsort.toolbox.setup]
    [solsort.toolbox.appdb :refer [db db! db-async!]]
    [solsort.toolbox.ui :refer [input select]]
@@ -20,7 +21,9 @@
 ; nb: https://github.com/rasmuserik/solsort-util/blob/master/src/solsort/apps/hack4dk.cljs
 (defn header []
   [:h1
-   [:img {:src "/assets/icon.png" :style {:height "1em" :margin-right "1ex"}}]
+   [:img {:src "/assets/icon.png" :style {:margin-top "1ex"
+                                          :height "1.5em"
+                                          :margin-right "1ex"}}]
    "Federated Linked Data Endpoint"]
   )
 (when (and js/window.process js/window.process.versions js/window.process.versions.electron)
@@ -124,7 +127,7 @@
                    ]
                   [:div.four.wide.column
                    {"dangerouslySetInnerHTML"
-                    {:__html"<button class=\"fluid ui button\" onclick=\"location.href='/search/'+query.value;\">Search</button>"}}]
+                    {:__html"<button class=\"fluid ui primary button\" onclick=\"location.href='/search/'+query.value;\">Search</button>"}}]
                   ]
 
                  [:hr]
@@ -177,9 +180,12 @@
      (fn [s] [:li [:a {:href s} s]])
      ["search/Nefertiti"
       "search/Blicher"
+      "search/sværd"
       "search/Pink Floyd"
+      "search/ost"
       "search/Frogner"
       "search/Tollund"
+      "search/værktøj"
       "search/Peder Wessel"
       "search/Astrid Lindgren"
       "search/Solvognen"

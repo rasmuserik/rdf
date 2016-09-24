@@ -29,8 +29,24 @@
                  (if err (do (log err data) (close! c)) (put! c data))))
       c))
 
-  (go
+  #_(go
     (log (<! (<http "http://www.europeana.eu/api/v2/search.json?wskey=zdanGC4Wc&query=blicher")))
     (log (<! (<http "http://www.europeana.eu/api/v2/record/2058618/object_KUAS_22340808.jsonld?wskey=zdanGC4Wc&query=blicher"))))
-
+  (defn <europeana [action arg]
+    (go (log 'here)
+        (let [url (if (= :search action)
+                    (str "http://www.europeana.eu/api/v2/search.json"
+                         "?wskey=" wskey
+                         "&query=" arg)
+                    (str "http://www.europeana.eu/api/v2/record/"
+                         arg; "2058618/object_KUAS_22340808"
+                         ".jsonld?wskey=zdanGC4Wc&query=blicher"))
+              text (<! (<http url))
+              obj (js->clj (js/JSON.parse text))
+              ]
+          (log obj)
+          obj))
+    )
+  (<europeana :search "Frogner")
   )
+

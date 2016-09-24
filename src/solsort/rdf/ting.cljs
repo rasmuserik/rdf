@@ -90,4 +90,4 @@
                   "\""
                   (string/join "\" AND \"" (string/split q #" +"))
                   "\"")
-                 })))))
+                 :offset (* 10 page)})))))
