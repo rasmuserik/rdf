@@ -3722,13 +3722,13 @@ function Oe(a, b, c, d, e, f) {
 var Pe = function Pe() {
   "undefined" === typeof $a && ($a = function(b, c) {
     this.Ne = b;
-    this.Le = c;
+    this.Ie = c;
     this.v = 393216;
     this.H = 0;
   }, $a.prototype.T = function(b, c) {
     return new $a(this.Ne, c);
   }, $a.prototype.O = function() {
-    return this.Le;
+    return this.Ie;
   }, $a.prototype.va = function() {
     return !1;
   }, $a.prototype.next = function() {
@@ -3737,8 +3737,8 @@ var Pe = function Pe() {
     return Error("Unsupported operation");
   }, $a.vd = function() {
     return new V(null, 2, 5, X, [Ad(Re, new q(null, 1, [Se, te(Te, te(Gd))], null)), Ue], null);
-  }, $a.ac = !0, $a.rb = "cljs.core/t_cljs$core9988", $a.Ac = function(b, c) {
-    return sc(c, "cljs.core/t_cljs$core9988");
+  }, $a.ac = !0, $a.rb = "cljs.core/t_cljs$core10003", $a.Ac = function(b, c) {
+    return sc(c, "cljs.core/t_cljs$core10003");
   });
   return new $a(Pe, Ve);
 };
@@ -9064,27 +9064,27 @@ $h.prototype.toString = function() {
   return Oc(this);
 };
 var ai = new U(null, "asset-root", "asset-root", 1771735072), bi = new U(null, "max-number-body-items", "max-number-body-items", 299914624), ci = new U(null, "symbol-style", "symbol-style", 1022654848), di = new U(null, "inline-block", "inline-block", 1967810016), ei = new U(null, "nil-style", "nil-style", -1505044832), fi = new U(null, "body-pre-handler", "body-pre-handler", 1211926529), gi = new U(null, "java-trace-header-style", "java-trace-header-style", -1425214239), hi = new U(null, "output-dir", 
-"output-dir", -290956991), ii = new U(null, "_id", "_id", -789960287), ji = new U(null, "line-index-separator", "line-index-separator", -1735989246), ki = new U(null, "new-line-string-replacer", "new-line-string-replacer", -753206206), li = new U(null, "on-set", "on-set", -140953470), mi = new U(null, "meta-reference-style", "meta-reference-style", -1930118462), ni = new Zc(null, "meta13876", "meta13876", -92472061, null), oi = new U(null, "cljsLegacyRender", "cljsLegacyRender", -1527295613), Ue = 
-new Zc(null, "meta9989", "meta9989", 1655878275, null), pi = new U(null, "ua-product", "ua-product", 938384227), qi = new U(null, "header-style", "header-style", -2122121341), ri = new U(null, "transform", "transform", 1381301764), ib = new U(null, "meta", "meta", 1499536964), si = new U(null, "ul", "ul", -1349521403), ti = new Zc(null, "blockable", "blockable", -28395259, null), jb = new U(null, "dup", "dup", 556298533), ui = new U(null, "body-items-more-label", "body-items-more-label", -1561152123), 
-vi = new U(null, "safari", "safari", 497115653), wi = new U(null, "key", "key", -1516042587), xi = new U(null, "private", "private", -558947994), yi = new U(null, "has-body-pre-handler", "has-body-pre-handler", 1787020038), zi = new U(null, "surrogate-key", "surrogate-key", 391132006), Ai = new U(null, "credentials", "credentials", 1373178854), Bi = new U(null, "top", "top", -1856271961), Ci = new Zc(null, "meta12610", "meta12610", -1300515353, null), Di = new U(null, "displayName", "displayName", 
--809144601), ff = new U(null, "validator", "validator", -1966190681), Ei = new U(null, "method", "method", 55703592), Fi = new U(null, "string-abbreviation-marker", "string-abbreviation-marker", -347785112), Gi = new U(null, "max-header-elements", "max-header-elements", 713629864), Hi = new U(null, "default", "default", -1987822328), Ii = new U(null, "finally-block", "finally-block", 832982472), Ji = new U(null, "warn", "warn", -436710552), Ki = new U(null, "name", "name", 1843675177), Li = new Zc(null, 
-"meta14022", "meta14022", -776077847, null), Mi = new U(null, "li", "li", 723558921), Ni = new U(null, "sanity-hint-min-length", "sanity-hint-min-length", 104958154), Oi = new U(null, "header-post-handler", "header-post-handler", 514828618), Pi = new U(null, "circular-reference-wrapper-style", "circular-reference-wrapper-style", -329208502), Qi = new U(null, "header-pre-handler", "header-pre-handler", -1997722262), Ri = new U(null, "component-did-mount", "component-did-mount", -1126910518), Si = 
-new U(null, "file", "file", -1269645878), Ti = new U(null, "prevent-recursion", "prevent-recursion", -1498371606), Ui = new U(null, "expanded-string-style", "expanded-string-style", -543781397), Vi = new U(null, "standard-li-style", "standard-li-style", 413442955), Wi = new U(null, "component-did-update", "component-did-update", -1468549173), Xi = new U(null, "body-style", "body-style", 1462943820), Yi = new U(null, "history", "history", -247395220), yh = new U(null, "val", "val", 128701612), Zi = 
-new U(null, "recur", "recur", -437573268), $i = new U(null, "type", "type", 1174270348), aj = new U(null, "catch-block", "catch-block", 1175212748), bj = new U(null, "entered-reference", "entered-reference", 2117851020), cj = new U(null, "dq", "dq", -1690275860), dj = new U(null, "src", "src", -1651076051), ej = new U(null, "nil-label", "nil-label", -587789203), uh = new U(null, "fallback-impl", "fallback-impl", -1501286995), gb = new U(null, "flush-on-newline", "flush-on-newline", -151457939), fj = 
-new U(null, "componentWillUnmount", "componentWillUnmount", 1573788814), gj = new U(null, "port", "port", 1534937262), hj = new U(null, "standard-ol-no-margin-style", "standard-ol-no-margin-style", -1701969586), ij = new U(null, "hits", "hits", -2120002930), jj = new U(null, "function", "function", -2127255473), kj = new U(null, "charset", "charset", -1063822193), Mh = new U(null, "descendants", "descendants", 1824886031), lj = new U(null, "standard-ol-style", "standard-ol-style", 2143825615), mj = 
-new U(null, "column", "column", 2078222095), nj = new U(null, "headers", "headers", -835030129), oj = new U(null, "shouldComponentUpdate", "shouldComponentUpdate", 1795750960), pj = new U(null, "file-reader", "file-reader", -450847664), Nh = new U(null, "ancestors", "ancestors", -776045424), qj = new U(null, "style", "style", -496642736), rj = new U(null, "float-style", "float-style", 705926672), sj = new U(null, "firefox", "firefox", 1283768880), tj = new U(null, "div", "div", 1057191632), hb = 
-new U(null, "readably", "readably", 1129599760), uj = new U(null, "body-post-handler", "body-post-handler", -1040905424), vj = new Zc(null, "box", "box", -1123515375, null), lh = new U(null, "more-marker", "more-marker", -14717935), wj = new U(null, "bool-style", "bool-style", -1275737743), xj = new U(null, "head", "head", -771383919), Wg = new U(null, "reagentRender", "reagentRender", -358306383), yj = new U(null, "reason", "reason", -2070751759), zj = new U(null, "asset-path", "asset-path", 1500889617), 
-Aj = new U(null, "seqables-always-expandable", "seqables-always-expandable", -1995087215), Bj = new U(null, "string-style", "string-style", 744195825), Cj = new U(null, "circular-reference-label", "circular-reference-label", 1854246641), Dj = new U(null, "min-sequable-count-for-expansion", "min-sequable-count-for-expansion", 1409206097), Ej = new U(null, "host", "host", -1558485167), Fj = new U(null, "no-cache", "no-cache", 1588056370), Vg = new U(null, "render", "render", -1408033454), Gj = new U(null, 
-"integer-style", "integer-style", 1568434578), Hj = new U(null, "default-envelope-header", "default-envelope-header", -90723598), Ij = new U(null, "ol", "ol", 932524051), Jj = new U(null, "parse-stacktrace", "parse-stacktrace", -38208461), Kj = new U(null, "reagent-render", "reagent-render", -985383853), Lj = new U(null, "line", "line", 212345235), Mj = new U(null, "chrome", "chrome", 1718738387), Nj = new Zc(null, "val", "val", 1769233139, null), Oj = new U(null, "spacer", "spacer", 2067425139), 
-Pj = new U(null, "rhino", "rhino", 1962118035), Qj = new U(null, "result", "result", 1415092211), kb = new U(null, "print-length", "print-length", 1931866356), Rj = new U(null, "relativize-url", "relativize-url", 621482324), Sj = new U(null, "catch-exception", "catch-exception", -1997306795), Tj = new U(null, "legacy-formatter", "legacy-formatter", -1954119499), Uj = new U(null, "standard-li-no-margin-style", "standard-li-no-margin-style", 87138485), Vj = new U(null, "auto-run", "auto-run", 1958400437), 
-Lh = new U(null, "parents", "parents", -2027538891), Wj = new U(null, "string-postfix-limit", "string-postfix-limit", -1282205963), Xj = new U(null, "fn-style", "fn-style", 1330516917), Yj = new U(null, "item-style", "item-style", -188747722), Zj = new U(null, "prev", "prev", -1597069226), ak = new U(null, "continue-block", "continue-block", -1852047850), bk = new U(null, "index-style", "index-style", 93813430), ck = new U(null, "transform-origin", "transform-origin", -586167370), dk = new U(null, 
-"display-name", "display-name", 694513143), ek = new U(null, "display", "display", 242065432), fk = new U(null, "position", "position", -2011731912), gk = new U(null, "on-dispose", "on-dispose", 2105306360), hk = new U(null, "error", "error", -978969032), ik = new U(null, "_title", "_title", -1401898184), Xg = new U(null, "componentFunction", "componentFunction", 825866104), jk = new U(null, "has-body-post-handler", "has-body-post-handler", -863451271), kk = new U(null, "sourceId", "sourceId", -819621895), 
-lk = new U(null, "sanity-hints", "sanity-hints", 1201436858), Te = new Zc(null, "quote", "quote", 1377916282, null), mk = new U(null, "timeout", "timeout", -318625318), nk = new U(null, "circular-reference-style", "circular-reference-style", 2114427386), ok = new U(null, "body-items-more-label-style", "body-items-more-label-style", -1440170470), pk = new U(null, "margin-right", "margin-right", 809689658), qk = new U(null, "h1", "h1", -1896887462), Se = new U(null, "arglists", "arglists", 1661989754), 
-Re = new Zc(null, "nil-iter", "nil-iter", 1101030523, null), rk = new U(null, "workDescription", "workDescription", 1962177755), sk = new U(null, "max-print-level", "max-print-level", -462237413), tk = new U(null, "meta-wrapper-style", "meta-wrapper-style", -1627075237), uk = new U(null, "autobind", "autobind", -570650245), vk = new U(null, "hierarchy", "hierarchy", -1053470341), wk = new U(null, "_source", "_source", -812884485), xk = new U(null, "body", "body", -2049205669), yk = new U(null, "nashorn", 
-"nashorn", 988299963), th = new U(null, "alt-impl", "alt-impl", 670969595), zk = new Zc(null, "fn-handler", "fn-handler", 648785851, null), Ak = new U(null, "header-post-handelr", "header-post-handelr", 1525935099), Bk = new U(null, "host-port", "host-port", 1956551772), Ck = new U(null, "meta-body-style", "meta-body-style", -1858094980), Dk = new U(null, "string-prefix-limit", "string-prefix-limit", 1256106332), Ek = new U(null, "collection", "collection", -683361892), Ih = new U(null, "keywordize-keys", 
-"keywordize-keys", 1310784252), Fk = new U(null, "p", "p", 151049309), Gk = new U(null, "cljs-style", "cljs-style", 1984116061), Hk = new U(null, "custom-formatters", "custom-formatters", -863243779), Ik = new U(null, "componentWillMount", "componentWillMount", -285327619), Jk = new U(null, "print-meta-data", "print-meta-data", 1409048509), Kk = new U(null, "href", "href", -793805698), Lk = new U(null, "div.ui.container", "div.ui.container", -613874402), Mk = new U(null, "img", "img", 1442687358), 
-Nk = new U(null, "dont-display-banner", "dont-display-banner", -1175550370), Ok = new U(null, "a", "a", -2123407586), Pk = new U(null, "height", "height", 1025178622), Qk = new U(null, "body-line-max-print-level", "body-line-max-print-level", 571158623), Rk = new U(null, "left", "left", -399115937), Sk = new U(null, "html", "html", -998796897), Yg = new U("cljs.core", "not-found", "cljs.core/not-found", -1572889185), Tk = new U(null, "keyword-style", "keyword-style", -780643937), Uk = new U(null, 
-"span", "span", 1394872991), Vk = new U(null, "data", "data", -232669377), Wk = new Zc(null, "f", "f", 43394975, null), Xk = new U(null, "meta-style", "meta-style", 1528213407);
+"output-dir", -290956991), ii = new U(null, "_id", "_id", -789960287), ji = new U(null, "line-index-separator", "line-index-separator", -1735989246), ki = new U(null, "new-line-string-replacer", "new-line-string-replacer", -753206206), li = new U(null, "on-set", "on-set", -140953470), mi = new U(null, "meta-reference-style", "meta-reference-style", -1930118462), ni = new U(null, "cljsLegacyRender", "cljsLegacyRender", -1527295613), oi = new U(null, "ua-product", "ua-product", 938384227), pi = new U(null, 
+"header-style", "header-style", -2122121341), qi = new U(null, "transform", "transform", 1381301764), ib = new U(null, "meta", "meta", 1499536964), ri = new U(null, "ul", "ul", -1349521403), si = new Zc(null, "blockable", "blockable", -28395259, null), jb = new U(null, "dup", "dup", 556298533), ti = new U(null, "body-items-more-label", "body-items-more-label", -1561152123), ui = new U(null, "safari", "safari", 497115653), vi = new U(null, "key", "key", -1516042587), wi = new U(null, "private", "private", 
+-558947994), xi = new U(null, "has-body-pre-handler", "has-body-pre-handler", 1787020038), yi = new U(null, "surrogate-key", "surrogate-key", 391132006), zi = new U(null, "credentials", "credentials", 1373178854), Ai = new U(null, "top", "top", -1856271961), Bi = new U(null, "displayName", "displayName", -809144601), ff = new U(null, "validator", "validator", -1966190681), Ci = new U(null, "method", "method", 55703592), Di = new U(null, "string-abbreviation-marker", "string-abbreviation-marker", 
+-347785112), Ei = new U(null, "max-header-elements", "max-header-elements", 713629864), Fi = new U(null, "default", "default", -1987822328), Gi = new U(null, "finally-block", "finally-block", 832982472), Hi = new Zc(null, "meta12625", "meta12625", 1486306824, null), Ii = new U(null, "warn", "warn", -436710552), Ji = new U(null, "name", "name", 1843675177), Ki = new U(null, "li", "li", 723558921), Li = new U(null, "sanity-hint-min-length", "sanity-hint-min-length", 104958154), Mi = new U(null, "header-post-handler", 
+"header-post-handler", 514828618), Ni = new U(null, "circular-reference-wrapper-style", "circular-reference-wrapper-style", -329208502), Oi = new U(null, "header-pre-handler", "header-pre-handler", -1997722262), Pi = new U(null, "component-did-mount", "component-did-mount", -1126910518), Qi = new U(null, "file", "file", -1269645878), Ri = new U(null, "prevent-recursion", "prevent-recursion", -1498371606), Si = new U(null, "expanded-string-style", "expanded-string-style", -543781397), Ti = new Zc(null, 
+"meta13891", "meta13891", 1952224971, null), Ui = new U(null, "standard-li-style", "standard-li-style", 413442955), Vi = new U(null, "component-did-update", "component-did-update", -1468549173), Wi = new U(null, "body-style", "body-style", 1462943820), Xi = new U(null, "history", "history", -247395220), yh = new U(null, "val", "val", 128701612), Yi = new U(null, "recur", "recur", -437573268), Zi = new U(null, "type", "type", 1174270348), $i = new U(null, "catch-block", "catch-block", 1175212748), 
+aj = new U(null, "entered-reference", "entered-reference", 2117851020), bj = new U(null, "dq", "dq", -1690275860), cj = new U(null, "src", "src", -1651076051), dj = new U(null, "nil-label", "nil-label", -587789203), uh = new U(null, "fallback-impl", "fallback-impl", -1501286995), gb = new U(null, "flush-on-newline", "flush-on-newline", -151457939), ej = new U(null, "componentWillUnmount", "componentWillUnmount", 1573788814), fj = new U(null, "port", "port", 1534937262), gj = new U(null, "standard-ol-no-margin-style", 
+"standard-ol-no-margin-style", -1701969586), hj = new U(null, "hits", "hits", -2120002930), ij = new U(null, "function", "function", -2127255473), jj = new U(null, "charset", "charset", -1063822193), Mh = new U(null, "descendants", "descendants", 1824886031), kj = new U(null, "standard-ol-style", "standard-ol-style", 2143825615), lj = new U(null, "column", "column", 2078222095), mj = new U(null, "headers", "headers", -835030129), nj = new U(null, "shouldComponentUpdate", "shouldComponentUpdate", 
+1795750960), oj = new U(null, "file-reader", "file-reader", -450847664), Nh = new U(null, "ancestors", "ancestors", -776045424), pj = new U(null, "style", "style", -496642736), qj = new U(null, "float-style", "float-style", 705926672), rj = new U(null, "firefox", "firefox", 1283768880), sj = new U(null, "div", "div", 1057191632), hb = new U(null, "readably", "readably", 1129599760), tj = new U(null, "body-post-handler", "body-post-handler", -1040905424), uj = new Zc(null, "box", "box", -1123515375, 
+null), lh = new U(null, "more-marker", "more-marker", -14717935), vj = new U(null, "bool-style", "bool-style", -1275737743), wj = new U(null, "head", "head", -771383919), Wg = new U(null, "reagentRender", "reagentRender", -358306383), xj = new U(null, "reason", "reason", -2070751759), yj = new U(null, "asset-path", "asset-path", 1500889617), zj = new U(null, "seqables-always-expandable", "seqables-always-expandable", -1995087215), Aj = new U(null, "string-style", "string-style", 744195825), Bj = 
+new U(null, "circular-reference-label", "circular-reference-label", 1854246641), Cj = new U(null, "min-sequable-count-for-expansion", "min-sequable-count-for-expansion", 1409206097), Dj = new U(null, "host", "host", -1558485167), Ej = new U(null, "no-cache", "no-cache", 1588056370), Vg = new U(null, "render", "render", -1408033454), Fj = new U(null, "integer-style", "integer-style", 1568434578), Gj = new U(null, "default-envelope-header", "default-envelope-header", -90723598), Hj = new U(null, "ol", 
+"ol", 932524051), Ij = new U(null, "parse-stacktrace", "parse-stacktrace", -38208461), Jj = new U(null, "reagent-render", "reagent-render", -985383853), Kj = new U(null, "line", "line", 212345235), Lj = new U(null, "chrome", "chrome", 1718738387), Mj = new Zc(null, "val", "val", 1769233139, null), Nj = new U(null, "spacer", "spacer", 2067425139), Oj = new U(null, "rhino", "rhino", 1962118035), Pj = new U(null, "result", "result", 1415092211), kb = new U(null, "print-length", "print-length", 1931866356), 
+Qj = new Zc(null, "meta14037", "meta14037", 1900692756, null), Rj = new U(null, "relativize-url", "relativize-url", 621482324), Sj = new U(null, "catch-exception", "catch-exception", -1997306795), Tj = new U(null, "legacy-formatter", "legacy-formatter", -1954119499), Uj = new U(null, "standard-li-no-margin-style", "standard-li-no-margin-style", 87138485), Vj = new U(null, "auto-run", "auto-run", 1958400437), Lh = new U(null, "parents", "parents", -2027538891), Wj = new U(null, "string-postfix-limit", 
+"string-postfix-limit", -1282205963), Xj = new U(null, "fn-style", "fn-style", 1330516917), Yj = new U(null, "item-style", "item-style", -188747722), Zj = new U(null, "prev", "prev", -1597069226), ak = new U(null, "continue-block", "continue-block", -1852047850), bk = new U(null, "index-style", "index-style", 93813430), ck = new U(null, "transform-origin", "transform-origin", -586167370), dk = new U(null, "display-name", "display-name", 694513143), ek = new U(null, "display", "display", 242065432), 
+fk = new U(null, "position", "position", -2011731912), gk = new U(null, "on-dispose", "on-dispose", 2105306360), hk = new U(null, "error", "error", -978969032), ik = new U(null, "_title", "_title", -1401898184), Xg = new U(null, "componentFunction", "componentFunction", 825866104), jk = new U(null, "has-body-post-handler", "has-body-post-handler", -863451271), kk = new U(null, "sourceId", "sourceId", -819621895), lk = new U(null, "sanity-hints", "sanity-hints", 1201436858), Te = new Zc(null, "quote", 
+"quote", 1377916282, null), mk = new U(null, "timeout", "timeout", -318625318), nk = new U(null, "circular-reference-style", "circular-reference-style", 2114427386), ok = new U(null, "body-items-more-label-style", "body-items-more-label-style", -1440170470), pk = new U(null, "margin-right", "margin-right", 809689658), qk = new U(null, "h1", "h1", -1896887462), Se = new U(null, "arglists", "arglists", 1661989754), Re = new Zc(null, "nil-iter", "nil-iter", 1101030523, null), rk = new U(null, "workDescription", 
+"workDescription", 1962177755), sk = new U(null, "max-print-level", "max-print-level", -462237413), tk = new U(null, "meta-wrapper-style", "meta-wrapper-style", -1627075237), uk = new U(null, "autobind", "autobind", -570650245), vk = new U(null, "hierarchy", "hierarchy", -1053470341), wk = new U(null, "_source", "_source", -812884485), xk = new U(null, "body", "body", -2049205669), yk = new U(null, "nashorn", "nashorn", 988299963), th = new U(null, "alt-impl", "alt-impl", 670969595), zk = new Zc(null, 
+"fn-handler", "fn-handler", 648785851, null), Ak = new U(null, "header-post-handelr", "header-post-handelr", 1525935099), Bk = new U(null, "host-port", "host-port", 1956551772), Ck = new U(null, "meta-body-style", "meta-body-style", -1858094980), Dk = new U(null, "string-prefix-limit", "string-prefix-limit", 1256106332), Ek = new U(null, "collection", "collection", -683361892), Ih = new U(null, "keywordize-keys", "keywordize-keys", 1310784252), Fk = new U(null, "p", "p", 151049309), Gk = new U(null, 
+"cljs-style", "cljs-style", 1984116061), Ue = new Zc(null, "meta10004", "meta10004", 546265565, null), Hk = new U(null, "custom-formatters", "custom-formatters", -863243779), Ik = new U(null, "componentWillMount", "componentWillMount", -285327619), Jk = new U(null, "print-meta-data", "print-meta-data", 1409048509), Kk = new U(null, "href", "href", -793805698), Lk = new U(null, "div.ui.container", "div.ui.container", -613874402), Mk = new U(null, "img", "img", 1442687358), Nk = new U(null, "dont-display-banner", 
+"dont-display-banner", -1175550370), Ok = new U(null, "a", "a", -2123407586), Pk = new U(null, "height", "height", 1025178622), Qk = new U(null, "body-line-max-print-level", "body-line-max-print-level", 571158623), Rk = new U(null, "left", "left", -399115937), Sk = new U(null, "html", "html", -998796897), Yg = new U("cljs.core", "not-found", "cljs.core/not-found", -1572889185), Tk = new U(null, "keyword-style", "keyword-style", -780643937), Uk = new U(null, "span", "span", 1394872991), Vk = new U(null, 
+"data", "data", -232669377), Wk = new Zc(null, "f", "f", 43394975, null), Xk = new U(null, "meta-style", "meta-style", 1528213407);
 var Yk = "undefined" !== typeof console;
 if ("undefined" === typeof Zk) {
   var Zk = df ? df(null) : cf.call(null, null)
@@ -9105,7 +9105,7 @@ if ("undefined" === typeof $k) {
           return c.call(this, e);
         }
         function c(a) {
-          return hf.o(Zk, sf, new V(null, 1, 5, X, [Ji], null), Fd, Q([Ke(F, a)], 0));
+          return hf.o(Zk, sf, new V(null, 1, 5, X, [Ii], null), Fd, Q([Ke(F, a)], 0));
         }
         a.F = 0;
         a.C = function(a) {
@@ -9257,7 +9257,7 @@ function nl(a) {
       return b;
     }
     b = Nd(a);
-    return Td(b) ? Ki.c(b) : null;
+    return Td(b) ? Ji.c(b) : null;
   }();
   return bl("" + F(b), "$", ".");
 }
@@ -9688,7 +9688,7 @@ function Ql(a, b) {
   return d;
 }
 function Wl(a, b) {
-  var c = null != b && (b.v & 64 || b.Ea) ? Ke(ef, b) : b, d = H.f(c, Vj), e = H.f(c, li), f = H.f(c, gk), c = H.f(c, Fj);
+  var c = null != b && (b.v & 64 || b.Ea) ? Ke(ef, b) : b, d = H.f(c, Vj), e = H.f(c, li), f = H.f(c, gk), c = H.f(c, Ej);
   null != d && (a.Ua = d);
   null != e && (a.de = e);
   null != f && (a.ce = f);
@@ -9921,7 +9921,7 @@ function hm(a) {
     bm = b;
   }
 }
-var $l = new q(null, 1, [Fj, !0], null), jm = new q(null, 1, [Vg, function() {
+var $l = new q(null, 1, [Ej, !0], null), jm = new q(null, 1, [Vg, function() {
   if (jl) {
     return hm(this);
   }
@@ -10010,7 +10010,7 @@ function lm(a, b, c) {
   }
   return A(d) ? d : b;
 }
-var mm = new q(null, 3, [oj, null, Ik, null, fj, null], null), nm = function(a) {
+var mm = new q(null, 3, [nj, null, Ik, null, ej, null], null), nm = function(a) {
   return function(b) {
     return function(c) {
       var d = H.f(L.c ? L.c(b) : L.call(null, b), c);
@@ -10043,7 +10043,7 @@ function pm(a) {
     var b = Wg.c(a);
     return A(b) ? b : Xg.c(a);
   }(), b = null == c, d = A(c) ? c : Vg.c(a), e = "" + F(function() {
-    var b = Di.c(a);
+    var b = Bi.c(a);
     return A(b) ? b : nl(d);
   }()), f;
   a: {
@@ -10064,7 +10064,7 @@ function pm(a) {
       return S.h(a, b, lm(b, c, e));
     };
   }(c, b, d, e, f), Ve, a);
-  return S.o(c, Di, f, Q([uk, !1, oi, b, Wg, d, Vg, Vg.c(jm)], 0));
+  return S.o(c, Bi, f, Q([uk, !1, ni, b, Wg, d, Vg, Vg.c(jm)], 0));
 }
 function qm(a) {
   return ie(function(a, c, d) {
@@ -10110,7 +10110,7 @@ function tm(a) {
   if (dm(a)) {
     return a.cljsReactClass = a;
   }
-  var b = Nd(a), b = S.h(b, Kj, a), b = rm(b);
+  var b = Nd(a), b = S.h(b, Jj, a), b = rm(b);
   return a.cljsReactClass = b;
 }
 ;function um(a, b, c) {
@@ -10247,7 +10247,7 @@ function Hm(a) {
     }(a, c, d, e);
   }
 }
-var Im = null, Km = new q(null, 3, [dk, "ReagentInput", Wi, Fm, Kj, function(a, b, c, d) {
+var Im = null, Km = new q(null, 3, [dk, "ReagentInput", Vi, Fm, Jj, function(a, b, c, d) {
   Hm(c);
   return Jm.B ? Jm.B(a, b, c, d) : Jm.call(null, a, b, c, d);
 }], null);
@@ -10255,7 +10255,7 @@ function Lm(a) {
   var b;
   if (Td(a)) {
     try {
-      b = H.f(a, wi);
+      b = H.f(a, vi);
     } catch (c) {
       b = null;
     }
@@ -10848,19 +10848,19 @@ function Rn(a) {
   "undefined" === typeof Sn && (Sn = function(b, d, e) {
     this.ne = b;
     this.Ca = d;
-    this.Ie = e;
+    this.Je = e;
     this.v = 425984;
     this.H = 0;
   }, Sn.prototype.T = function(b, d) {
     return new Sn(this.ne, this.Ca, d);
   }, Sn.prototype.O = function() {
-    return this.Ie;
+    return this.Je;
   }, Sn.prototype.pb = function() {
     return this.Ca;
   }, Sn.vd = function() {
-    return new V(null, 3, 5, X, [Ad(vj, new q(null, 1, [Se, te(Te, te(new V(null, 1, 5, X, [Nj], null)))], null)), Nj, Ci], null);
-  }, Sn.ac = !0, Sn.rb = "cljs.core.async.impl.channels/t_cljs$core$async$impl$channels12609", Sn.Ac = function(b, d) {
-    return sc(d, "cljs.core.async.impl.channels/t_cljs$core$async$impl$channels12609");
+    return new V(null, 3, 5, X, [Ad(uj, new q(null, 1, [Se, te(Te, te(new V(null, 1, 5, X, [Mj], null)))], null)), Mj, Hi], null);
+  }, Sn.ac = !0, Sn.rb = "cljs.core.async.impl.channels/t_cljs$core$async$impl$channels12624", Sn.Ac = function(b, d) {
+    return sc(d, "cljs.core.async.impl.channels/t_cljs$core$async$impl$channels12624");
   });
   return new Sn(Tn, b, Ve);
 };
@@ -12429,13 +12429,13 @@ function nq(a, b) {
   "undefined" === typeof yq && (yq = function(b, d, e) {
     this.Ge = b;
     this.ua = d;
-    this.Je = e;
+    this.Ke = e;
     this.v = 393216;
     this.H = 0;
   }, yq.prototype.T = function(b, d) {
     return new yq(this.Ge, this.ua, d);
   }, yq.prototype.O = function() {
-    return this.Je;
+    return this.Ke;
   }, yq.prototype.Qd = function() {
     return !0;
   }, yq.prototype.pd = function() {
@@ -12443,9 +12443,9 @@ function nq(a, b) {
   }, yq.prototype.Rd = function() {
     return this.ua;
   }, yq.vd = function() {
-    return new V(null, 3, 5, X, [Ad(zk, new q(null, 2, [xi, !0, Se, te(Te, te(new V(null, 1, 5, X, [Wk], null)))], null)), Wk, ni], null);
-  }, yq.ac = !0, yq.rb = "cljs.core.async.impl.ioc-helpers/t_cljs$core$async$impl$ioc_helpers13875", yq.Ac = function(b, d) {
-    return sc(d, "cljs.core.async.impl.ioc-helpers/t_cljs$core$async$impl$ioc_helpers13875");
+    return new V(null, 3, 5, X, [Ad(zk, new q(null, 2, [wi, !0, Se, te(Te, te(new V(null, 1, 5, X, [Wk], null)))], null)), Wk, Ti], null);
+  }, yq.ac = !0, yq.rb = "cljs.core.async.impl.ioc-helpers/t_cljs$core$async$impl$ioc_helpers13890", yq.Ac = function(b, d) {
+    return sc(d, "cljs.core.async.impl.ioc-helpers/t_cljs$core$async$impl$ioc_helpers13890");
   });
   return new yq(zq, b, Ve);
 };
@@ -12462,7 +12462,7 @@ function Bq(a, b, c) {
     a[1] = b;
     return Aq(a);
   }));
-  return A(c) ? (a[2] = L.c ? L.c(c) : L.call(null, c), a[1] = b, Zi) : null;
+  return A(c) ? (a[2] = L.c ? L.c(c) : L.call(null, c), a[1] = b, Yi) : null;
 }
 function Cq(a, b) {
   var c = a[6];
@@ -12476,7 +12476,7 @@ function Cq(a, b) {
 }
 function Dq(a) {
   for (;;) {
-    var b = a[4], c = aj.c(b), d = Sj.c(b), e = a[5];
+    var b = a[4], c = $i.c(b), d = Sj.c(b), e = a[5];
     if (A(function() {
       var a = e;
       return A(a) ? sb(b) : a;
@@ -12485,37 +12485,37 @@ function Dq(a) {
     }
     if (A(function() {
       var a = e;
-      return A(a) ? (a = c, A(a) ? K.f(Hi, d) || e instanceof d : a) : a;
+      return A(a) ? (a = c, A(a) ? K.f(Fi, d) || e instanceof d : a) : a;
     }())) {
       a[1] = c;
       a[2] = e;
       a[5] = null;
-      a[4] = S.o(b, aj, null, Q([Sj, null], 0));
+      a[4] = S.o(b, $i, null, Q([Sj, null], 0));
       break;
     }
     if (A(function() {
       var a = e;
-      return A(a) ? sb(c) && sb(Ii.c(b)) : a;
+      return A(a) ? sb(c) && sb(Gi.c(b)) : a;
     }())) {
       a[4] = Zj.c(b);
     } else {
       if (A(function() {
         var a = e;
-        return A(a) ? (a = sb(c)) ? Ii.c(b) : a : a;
+        return A(a) ? (a = sb(c)) ? Gi.c(b) : a : a;
       }())) {
-        a[1] = Ii.c(b);
-        a[4] = S.h(b, Ii, null);
+        a[1] = Gi.c(b);
+        a[4] = S.h(b, Gi, null);
         break;
       }
       if (A(function() {
         var a = sb(e);
-        return a ? Ii.c(b) : a;
+        return a ? Gi.c(b) : a;
       }())) {
-        a[1] = Ii.c(b);
-        a[4] = S.h(b, Ii, null);
+        a[1] = Gi.c(b);
+        a[4] = S.h(b, Gi, null);
         break;
       }
-      if (sb(e) && sb(Ii.c(b))) {
+      if (sb(e) && sb(Gi.c(b))) {
         a[1] = ak.c(b);
         a[4] = Zj.c(b);
         break;
@@ -12543,13 +12543,13 @@ var Hq = function(a) {
   "undefined" === typeof jn && (jn = function(a, c, d) {
     this.ua = a;
     this.Dd = c;
-    this.Ke = d;
+    this.Le = d;
     this.v = 393216;
     this.H = 0;
   }, jn.prototype.T = function(a, c) {
     return new jn(this.ua, this.Dd, c);
   }, jn.prototype.O = function() {
-    return this.Ke;
+    return this.Le;
   }, jn.prototype.Qd = function() {
     return !0;
   }, jn.prototype.pd = function() {
@@ -12557,9 +12557,9 @@ var Hq = function(a) {
   }, jn.prototype.Rd = function() {
     return this.ua;
   }, jn.vd = function() {
-    return new V(null, 3, 5, X, [Wk, ti, Li], null);
-  }, jn.ac = !0, jn.rb = "cljs.core.async/t_cljs$core$async14021", jn.Ac = function(a, c) {
-    return sc(c, "cljs.core.async/t_cljs$core$async14021");
+    return new V(null, 3, 5, X, [Wk, si, Qj], null);
+  }, jn.ac = !0, jn.rb = "cljs.core.async/t_cljs$core$async14036", jn.Ac = function(a, c) {
+    return sc(c, "cljs.core.async/t_cljs$core$async14036");
   });
   return new jn(a, !0, Ve);
 }(function() {
@@ -12855,8 +12855,8 @@ function Vq(a) {
   return b.width = [F(c), F("px")].join("");
 }
 Ad(function(a) {
-  return new V(null, 3, 5, X, [tj, new q(null, 1, [qj, new q(null, 2, [fk, "relative", ek, di], null)], null), new V(null, 3, 5, X, [tj, new q(null, 1, [qj, new q(null, 6, [ck, "0% 0%", ri, "rotate(-90deg)", fk, "absolute", Bi, "100%", Rk, 0, ek, di], null)], null), a], null)], null);
-}, new q(null, 2, [Ri, Vq, Wi, Vq], null));
+  return new V(null, 3, 5, X, [sj, new q(null, 1, [pj, new q(null, 2, [fk, "relative", ek, di], null)], null), new V(null, 3, 5, X, [sj, new q(null, 1, [pj, new q(null, 6, [ck, "0% 0%", qi, "rotate(-90deg)", fk, "absolute", Ai, "100%", Rk, 0, ek, di], null)], null), a], null)], null);
+}, new q(null, 2, [Pi, Vq, Vi, Vq], null));
 F("/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css");
 F(" */html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size");
 F("-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,");
@@ -12896,7 +12896,7 @@ function Wq(a) {
   return Xq(arguments[0], 1 < b.length ? new v(b.slice(1), 0, null) : null);
 }
 function Xq(a, b) {
-  var c = null != b && (b.v & 64 || b.Ea) ? Ke(ef, b) : b, d = H.h(c, Ei, "GET"), e = H.h(c, Vk, null), f = H.h(c, nj, {}), g = H.h(c, mk, 0), k = H.h(c, Ai, !0), m = H.h(c, Qj, "js-\x3eclj"), p = Gq(null), n = !de(new V(null, 4, 5, X, [null, window.ArrayBuffer, window.ArrayBufferView, window.Blob], null), null == e ? null : e.constructor), r = n ? function() {
+  var c = null != b && (b.v & 64 || b.Ea) ? Ke(ef, b) : b, d = H.h(c, Ci, "GET"), e = H.h(c, Vk, null), f = H.h(c, mj, {}), g = H.h(c, mk, 0), k = H.h(c, zi, !0), m = H.h(c, Pj, "js-\x3eclj"), p = Gq(null), n = !de(new V(null, 4, 5, X, [null, window.ArrayBuffer, window.ArrayBufferView, window.Blob], null), null == e ? null : e.constructor), r = n ? function() {
     var a = Eh(e);
     return JSON.stringify(a);
   }() : e;
@@ -12932,16 +12932,16 @@ if ("undefined" === typeof Yh) {
     var a = df ? df(Ve) : cf.call(null, Ve), b = df ? df(Ve) : cf.call(null, Ve), c = df ? df(Ve) : cf.call(null, Ve), d = df ? df(Ve) : cf.call(null, Ve), e = H.h(Ve, vk, Kh());
     return new Vh($c.f("cljs.stacktrace", "parse-stacktrace"), function() {
       return function(a, b, c) {
-        return pi.c(c);
+        return oi.c(c);
       };
-    }(a, b, c, d, e), Hi, e, a, b, c, d);
+    }(a, b, c, d, e), Fi, e, a, b, c, d);
   }()
 }
 function Yq(a) {
   var b = a.length - 1;
   return 0 <= b && a.indexOf(")", b) == b;
 }
-Xh(Hi, function(a, b) {
+Xh(Fi, function(a, b) {
   return b;
 });
 function Zq(a) {
@@ -12962,8 +12962,8 @@ function Zq(a) {
 }
 function $q(a, b, c) {
   var d = null != a && (a.v & 64 || a.Ea) ? Ke(ef, a) : a;
-  a = H.f(d, Ej);
-  var e = H.f(d, Bk), d = H.f(d, gj), f = null != c && (c.v & 64 || c.Ea) ? Ke(ef, c) : c, g = H.f(f, zj);
+  a = H.f(d, Dj);
+  var e = H.f(d, Bk), d = H.f(d, fj), f = null != c && (c.v & 64 || c.Ea) ? Ke(ef, c) : c, g = H.f(f, yj);
   c = A(a) ? new RegExp([F("http://"), F(a), F(":"), F(A(e) ? e : d), F("/")].join("")) : "";
   a = A(a) ? ih(c, b) : de(f, hi);
   if (A(a)) {
@@ -12977,27 +12977,27 @@ function $q(a, b, c) {
   if (A(c)) {
     return bl(b, c, "");
   }
-  throw new $h([F("Could not relativize URL "), F(b)].join(""), new q(null, 2, [$i, Jj, yj, Rj], null), null);
+  throw new $h([F("Could not relativize URL "), F(b)].join(""), new q(null, 2, [Zi, Ij, xj, Rj], null), null);
 }
-Xh(Mj, function(a, b, c, d) {
+Xh(Lj, function(a, b, c, d) {
   return ge(qf(qb, Z.f(function(b) {
     b = dl(bl(b, /\s+at\s+/, ""), /\s+/);
     var c = 1 === O(b) ? new V(null, 2, 5, X, [null, I(b)], null) : new V(null, 2, 5, X, [I(b), Ed(b)], null);
     b = R(c, 0, null);
     var c = R(c, 1, null), g = Zq(c), c = R(g, 0, null), k = R(g, 1, null), g = R(g, 2, null);
-    return A(A(c) ? A(b) ? A(k) ? g : k : b : c) ? new q(null, 4, [Si, $q(a, c, d), jj, bl(b, /Object\./, ""), Lj, k, mj, g], null) : Ba(b) ? null : new q(null, 4, [Si, null, jj, bl(b, /Object\./, ""), Lj, null, mj, null], null);
+    return A(A(c) ? A(b) ? A(k) ? g : k : b : c) ? new q(null, 4, [Qi, $q(a, c, d), ij, bl(b, /Object\./, ""), Kj, k, lj, g], null) : Ba(b) ? null : new q(null, 4, [Qi, null, ij, bl(b, /Object\./, ""), Kj, null, lj, null], null);
   }, dh(function(a) {
     return 0 != a.lastIndexOf("    at eval", 0);
   }, of(function(a) {
     return 0 == a.lastIndexOf("Error", 0);
   }, dl(b, /\n|\r\n/))))));
 });
-Xh(vi, function(a, b, c, d) {
+Xh(ui, function(a, b, c, d) {
   return ge(qf(qb, Z.f(function(b) {
     var c = A(ih(/@/, b)) ? dl(b, /@/) : new V(null, 2, 5, X, [null, b], null);
     b = R(c, 0, null);
     var c = R(c, 1, null), g = Zq(c), c = R(g, 0, null), k = R(g, 1, null), g = R(g, 2, null);
-    return A(A(c) ? A(b) ? A(k) ? g : k : b : c) ? new q(null, 4, [Si, $q(a, c, d), jj, Ca(b), Lj, k, mj, g], null) : Ba(b) ? null : new q(null, 4, [Si, null, jj, Ca(b), Lj, null, mj, null], null);
+    return A(A(c) ? A(b) ? A(k) ? g : k : b : c) ? new q(null, 4, [Qi, $q(a, c, d), ij, Ca(b), Kj, k, lj, g], null) : Ba(b) ? null : new q(null, 4, [Qi, null, ij, Ca(b), Kj, null, lj, null], null);
   }, qf(el, dh(function(a) {
     return 0 != a.lastIndexOf("eval code", 0);
   }, of(function(a) {
@@ -13013,19 +13013,19 @@ function ar(a) {
   }
   return bl(bl(a, /</, ""), /\//, "");
 }
-Xh(sj, function(a, b, c, d) {
+Xh(rj, function(a, b, c, d) {
   return ge(qf(qb, Z.f(function(b) {
     var c = A(ih(/@/, b)) ? dl(b, /@/) : new V(null, 2, 5, X, [null, b], null);
     b = R(c, 0, null);
     var c = R(c, 1, null), g = Zq(c), c = R(g, 0, null), k = R(g, 1, null), g = R(g, 2, null);
-    return A(A(c) ? A(b) ? A(k) ? g : k : b : c) ? new q(null, 4, [Si, $q(a, c, d), jj, ar(b), Lj, k, mj, g], null) : Ba(b) ? null : new q(null, 4, [Si, null, jj, ar(b), Lj, null, mj, null], null);
+    return A(A(c) ? A(b) ? A(k) ? g : k : b : c) ? new q(null, 4, [Qi, $q(a, c, d), ij, ar(b), Kj, k, lj, g], null) : Ba(b) ? null : new q(null, 4, [Qi, null, ij, ar(b), Kj, null, lj, null], null);
   }, qf(el, dh(function(a) {
     return K.f(a.indexOf("\x3e eval"), -1);
   }, of(function(a) {
     return 0 == a.lastIndexOf("Error", 0);
   }, dl(b, /\n|\r\n/)))))));
 });
-Xh(Pj, function(a, b, c, d) {
+Xh(Oj, function(a, b, c, d) {
   a = null != d && (d.v & 64 || d.Ea) ? Ke(ef, d) : d;
   c = H.f(a, hi);
   return ge(qf(qb, Z.f(function(a, b, c, d) {
@@ -13038,7 +13038,7 @@ Xh(Pj, function(a, b, c, d) {
       b = R(b, 1, null);
       a = bl(a, /\s+at\s+/, "");
       var c = dl(b, /\s+/), b = R(c, 0, null), c = R(c, 1, null);
-      return new q(null, 4, [Si, bl(a, [F(d), F("/")].join(""), ""), jj, A(c) ? bl(bl(c, "(", ""), ")", "") : null, Lj, A(A(b) ? !Ba(b) : b) ? parseInt(b, 10) : null, mj, 0], null);
+      return new q(null, 4, [Qi, bl(a, [F(d), F("/")].join(""), ""), ij, A(c) ? bl(bl(c, "(", ""), ")", "") : null, Kj, A(A(b) ? !Ba(b) : b) ? parseInt(b, 10) : null, lj, 0], null);
     };
   }(d, a, a, c), dl(b, /\n/))));
 });
@@ -13054,11 +13054,11 @@ Xh(yk, function(a, b, c, d) {
       var b = dl(a, /\s+/);
       a = R(b, 0, null);
       var b = R(b, 1, null), c = dl(b, /:/), b = R(c, 0, null), c = R(c, 1, null);
-      return new q(null, 4, [Si, bl(b.substring(1), [F(d), F("/")].join(""), ""), jj, a, Lj, A(A(c) ? !Ba(c) : c) ? parseInt(c.substring(0, O(c) - 1), 10) : null, mj, 0], null);
+      return new q(null, 4, [Qi, bl(b.substring(1), [F(d), F("/")].join(""), ""), ij, a, Kj, A(A(c) ? !Ba(c) : c) ? parseInt(c.substring(0, O(c) - 1), 10) : null, lj, 0], null);
     };
   }(d, a, a, c), dl(b, /\n/))));
 });
-var br = Id([bi, ci, ei, fi, gi, ji, ki, qi, ui, yi, zi, Fi, Gi, Mi, Ni, Pi, Qi, Ui, Vi, Xi, cj, ej, hj, lj, pj, rj, tj, uj, lh, wj, Aj, Bj, Cj, Dj, Gj, Hj, Ij, Oj, Uj, Wj, Xj, Yj, bk, jk, nk, ok, sk, tk, Ak, Ck, Dk, Gk, Jk, Qk, Tk, Uk, Xk], [100, "color:#000000", "color:#808080", null, "color:red", "", "↵", "white-space: nowrap", "more…", null, "$$this-is-cljs-devtools-surrogate", " … ", 5, "li", 128, "", null, [F("padding: 0px 12px 0px 12px;"), F("color:#C41A16;"), F("white-space: pre;"), F("border-top: 1px solid "), 
+var br = Id([bi, ci, ei, fi, gi, ji, ki, pi, ti, xi, yi, Di, Ei, Ki, Li, Ni, Oi, Si, Ui, Wi, bj, dj, gj, kj, oj, qj, sj, tj, lh, vj, zj, Aj, Bj, Cj, Fj, Gj, Hj, Nj, Uj, Wj, Xj, Yj, bk, jk, nk, ok, sk, tk, Ak, Ck, Dk, Gk, Jk, Qk, Tk, Uk, Xk], [100, "color:#000000", "color:#808080", null, "color:red", "", "↵", "white-space: nowrap", "more…", null, "$$this-is-cljs-devtools-surrogate", " … ", 5, "li", 128, "", null, [F("padding: 0px 12px 0px 12px;"), F("color:#C41A16;"), F("white-space: pre;"), F("border-top: 1px solid "), 
 F("rgba(255, 100, 100, 0.4)"), F(";"), F("border-radius:1px;"), F("margin: 0px 0px 2px 0px;"), F("background-color:"), F("rgba(255, 100, 100, 0.08)"), F(";")].join(""), "margin-left:16px", [F("display:inline-block;"), F("padding: 0px;"), F("border-top: 1px solid "), F("rgba(100, 255, 100, 0.4)"), F(";"), F("border-radius:1px;"), F("margin: 0px 0px 2px 0px;"), F("background-color:"), F("rgba(100, 255, 100, 0.08)"), F(";")].join(""), '"', "nil", [F("list-style-type:none;"), F("padding-left:0px;"), 
 F("margin-top:0px;"), F("margin-bottom:0px;"), F("margin-left:0px")].join(""), [F("list-style-type:none;"), F("padding-left:0px;"), F("margin-top:0px;"), F("margin-bottom:0px;"), F("margin-left:0px")].join(""), null, "color:#1C88CF", "div", null, "…", "color:#099", !0, "color:#C41A16", "∞", 3, "color:#1C00CF", "\ud83d\udce8", "ol", " ", "margin-left:0px", 20, "color:#090", [F("display: inline-block;"), F("white-space: nowrap;"), F("border-left: 2px solid rgba(100, 100, 100, 0.2);"), F("padding: 0px 4px 0px 4px;"), 
 F("margin: 1px 0px 0px 0px;")].join(""), [F("min-width: 50px;"), F("display: inline-block;"), F("text-align: right;"), F("vertical-align: top;"), F("background-color:#ddd;"), F("color:#000;"), F("opacity: 0.5;"), F("margin-right: 3px;"), F("padding: 0px 4px 0px 4px;"), F("margin: 1px 0px 0px 0px;"), F("-webkit-user-select: none;")].join(""), null, [F("background-color:#f88;"), F("color:#fff;"), F("opacity: 0.5;"), F("margin-right: 3px;"), F("padding: 0px 4px 0px 4px;"), F("border-radius:2px;"), F("-webkit-user-select: none;")].join(""), 
@@ -13088,17 +13088,17 @@ var jr = function jr(b, c, d, e) {
 };
 function kr(a) {
   try {
-    var b = a.stack, c, d = new q(null, 1, [pi, Mj], null), e = new q(null, 1, [ai, ""], null);
+    var b = a.stack, c, d = new q(null, 1, [oi, Lj], null), e = new q(null, 1, [ai, ""], null);
     c = Yh.B ? Yh.B(Ve, b, d, e) : Yh.call(null, Ve, b, d, e);
-    var f = I(J(c)), g = null != f && (f.v & 64 || f.Ea) ? Ke(ef, f) : f, k = H.f(g, Si), m = H.f(g, Lj), p = H.f(g, mj), n;
+    var f = I(J(c)), g = null != f && (f.v & 64 || f.Ea) ? Ke(ef, f) : f, k = H.f(g, Qi), m = H.f(g, Kj), p = H.f(g, lj), n;
     if (A(hh(/Cannot read property 'call' of.*/, a.message))) {
-      var r, t = cr(pj);
+      var r, t = cr(oj);
       r = A(t) ? t : ir;
       var u = (r.c ? r.c(k) : r.call(null, k)).split("\n"), w, y = u[m - 1];
       a = p - 1;
       var z = y.substring(a);
       w = [F(y.substring(0, a)), F(" \x3c\x3c\x3c ☢ NULL ☢ \x3c\x3c\x3c "), F(z)].join("");
-      var D = cr(Ni);
+      var D = cr(Li);
       n = jr(w, u, m, A(D) ? D : 128);
     } else {
       n = null;
@@ -13244,20 +13244,20 @@ function yr(a, b, c) {
 }
 function zr(a) {
   var b = null != a;
-  return b ? a[cr(zi)] : b;
+  return b ? a[cr(yi)] : b;
 }
 function Ar(a, b, c) {
-  var d = cr(zi);
+  var d = cr(yi);
   a = {target:a, header:b, hasBody:!0, bodyTemplate:c};
   a[d] = !0;
   return a;
 }
 function Br(a) {
   var b = vr;
-  if (A(bj.c(b))) {
-    return wr(Jd, Q([bj], 0)), !1;
+  if (A(aj.c(b))) {
+    return wr(Jd, Q([aj], 0)), !1;
   }
-  var c = Yi.c(vr);
+  var c = Xi.c(vr);
   return Xe(function() {
     return function(b) {
       return b === a;
@@ -13265,11 +13265,11 @@ function Br(a) {
   }(c, b), c);
 }
 function Cr(a) {
-  wr(S, Q([bj, !0], 0));
+  wr(S, Q([aj, !0], 0));
   return ["object", {object:a, config:vr}];
 }
 function Dr(a) {
-  return [F(Ke(F, kf(cr(Dk), a))), F(cr(Fi)), F(Ke(F, nf(cr(Wj), a)))].join("");
+  return [F(Ke(F, kf(cr(Dk), a))), F(cr(Di)), F(Ke(F, nf(cr(Wj), a)))].join("");
 }
 function Er(a) {
   return Xe(function(a) {
@@ -13287,31 +13287,31 @@ Fr.prototype.od = function(a, b) {
 function Gr(a, b, c) {
   var d = vr;
   try {
-    var e = sb(bj.c(vr));
+    var e = sb(aj.c(vr));
     if (e ? null != a ? a.rd || (a.sb ? 0 : C(rr, a)) : C(rr, a) : e) {
       return sc(b, Cr(a));
     }
     var f = Br(a);
-    wr(tf, Q([Yi, Fd, a], 0));
+    wr(tf, Q([Xi, Fd, a], 0));
     var g, k;
     if (null == a) {
-      k = yr(Uk, ei, Q([ej], 0));
+      k = yr(Uk, ei, Q([dj], 0));
     } else {
       var m;
       if (A(!0 === a || !1 === a)) {
-        m = yr(Uk, wj, Q([a], 0));
+        m = yr(Uk, vj, Q([a], 0));
       } else {
         var p;
         if ("string" === typeof a) {
-          var n = cr(cj), r = RegExp("\n", "g"), t = a.replace(r, cr(ki)), u = cr(Dk) + cr(Wj);
+          var n = cr(bj), r = RegExp("\n", "g"), t = a.replace(r, cr(ki)), u = cr(Dk) + cr(Wj);
           if (O(t) <= u) {
-            p = yr(Uk, Bj, Q([[F(n), F(t), F(n)].join("")], 0));
+            p = yr(Uk, Aj, Q([[F(n), F(t), F(n)].join("")], 0));
           } else {
-            var w = yr(Uk, Bj, Q([[F(n), F(Dr(t)), F(n)].join("")], 0)), y = a.replace(r, [F(cr(ki)), F("\n")].join("")), z = yr(Uk, Ui, Q([y], 0));
+            var w = yr(Uk, Aj, Q([[F(n), F(Dr(t)), F(n)].join("")], 0)), y = a.replace(r, [F(cr(ki)), F("\n")].join("")), z = yr(Uk, Si, Q([y], 0));
             p = Cr(Ar(a, w, z));
           }
         } else {
-          p = "number" === typeof a ? "number" !== typeof a || isNaN(a) || Infinity === a || parseFloat(a) !== parseInt(a, 10) ? yr(Uk, rj, Q([a], 0)) : yr(Uk, Gj, Q([a], 0)) : a instanceof U ? yr(Uk, Tk, Q(["" + F(a)], 0)) : a instanceof Zc ? yr(Uk, ci, Q(["" + F(a)], 0)) : null;
+          p = "number" === typeof a ? "number" !== typeof a || isNaN(a) || Infinity === a || parseFloat(a) !== parseInt(a, 10) ? yr(Uk, qj, Q([a], 0)) : yr(Uk, Fj, Q([a], 0)) : a instanceof U ? yr(Uk, Tk, Q(["" + F(a)], 0)) : a instanceof Zc ? yr(Uk, ci, Q(["" + F(a)], 0)) : null;
         }
         m = p;
       }
@@ -13325,14 +13325,14 @@ function Gr(a, b, c) {
     G.h ? G.h(a, D, N) : G.call(null, a, D, N);
     var aa;
     var T = D.group;
-    K.f(O(T), 5) && K.f(T[0], "#object[") && K.f(T[4], '"]') || K.f(O(T), 5) && K.f(T[0], "#object[") && K.f(T[4], "]") || K.f(O(T), 3) && K.f(T[0], "#object[") && K.f(T[2], "]") ? (wr(S, Q([Ti, !0], 0)), aa = [Cr(a)]) : K.f(O(T), 3) && K.f(T[0], "#\x3c") && K.f("" + F(a), T[1]) && K.f(T[2], "\x3e") ? (wr(S, Q([Ti, !0], 0)), aa = [T[0], Cr(a), T[2]]) : aa = T;
+    K.f(O(T), 5) && K.f(T[0], "#object[") && K.f(T[4], '"]') || K.f(O(T), 5) && K.f(T[0], "#object[") && K.f(T[4], "]") || K.f(O(T), 3) && K.f(T[0], "#object[") && K.f(T[2], "]") ? (wr(S, Q([Ri, !0], 0)), aa = [Cr(a)]) : K.f(O(T), 3) && K.f(T[0], "#\x3c") && K.f("" + F(a), T[1]) && K.f(T[2], "\x3e") ? (wr(S, Q([Ri, !0], 0)), aa = [T[0], Cr(a), T[2]]) : aa = T;
     c = aa;
     var B, ra;
-    var W = cr(Aj);
+    var W = cr(zj);
     if (A(W)) {
       var Y = ae(a), fa;
       if (Y) {
-        var ha = cr(Dj), ka = kf(ha, a);
+        var ha = cr(Cj), ka = kf(ha, a);
         fa = K.f(O(ka), ha);
       } else {
         fa = Y;
@@ -13344,7 +13344,7 @@ function Gr(a, b, c) {
     B = A(ra) ? ra : Er(c);
     var la;
     if (A(B)) {
-      var oa, ta = xr(Uk, qi).concat(c);
+      var oa, ta = xr(Uk, pi).concat(c);
       oa = Ar(a, ta, null);
       la = [Cr(oa)];
     } else {
@@ -13352,7 +13352,7 @@ function Gr(a, b, c) {
     }
     a = la;
     var va;
-    va = A(f) ? [xr(Uk, Pi).concat([yr(Uk, nk, Q(["" + F(cr(Cj))], 0))], a)] : a;
+    va = A(f) ? [xr(Uk, Ni).concat([yr(Uk, nk, Q(["" + F(cr(Bj))], 0))], a)] : a;
     return b.group.push.apply(b.group, va);
   } finally {
     vr = d;
@@ -13363,14 +13363,14 @@ function Hr(a, b, c) {
   var d = new Fr(b), e = cb;
   cb = c;
   try {
-    vh(new V(null, 1, 5, X, [a], null), d, new q(null, 3, [th, Gr, kb, cr(Gi), lh, cr(lh)], null));
+    vh(new V(null, 1, 5, X, [a], null), d, new q(null, 3, [th, Gr, kb, cr(Ei), lh, cr(lh)], null));
   } finally {
     cb = e;
   }
   return b;
 }
 function Ir(a) {
-  var b = Hr(a, qi, cr(sk) + 1), c = A(cr(Jk)) ? Nd(a) : null;
+  var b = Hr(a, pi, cr(sk) + 1), c = A(cr(Jk)) ? Nd(a) : null;
   if (A(c)) {
     a = yr;
     var d = yr(Uk, Xk, Q(["meta"], 0)), e = yr(Uk, Ck, Q([Ir.c ? Ir.c(c) : Ir.call(null, c)], 0)), c = yr(Uk, mi, Q([Cr(Ar(c, d, e))], 0)), b = a(Uk, tk, Q([b, c], 0));
@@ -13378,12 +13378,12 @@ function Ir(a) {
   return b;
 }
 function Jr(a, b) {
-  var c = A(b) ? lj : hj;
-  return yr(Ij, c, Q([Z.f(function(a, b) {
+  var c = A(b) ? kj : gj;
+  return yr(Hj, c, Q([Z.f(function(a, b) {
     return function(a) {
-      return yr(Mi, b, Q([a], 0));
+      return yr(Ki, b, Q([a], 0));
     };
-  }(c, A(b) ? Vi : Uj), a)], 0));
+  }(c, A(b) ? Ui : Uj), a)], 0));
 }
 function Kr(a, b) {
   return new V(null, 2, 5, X, [yr(Uk, bk, Q([a, ji], 0)), Hr(b, Yj, cr(Qk) + 1)], null);
@@ -13400,7 +13400,7 @@ function Lr(a) {
   };
 }
 var Mr = Lr(function(a) {
-  if (A(be(Ti.c(vr)))) {
+  if (A(be(Ri.c(vr)))) {
     return !1;
   }
   var b;
@@ -13421,9 +13421,9 @@ function Nr(a, b, c) {
 }
 var Or = Nr(Lr(function(a) {
   return A(zr(a)) ? a.header : (null != a ? a.rd || (a.sb ? 0 : C(rr, a)) : C(rr, a)) ? sr(a) : yr(Uk, Gk, Q([Ir(a)], 0));
-}), Qi, Oi), Pr = Nr(Lr(function(a) {
+}), Oi, Mi), Pr = Nr(Lr(function(a) {
   return A(zr(a)) ? a.hasBody : (null != a ? a.rd || (a.sb ? 0 : C(rr, a)) : C(rr, a)) ? tr(a) : !1;
-}), yi, jk), Qr = Nr(Lr(function(a) {
+}), xi, jk), Qr = Nr(Lr(function(a) {
   if (A(zr(a))) {
     var b = a.bodyTemplate;
     if (A(b)) {
@@ -13444,18 +13444,18 @@ var Or = Nr(Lr(function(a) {
             var k = ad(e), m = f + 1, g = Fd.f(g, Kr(f, I(e))), e = k, f = m;
           }
         }
-        Pd(kf(1, d)) ? b = e : (f = yr(Uk, ok, Q([cr(ui)], 0)), d = Ar(d, f, null), d.startingIndex = b + c, b = Fd.f(e, Cr(d)));
+        Pd(kf(1, d)) ? b = e : (f = yr(Uk, ok, Q([cr(ti)], 0)), d = Ar(d, f, null), d.startingIndex = b + c, b = Fd.f(e, Cr(d)));
         b = Jr(b, a);
-        a = a ? yr(Uk, Xi, Q([b], 0)) : b;
+        a = a ? yr(Uk, Wi, Q([b], 0)) : b;
       } else {
-        a = yr(Ij, lj, Q([yr(Mi, Vi, Q([Cr(c)], 0))], 0));
+        a = yr(Hj, kj, Q([yr(Ki, Ui, Q([Cr(c)], 0))], 0));
       }
     }
   } else {
     a = (null != a ? a.rd || (a.sb ? 0 : C(rr, a)) : C(rr, a)) ? ur(a) : null;
   }
   return a;
-}), fi, uj);
+}), fi, tj);
 var Rr = !1;
 function Sr() {
   var a = Fn();
@@ -13628,20 +13628,20 @@ function rs(a, b) {
                   try {
                     for (;;) {
                       var e = a(c);
-                      if (!ve(e, Zi)) {
+                      if (!ve(e, Yi)) {
                         d = e;
                         break a;
                       }
                     }
                   } catch (f) {
                     if (f instanceof Object) {
-                      c[5] = f, Dq(c), d = Zi;
+                      c[5] = f, Dq(c), d = Yi;
                     } else {
                       throw f;
                     }
                   }
                 }
-                if (!ve(d, Zi)) {
+                if (!ve(d, Yi)) {
                   return d;
                 }
               }
@@ -13675,11 +13675,11 @@ function rs(a, b) {
                     return H.h(a, wk, Ve);
                   };
                 }(e, c);
-              }(), n = 0 * b, n = [F("http://samlinger.natmus.dk/api/all/_search"), F("?q\x3d"), F(a), F("\x26from\x3d"), F(n), F("\x26size\x3d"), F(b)].join(""), n = Wq.h ? Wq.h(n, Ai, !1) : Wq.call(null, n, Ai, !1);
+              }(), n = 0 * b, n = [F("http://samlinger.natmus.dk/api/all/_search"), F("?q\x3d"), F(a), F("\x26from\x3d"), F(n), F("\x26size\x3d"), F(b)].join(""), n = Wq.h ? Wq.h(n, zi, !1) : Wq.call(null, n, zi, !1);
               d[7] = f;
               return Bq(d, 2, n);
             }
-            return 2 === e ? (f = d[7], n = xm(d[2]), n = ij.c(n), n = ij.c(n), f = Z.f(f, n), f = Z.f(qs, f), Cq(d, f)) : null;
+            return 2 === e ? (f = d[7], n = xm(d[2]), n = hj.c(n), n = hj.c(n), f = Z.f(f, n), f = Z.f(qs, f), Cq(d, f)) : null;
           };
         }(c), c);
       }(), f = function() {
@@ -13706,20 +13706,20 @@ function ss(a) {
                   try {
                     for (;;) {
                       var e = a(c);
-                      if (!ve(e, Zi)) {
+                      if (!ve(e, Yi)) {
                         d = e;
                         break a;
                       }
                     }
                   } catch (g) {
                     if (g instanceof Object) {
-                      c[5] = g, Dq(c), d = Zi;
+                      c[5] = g, Dq(c), d = Yi;
                     } else {
                       throw g;
                     }
                   }
                 }
-                if (!ve(d, Zi)) {
+                if (!ve(d, Yi)) {
                   return d;
                 }
               }
@@ -13778,20 +13778,20 @@ function ts(a) {
                   try {
                     for (;;) {
                       var e = a(c);
-                      if (!ve(e, Zi)) {
+                      if (!ve(e, Yi)) {
                         d = e;
                         break a;
                       }
                     }
                   } catch (g) {
                     if (g instanceof Object) {
-                      c[5] = g, Dq(c), d = Zi;
+                      c[5] = g, Dq(c), d = Yi;
                     } else {
                       throw g;
                     }
                   }
                 }
-                if (!ve(d, Zi)) {
+                if (!ve(d, Yi)) {
                   return d;
                 }
               }
@@ -13850,224 +13850,225 @@ if (A(vs)) {
   us = vs;
 }
 A(us) && require("module").globalPaths.push([F(process.cwd()), F("/node_modules")].join(""));
-var xs = require;
-xs.c ? xs.c("http") : xs.call(null, "http");
-function ys(a, b) {
-  var c = Gq(1);
-  Rn(function(c) {
-    return function() {
-      var e = function() {
-        return function(a) {
-          return function() {
-            function b(c) {
-              for (;;) {
-                var d;
-                a: {
-                  try {
-                    for (;;) {
-                      var e = a(c);
-                      if (!ve(e, Zi)) {
-                        d = e;
-                        break a;
+if (A(window.process)) {
+  var xs = require;
+  xs.c ? xs.c("http") : xs.call(null, "http");
+  var ys = function(a, b) {
+    var c = Gq(1);
+    Rn(function(c) {
+      return function() {
+        var e = function() {
+          return function(a) {
+            return function() {
+              function b(c) {
+                for (;;) {
+                  var d;
+                  a: {
+                    try {
+                      for (;;) {
+                        var e = a(c);
+                        if (!ve(e, Yi)) {
+                          d = e;
+                          break a;
+                        }
+                      }
+                    } catch (f) {
+                      if (f instanceof Object) {
+                        c[5] = f, Dq(c), d = Yi;
+                      } else {
+                        throw f;
                       }
                     }
-                  } catch (f) {
-                    if (f instanceof Object) {
-                      c[5] = f, Dq(c), d = Zi;
-                    } else {
-                      throw f;
-                    }
+                  }
+                  if (!ve(d, Yi)) {
+                    return d;
                   }
                 }
-                if (!ve(d, Zi)) {
-                  return d;
+              }
+              function c() {
+                var a = [null, null, null, null, null, null, null, null];
+                a[0] = d;
+                a[1] = 1;
+                return a;
+              }
+              var d = null, d = function(a) {
+                switch(arguments.length) {
+                  case 0:
+                    return c.call(this);
+                  case 1:
+                    return b.call(this, a);
                 }
+                throw Error("Invalid arity: " + arguments.length);
+              };
+              d.A = c;
+              d.c = b;
+              return d;
+            }();
+          }(function() {
+            return function(c) {
+              var d = c[1];
+              if (1 === d) {
+                var d = c[7], d = a.params.id, e = dl(d, /:/), e = I(e);
+                c[7] = d;
+                switch(e) {
+                  case "natmus":
+                    c[1] = 3;
+                    break;
+                  default:
+                    c[1] = 5;
+                }
+                return Yi;
               }
-            }
-            function c() {
-              var a = [null, null, null, null, null, null, null, null];
-              a[0] = d;
-              a[1] = 1;
-              return a;
-            }
-            var d = null, d = function(a) {
-              switch(arguments.length) {
-                case 0:
-                  return c.call(this);
-                case 1:
-                  return b.call(this, a);
-              }
-              throw Error("Invalid arity: " + arguments.length);
+              return 2 === d ? (d = Q([c[2]], 0), e = fb(), Pd(d) ? d = "\n" : (d = wh(d, e), d.append("\n"), d = "" + F(d)), d = b.end(d), Cq(c, d)) : 3 === d ? (d = c[7], d = ss(d), Bq(c, 4, d)) : 4 === d ? (c[2] = c[2], c[1] = 2, Yi) : 5 === d ? (d = c[7], d = Id([ii], [d]), c[2] = d, c[1] = 2, Yi) : null;
             };
-            d.A = c;
-            d.c = b;
-            return d;
-          }();
-        }(function() {
-          return function(c) {
-            var d = c[1];
-            if (1 === d) {
-              var d = c[7], d = a.params.id, e = dl(d, /:/), e = I(e);
-              c[7] = d;
-              switch(e) {
-                case "natmus":
-                  c[1] = 3;
-                  break;
-                default:
-                  c[1] = 5;
-              }
-              return Zi;
-            }
-            return 2 === d ? (d = Q([c[2]], 0), e = fb(), Pd(d) ? d = "\n" : (d = wh(d, e), d.append("\n"), d = "" + F(d)), d = b.end(d), Cq(c, d)) : 3 === d ? (d = c[7], d = ss(d), Bq(c, 4, d)) : 4 === d ? (c[2] = c[2], c[1] = 2, Zi) : 5 === d ? (d = c[7], d = Id([ii], [d]), c[2] = d, c[1] = 2, Zi) : null;
-          };
-        }(c), c);
-      }(), f = function() {
-        var a = e.A ? e.A() : e.call(null);
-        a[6] = c;
-        return a;
-      }();
-      return Aq(f);
-    };
-  }(c));
-  return c;
-}
-function zs(a, b) {
-  var c = Gq(1);
-  Rn(function(c) {
-    return function() {
-      var e = function() {
-        return function(a) {
-          return function() {
-            function b(c) {
-              for (;;) {
-                var d;
-                a: {
-                  try {
-                    for (;;) {
-                      var e = a(c);
-                      if (!ve(e, Zi)) {
-                        d = e;
-                        break a;
+          }(c), c);
+        }(), f = function() {
+          var a = e.A ? e.A() : e.call(null);
+          a[6] = c;
+          return a;
+        }();
+        return Aq(f);
+      };
+    }(c));
+    return c;
+  }, zs = function(a, b) {
+    var c = Gq(1);
+    Rn(function(c) {
+      return function() {
+        var e = function() {
+          return function(a) {
+            return function() {
+              function b(c) {
+                for (;;) {
+                  var d;
+                  a: {
+                    try {
+                      for (;;) {
+                        var e = a(c);
+                        if (!ve(e, Yi)) {
+                          d = e;
+                          break a;
+                        }
+                      }
+                    } catch (f) {
+                      if (f instanceof Object) {
+                        c[5] = f, Dq(c), d = Yi;
+                      } else {
+                        throw f;
                       }
                     }
-                  } catch (f) {
-                    if (f instanceof Object) {
-                      c[5] = f, Dq(c), d = Zi;
-                    } else {
-                      throw f;
-                    }
+                  }
+                  if (!ve(d, Yi)) {
+                    return d;
                   }
                 }
-                if (!ve(d, Zi)) {
-                  return d;
+              }
+              function c() {
+                var a = [null, null, null, null, null, null, null, null];
+                a[0] = d;
+                a[1] = 1;
+                return a;
+              }
+              var d = null, d = function(a) {
+                switch(arguments.length) {
+                  case 0:
+                    return c.call(this);
+                  case 1:
+                    return b.call(this, a);
                 }
+                throw Error("Invalid arity: " + arguments.length);
+              };
+              d.A = c;
+              d.c = b;
+              return d;
+            }();
+          }(function(c) {
+            return function(d) {
+              var e = d[1];
+              if (1 === e) {
+                var f = d[7], n = a.params.query, r = ts(n);
+                d[7] = n;
+                return Bq(d, 2, r);
               }
-            }
-            function c() {
-              var a = [null, null, null, null, null, null, null, null];
-              a[0] = d;
-              a[1] = 1;
-              return a;
-            }
-            var d = null, d = function(a) {
-              switch(arguments.length) {
-                case 0:
-                  return c.call(this);
-                case 1:
-                  return b.call(this, a);
-              }
-              throw Error("Invalid arity: " + arguments.length);
-            };
-            d.A = c;
-            d.c = b;
-            return d;
-          }();
-        }(function(c) {
-          return function(d) {
-            var e = d[1];
-            if (1 === e) {
-              var f = d[7], n = a.params.query, r = ts(n);
-              d[7] = n;
-              return Bq(d, 2, r);
-            }
-            if (2 === e) {
-              var f = d[7], t = d[2], u = He.c(t), w = ee(u), y = [kj], z = ["utf-8"], D = Id(y, z), G = [ib, D], N = new V(null, 2, 5, X, G, null), aa = [xj, N], T = new V(null, 2, 5, X, aa, null), B = [Fk, '"', f, '" search results:'], ra = new V(null, 4, 5, X, B, null), W = [si], Y = new V(null, 1, 5, X, W, null), n = function() {
-                return function(a, b, c, d, e, f, g, k, m, n, p, r, t, u, w, y, z, B, D, G, N, T, W, Y, aa, ra) {
-                  return function Ko(Bs) {
-                    return new ye(null, function() {
-                      return function() {
-                        for (;;) {
-                          var a = x(Bs);
-                          if (a) {
-                            if (Wd(a)) {
-                              var b = Ec(a), c = O(b), d = new Ae(Array(c), 0);
-                              a: {
-                                for (var e = 0;;) {
-                                  if (e < c) {
-                                    var f = Hb.f(b, e), f = new V(null, 2, 5, X, [Mi, new V(null, 3, 5, X, [Ok, new q(null, 1, [Kk, [F("/object/"), F(f)].join("")], null), f], null)], null);
-                                    d.add(f);
-                                    e += 1;
-                                  } else {
-                                    b = !0;
-                                    break a;
+              if (2 === e) {
+                var f = d[7], t = d[2], u = He.c(t), w = ee(u), y = [jj], z = ["utf-8"], D = Id(y, z), G = [ib, D], N = new V(null, 2, 5, X, G, null), aa = [wj, N], T = new V(null, 2, 5, X, aa, null), B = [Fk, '"', f, '" search results:'], ra = new V(null, 4, 5, X, B, null), W = [ri], Y = new V(null, 1, 5, X, W, null), n = function() {
+                  return function(a, b, c, d, e, f, g, k, m, n, p, r, t, u, w, y, z, B, D, G, N, T, W, Y, aa, ra) {
+                    return function Ko(As) {
+                      return new ye(null, function() {
+                        return function() {
+                          for (;;) {
+                            var a = x(As);
+                            if (a) {
+                              if (Wd(a)) {
+                                var b = Ec(a), c = O(b), d = new Ae(Array(c), 0);
+                                a: {
+                                  for (var e = 0;;) {
+                                    if (e < c) {
+                                      var f = Hb.f(b, e), f = new V(null, 2, 5, X, [Ki, new V(null, 3, 5, X, [Ok, new q(null, 1, [Kk, [F("/object/"), F(f)].join("")], null), f], null)], null);
+                                      d.add(f);
+                                      e += 1;
+                                    } else {
+                                      b = !0;
+                                      break a;
+                                    }
                                   }
                                 }
+                                return b ? De(d.Ia(), Ko(Fc(a))) : De(d.Ia(), null);
                               }
-                              return b ? De(d.Ia(), Ko(Fc(a))) : De(d.Ia(), null);
+                              d = I(a);
+                              return yd(new V(null, 2, 5, X, [Ki, new V(null, 3, 5, X, [Ok, new q(null, 1, [Kk, [F("/object/"), F(d)].join("")], null), d], null)], null), Ko(ad(a)));
                             }
-                            d = I(a);
-                            return yd(new V(null, 2, 5, X, [Mi, new V(null, 3, 5, X, [Ok, new q(null, 1, [Kk, [F("/object/"), F(d)].join("")], null), d], null)], null), Ko(ad(a)));
+                            return null;
                           }
-                          return null;
-                        }
-                      };
-                    }(a, b, c, d, e, f, g, k, m, n, p, r, t, u, w, y, z, B, D, G, N, T, W, Y, aa, ra), null, null);
-                  };
-                }(f, t, w, f, t, u, w, X, X, X, y, z, D, G, N, aa, T, X, X, B, ra, X, W, Y, e, c);
-              }(), n = n.c ? n.c(w) : n.call(null, w), n = rf.f(Y, n), n = Wm(new V(null, 3, 5, X, [Sk, T, new V(null, 3, 5, X, [xk, ra, n], null)], null)), n = b.end(n);
-              return Cq(d, n);
-            }
-            return null;
-          };
-        }(c), c);
-      }(), f = function() {
-        var a = e.A ? e.A() : e.call(null);
-        a[6] = c;
-        return a;
-      }();
-      return Aq(f);
-    };
-  }(c));
-  return c;
+                        };
+                      }(a, b, c, d, e, f, g, k, m, n, p, r, t, u, w, y, z, B, D, G, N, T, W, Y, aa, ra), null, null);
+                    };
+                  }(f, t, w, f, t, u, w, X, X, X, y, z, D, G, N, aa, T, X, X, B, ra, X, W, Y, e, c);
+                }(), n = n.c ? n.c(w) : n.call(null, w), n = rf.f(Y, n), n = Wm(new V(null, 3, 5, X, [Sk, T, new V(null, 3, 5, X, [xk, ra, n], null)], null)), n = b.end(n);
+                return Cq(d, n);
+              }
+              return null;
+            };
+          }(c), c);
+        }(), f = function() {
+          var a = e.A ? e.A() : e.call(null);
+          a[6] = c;
+          return a;
+        }();
+        return Aq(f);
+      };
+    }(c));
+    return c;
+  };
+  if ("undefined" === typeof Bs) {
+    var Bs = function() {
+      var a = xs.c ? xs.c("express") : xs.call(null, "express"), b = a.A ? a.A() : a.call(null);
+      b.get("/object/:id.:type", function() {
+        return function(a, b) {
+          return ys(a, b);
+        };
+      }(a, b));
+      b.get("/object/:id", function() {
+        return function(a, b) {
+          return ys(a, b);
+        };
+      }(a, b));
+      b.get("/search/:query/:page*?", function() {
+        return function(a, b) {
+          return zs(a, b);
+        };
+      }(a, b));
+      b.use(a["static"]("../"));
+      return b.listen(8888, function() {
+        return function() {
+          return console.log("started express on port 8888");
+        };
+      }(a, b));
+    }()
+  }
 }
-if ("undefined" === typeof As) {
-  var As = function() {
-    var a = xs.c ? xs.c("express") : xs.call(null, "express"), b = a.A ? a.A() : a.call(null);
-    b.get("/object/:id.:type", function() {
-      return function(a, b) {
-        return ys(a, b);
-      };
-    }(a, b));
-    b.get("/object/:id", function() {
-      return function(a, b) {
-        return ys(a, b);
-      };
-    }(a, b));
-    b.get("/search/:query/:page*?", function() {
-      return function(a, b) {
-        return zs(a, b);
-      };
-    }(a, b));
-    b.use(a["static"]("../"));
-    return b.listen(8888, function() {
-      return function() {
-        return console.log("started express on port 8888");
-      };
-    }(a, b));
-  }()
-}
-var Cs = new V(null, 4, 5, X, [Lk, new V(null, 3, 5, X, [qk, new V(null, 2, 5, X, [Mk, new q(null, 2, [dj, "assets/icon.png", qj, new q(null, 2, [Pk, "1em", pk, "1ex"], null)], null)], null), "Linked Data Endpoint"], null), new V(null, 3, 5, X, [Fk, "Made during ", new V(null, 3, 5, X, [Ok, new q(null, 1, [Kk, "http://hack4.dk"], null), "Hack4DK"], null)], null), new V(null, 3, 5, X, [tj, "Sample pages:", rf.f(new V(null, 1, 5, X, [si], null), Z.f(function(a) {
-  return new V(null, 2, 5, X, [Mi, new V(null, 3, 5, X, [Ok, new q(null, 1, [Kk, a], null), a], null)], null);
+var Cs = new V(null, 4, 5, X, [Lk, new V(null, 3, 5, X, [qk, new V(null, 2, 5, X, [Mk, new q(null, 2, [cj, "assets/icon.png", pj, new q(null, 2, [Pk, "1em", pk, "1ex"], null)], null)], null), "Linked Data Endpoint"], null), new V(null, 3, 5, X, [Fk, "Made during ", new V(null, 3, 5, X, [Ok, new q(null, 1, [Kk, "http://hack4.dk"], null), "Hack4DK"], null)], null), new V(null, 3, 5, X, [sj, "Sample pages:", rf.f(new V(null, 1, 5, X, [ri], null), Z.f(function(a) {
+  return new V(null, 2, 5, X, [Ki, new V(null, 3, 5, X, [Ok, new q(null, 1, [Kk, a], null), a], null)], null);
 }, new V(null, 5, 5, X, ["search/hest", "object/natmus:DMR:1850", "object/natmus:DMR:1850.json", "object/natmus:DMR:1850.html", "object/natmus:DMR:1850.rdf"], null)))], null)], null);
 Uq.c ? Uq.c(Cs) : Uq.call(null, Cs);
 

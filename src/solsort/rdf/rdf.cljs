@@ -19,8 +19,9 @@
 (when (and js/window.process js/window.process.versions js/window.process.versions.electron)
   (.push (.-globalPaths (js/require "module")) (str (js/process.cwd) "/node_modules")))
 
-(def process js/process)
-(def require js/require)
+(when js/window.process
+ (def process js/process)
+ (def require js/require)
 (def http (require "http"))
 
 (defn show-object [req res]
@@ -57,6 +58,7 @@
     (.get app "/search/:query/:page*?" #(search %1 %2))
     (.use app (.static express "../"))
     (.listen app 8888 #(js/console.log "started express on port 8888"))))
+)
 
 (render
  [:div.ui.container
