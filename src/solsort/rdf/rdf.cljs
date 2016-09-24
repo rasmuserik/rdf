@@ -64,7 +64,6 @@
              ])))
 
   (defn render-object [obj]
-    (log obj)
     [:div
      [:h1 (:_title obj)]
      [:p [:em (string/join " & " (:_creators obj))]]
@@ -75,10 +74,9 @@
     )
   (defn show-object [req res]
     (go
-      (js/console.log req)
       (let [accept (aget (aget req "headers") "accept")
             type 
-            (or (aget (log (.-params req)) "type")
+            (or (aget (.-params req) "type")
                 (second
                  (first
                   (sort
@@ -93,7 +91,7 @@
                        (minpos accept "application/ld+json"))
                       "json"]]))))
             id (.-id (.-params req))
-            kind (log (first (clojure.string/split id #":")))
+            kind (first (clojure.string/split id #":"))
             obj (case kind
                   "natmus" (<! (natmus/<obj id))
                   "ting" (<! (ting/<obj id))
@@ -108,10 +106,11 @@
   (defn search [req res]
     (go
       (let [query (.-query (.-params req))
-            page (log (js/parseInt (or (aget (.-params req) "page") 0) 10))
-            natmus (log (<! (natmus/<search query page)))
-            ting (log (<! (ting/<search query page)))
-            results (sort-by hash (concat natmus ting))
+            page (js/parseInt (or (aget (.-params req) "page") 0) 10)
+            natmus (<! (natmus/<search query page))
+            ting (<! (ting/<search query page))
+            europeana (<! (europeana/<search query page))
+            results (sort-by hash (concat natmus ting europeana))
             first-link (str "/search/" query)
             next-link (str "/search/" query "/" (inc page))
             prev-link (if (pos? page) (str "/search/" query "/" (dec page)) nil)
@@ -157,8 +156,10 @@
                      " \u00a0 "
                      ]
                     "")
-                  [:a {:href next-link} "Next"]
-                  " >>"]
+                  (if (empty? results)
+                    ""
+                    [:span  [:a {:href next-link} "Next"]
+                     " >>"])]
                  ])))))
   (defonce server
     (let [express (require "express")
@@ -184,7 +185,9 @@
       "search/Pink Floyd"
       "search/ost"
       "search/Frogner"
+      "search/Søren Kierkegaard"
       "search/Tollund"
+      "search/Eckersberg"
       "search/værktøj"
       "search/Peder Wessel"
       "search/Astrid Lindgren"

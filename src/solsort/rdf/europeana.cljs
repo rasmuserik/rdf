@@ -19,6 +19,15 @@
   (.push (.-globalPaths (js/require "module")) (str (js/process.cwd) "/node_modules")))
 
 (def wskey "zdanGC4Wc")
+(defn transform [obj]
+  (into
+   obj
+   {:_id
+    (str "europeana" (string/replace (get obj "id") (js/RegExp. "/" "g") ":"))
+    :_title (-> obj (get "dcTitleLangAware" {}) (first) (second) (first))
+    :_creators (distinct (concat (get obj "dcCreator" [])))
+    :_description  (get obj "type")
+    :_source "Europeana"}))
 (when js/window.process
   (def request (js/require "request"))
   (def access_token "a4516e74f16b7b2d3f7f3eb6cac35b2b07575345")
@@ -29,24 +38,34 @@
                  (if err (do (log err data) (close! c)) (put! c data))))
       c))
 
-  #_(go
-    (log (<! (<http "http://www.europeana.eu/api/v2/search.json?wskey=zdanGC4Wc&query=blicher")))
-    (log (<! (<http "http://www.europeana.eu/api/v2/record/2058618/object_KUAS_22340808.jsonld?wskey=zdanGC4Wc&query=blicher"))))
-  (defn <europeana [action arg]
-    (go (log 'here)
+  (defn <europeana [action & args]
+    (go
+      (log args)
         (let [url (if (= :search action)
-                    (str "http://www.europeana.eu/api/v2/search.json"
-                         "?wskey=" wskey
-                         "&query=" arg)
+                    (log (str "http://www.europeana.eu/api/v2/search.json"
+                          "?wskey=" wskey
+                          "&start=" (inc (* 12 (second args)))
+                          "&query=" (first args)
+                          ))
                     (str "http://www.europeana.eu/api/v2/record/"
-                         arg; "2058618/object_KUAS_22340808"
+                         (first args); "2058618/object_KUAS_22340808"
                          ".jsonld?wskey=zdanGC4Wc&query=blicher"))
               text (<! (<http url))
               obj (js->clj (js/JSON.parse text))
               ]
           (log obj)
-          obj))
-    )
-  (<europeana :search "Frogner")
+          obj)))
+  (defn <search [q page]
+    (go
+     (log (map
+           transform
+           (get (<! (<europeana
+                     :search
+                     (str
+                      "\""
+                      (string/join "\" AND \""
+                                   (string/split q #" +"))
+                      "\"") page))
+                "items")))))
+  (<search "Søren Kierkegaard" 0)
   )
-
