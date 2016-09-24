@@ -1,20 +1,19 @@
 (ns solsort.rdf.rdf
   (:require-macros
    [cljs.core.async.macros :refer [go go-loop alt!]]
-   #_[reagent.ratom :as ratom :refer  [reaction]])
+   [reagent.ratom :as ratom :refer  [reaction]])
   (:require
-   ;[cljs.reader]
-   ;[solsort.toolbox.setup]
-   ;[solsort.toolbox.appdb :refer [db db! db-async!]]
-   ;[solsort.toolbox.ui :refer [input select]]
-   #_[solsort.util
+   [cljs.reader]
+   [solsort.toolbox.setup]
+   [solsort.toolbox.appdb :refer [db db! db-async!]]
+   [solsort.toolbox.ui :refer [input select]]
+   [solsort.util
     :refer
     [<ajax <seq<! js-seq load-style! put!close!
      parse-json-or-nil log page-ready render dom->clj]]
-   ;[reagent.core :as reagent :refer []]
-   #_[clojure.string :as string :refer [replace split blank?]]
+   [reagent.core :as reagent :refer []]
+   [clojure.string :as string :refer [replace split blank?]]
    [cljs.core.async :refer [>! <! chan put! take! timeout close! pipe]]))
-#_(
 
 (js/console.log (.-globalPaths (js/require "module")))
 (js/console.log (str (js/process.cwd) "/node_modules"))
@@ -69,7 +68,6 @@
                       (<! (<natmus-search
                            (.-query (.-params req))
                            100 0))))]]))))
-;(natmus-search {} #js{:params #js{:query "hest"}})
 (defonce server
   (let [express (require "express")
         app (express)]
@@ -102,13 +100,13 @@
                 (close! c)
                 ))))
     (.open xhr "GET" url)
-    (.send xhr)))
+    (.send xhr)
+    c))
 (go
   (js/console.log "start")
   (js/console.log
    (<! (<http "http://samlinger.natmus.dk/api/all/_search?q=hest" ))
    "response"))
 (<http "http://samlinger.natmus.dk/api/all/_search?q=hest" )
-)
 (js/console.log "here1")
 (go (js/console.log "here2"))

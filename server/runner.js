@@ -10,6 +10,7 @@ jsdom.env({
     created: function(err, window) {
         window.process = process;
         window.require = require;
+        window.setImmediate = setImmediate;
         window.XMLHttpRequest = require('xmlhttprequest').XMLHttpRequest;
         console.log('created');
     },

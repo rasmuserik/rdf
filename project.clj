@@ -56,8 +56,8 @@
      {:output-to "index.js"
       :main solsort.rdf.rdf
       :externs ["util/externs.js"]
-      :optimizations :simple
-      ;:optimizations :advanced
+      ;:optimizations :simple
+      :optimizations :advanced
       :pretty-print true
       ;:pretty-print false
       }}]})
