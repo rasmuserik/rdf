@@ -40,7 +40,7 @@
     (let [query (.-query (.-params req))
           natmus (log (<! (natmus/<search-ids query)))
           ting (log (<! (ting/<search-ids query)))
-          results (shuffle (concat natmus ting))]
+          results (sort-by hash (concat natmus ting))]
      (.end res
            (reagent/render-to-static-markup
             [:html
