@@ -45,14 +45,14 @@
       obj)))
 
 (defn <search-ids [q]
-  (go (map :_id (<! (<search (str
-                           ""
-                           (clojure.string/join
-                            " OR "
-                            (map #(str "_all:" %)
-                                 (clojure.string/split q #" +")))
-                           "")
-                          10 0)))))
+  (go (map :_id (log (<! (<search (str
+                               ""
+                               (clojure.string/join
+                                " OR "
+                                (map #(str "_all:" %)
+                                     (clojure.string/split q #" +")))
+                               "")
+                              10 0))))))
 #_(go (log (<! (<search "hest" 5 0)))
     (log (<! (<obj "natmus:DO:59102"))))
 

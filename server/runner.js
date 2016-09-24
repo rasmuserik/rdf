@@ -6,7 +6,9 @@ virtualConsole.sendTo(console);
 jsdom.env({
     html: fs.readFileSync('../index.html'),
     virtualConsole,
-    src: [fs.readFileSync('../index.js')],
+    src: [
+      "https://openplatform.dbc.dk/v1/dbc_openplatform.min.js",
+      fs.readFileSync('../index.js')],
     created: function(err, window) {
         window.process = process;
         window.require = require;

@@ -5,6 +5,7 @@
   (:require
    [cljs.reader]
    [solsort.rdf.natmus :as natmus]
+   [solsort.rdf.ting :as ting]
    [solsort.toolbox.setup]
    [solsort.toolbox.appdb :refer [db db! db-async!]]
    [solsort.toolbox.ui :refer [input select]]
@@ -27,17 +28,19 @@
 (defn show-object [req res]
   (go
     (let [id (.-id (.-params req))
-         kind (first (clojure.string/split id #":"))
+          kind (log (first (clojure.string/split id #":")))
          obj (case kind
                "natmus" (<! (natmus/<obj id))
+               "ting" (<! (ting/<obj id))
                {:_id id})]
      (.end res (prn-str obj)))))
 
 (defn search [req res]
   (go
     (let [query (.-query (.-params req))
-          natmus (<! (natmus/<search-ids query))
-          results (shuffle (concat natmus))]
+          natmus (log (<! (natmus/<search-ids query)))
+          ting (log (<! (ting/<search-ids query)))
+          results (shuffle (concat natmus ting))]
      (.end res
            (reagent/render-to-static-markup
             [:html
@@ -73,11 +76,10 @@
     [:ul]
     (map
      (fn [s] [:li [:a {:href s} s]])
-     ["search/hest"
-      "object/natmus:DMR:1850"
-      "object/natmus:DMR:1850.json"
-      "object/natmus:DMR:1850.html"
-      "object/natmus:DMR:1850.rdf"
+     [
+      "search/nefertiti"
+      "search/blicher"
+      "search/ærø"
       ]))
    ]
   ])
