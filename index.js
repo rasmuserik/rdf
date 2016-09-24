@@ -13894,98 +13894,98 @@ if (B(Ts)) {
   Ss = Ts;
 }
 B(Ss) && require("module").globalPaths.push([F(process.cwd()), F("/node_modules")].join(""));
-var Vs = require("request");
-function Ws(a) {
-  var b = fr(null), c = function(a, b) {
-    return function(a, c, d) {
-      return B(a) ? (yr(Q([a, d], 0)), Ln(b)) : hr(b, d);
-    };
-  }(a, b);
-  Vs.f ? Vs.f(a, c) : Vs.call(null, a, c);
-  return b;
-}
-function Xs(a, b) {
-  var c = fr(1);
-  ro(function(c) {
-    return function() {
-      var e = function() {
-        return function(a) {
-          return function() {
-            function b(c) {
-              for (;;) {
-                var d;
-                a: {
-                  try {
-                    for (;;) {
-                      var e = a(c);
-                      if (!He(e, vj)) {
-                        d = e;
-                        break a;
+if (B(window.process)) {
+  var Vs = require("request"), Ws = function(a) {
+    var b = fr(null), c = function(a, b) {
+      return function(a, c, d) {
+        return B(a) ? (yr(Q([a, d], 0)), Ln(b)) : hr(b, d);
+      };
+    }(a, b);
+    Vs.f ? Vs.f(a, c) : Vs.call(null, a, c);
+    return b;
+  }, Xs = function(a, b) {
+    var c = fr(1);
+    ro(function(c) {
+      return function() {
+        var e = function() {
+          return function(a) {
+            return function() {
+              function b(c) {
+                for (;;) {
+                  var d;
+                  a: {
+                    try {
+                      for (;;) {
+                        var e = a(c);
+                        if (!He(e, vj)) {
+                          d = e;
+                          break a;
+                        }
+                      }
+                    } catch (f) {
+                      if (f instanceof Object) {
+                        c[5] = f, cr(c), d = vj;
+                      } else {
+                        throw f;
                       }
                     }
-                  } catch (f) {
-                    if (f instanceof Object) {
-                      c[5] = f, cr(c), d = vj;
-                    } else {
-                      throw f;
-                    }
+                  }
+                  if (!He(d, vj)) {
+                    return d;
                   }
                 }
-                if (!He(d, vj)) {
-                  return d;
+              }
+              function c() {
+                var a = [null, null, null, null, null, null, null];
+                a[0] = d;
+                a[1] = 1;
+                return a;
+              }
+              var d = null, d = function(a) {
+                switch(arguments.length) {
+                  case 0:
+                    return c.call(this);
+                  case 1:
+                    return b.call(this, a);
                 }
+                throw Error("Invalid arity: " + arguments.length);
+              };
+              d.w = c;
+              d.c = b;
+              return d;
+            }();
+          }(function(c) {
+            return function(d) {
+              var e = d[1];
+              if (1 === e) {
+                var f = Je(a), n = function() {
+                  return function() {
+                    return function(a) {
+                      return [F(function() {
+                        var b = Je(I(a));
+                        return encodeURIComponent(b);
+                      }()), F("\x3d"), F(function() {
+                        var b = Kd(a);
+                        return encodeURIComponent(b);
+                      }())].join("");
+                    };
+                  }(f, e, c);
+                }(), r = Qd([fj], ["a4516e74f16b7b2d3f7f3eb6cac35b2b07575345"]), r = Df.f(b, r), n = W.f(n, r), n = Cl("\x26", n), n = [F("https://openplatform.dbc.dk/v1/"), F(f), F("?"), F(n)].join(""), n = Ws(n);
+                return ar(d, 2, n);
               }
-            }
-            function c() {
-              var a = [null, null, null, null, null, null, null];
-              a[0] = d;
-              a[1] = 1;
-              return a;
-            }
-            var d = null, d = function(a) {
-              switch(arguments.length) {
-                case 0:
-                  return c.call(this);
-                case 1:
-                  return b.call(this, a);
-              }
-              throw Error("Invalid arity: " + arguments.length);
+              return 2 === e ? (n = JSON.parse(d[2]), n = Vh(n), n = G.f(n, "data"), br(d, n)) : null;
             };
-            d.w = c;
-            d.c = b;
-            return d;
-          }();
-        }(function(c) {
-          return function(d) {
-            var e = d[1];
-            if (1 === e) {
-              var f = Je(a), n = function() {
-                return function() {
-                  return function(a) {
-                    return [F(function() {
-                      var b = Je(I(a));
-                      return encodeURIComponent(b);
-                    }()), F("\x3d"), F(function() {
-                      var b = Kd(a);
-                      return encodeURIComponent(b);
-                    }())].join("");
-                  };
-                }(f, e, c);
-              }(), r = Qd([fj], ["a4516e74f16b7b2d3f7f3eb6cac35b2b07575345"]), r = Df.f(b, r), n = W.f(n, r), n = Cl("\x26", n), n = [F("https://openplatform.dbc.dk/v1/"), F(f), F("?"), F(n)].join(""), n = Ws(n);
-              return ar(d, 2, n);
-            }
-            return 2 === e ? (n = JSON.parse(d[2]), n = Vh(n), n = G.f(n, "data"), br(d, n)) : null;
-          };
-        }(c), c);
-      }(), f = function() {
-        var a = e.w ? e.w() : e.call(null);
-        a[6] = c;
-        return a;
-      }();
-      return $q(f);
-    };
-  }(c));
-  return c;
+          }(c), c);
+        }(), f = function() {
+          var a = e.w ? e.w() : e.call(null);
+          a[6] = c;
+          return a;
+        }();
+        return $q(f);
+      };
+    }(c));
+    return c;
+  }
 }
 function Ys(a) {
   var b = fr(1);
