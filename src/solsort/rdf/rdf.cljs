@@ -101,8 +101,8 @@
   (defn search [req res]
     (go
       (let [query (.-query (.-params req))
-            natmus (log (<! (natmus/<search-ids query)))
-            ting (log (<! (ting/<search-ids query)))
+            natmus (log (<! (natmus/<search query 0)))
+            ting (log (<! (ting/<search query 0)))
             results (sort-by hash (concat natmus ting))]
         (.end res
               (reagent/render-to-static-markup
@@ -112,9 +112,16 @@
                 [:body
                  [:p "\"" query "\" search results:"]
                  (into [:ul]
-                       (for [id results]
-                         [:li [:a {:href (str "/object/" id)}
-                               id]]))]])))))
+                       (for [obj results]
+                         [:li
+                          [:a {:href (str "/object/" (:_id obj))}
+                           [:strong (:_title obj)]
+                           " \u00a0 "
+                           [:em (string/join " & "(:_creators obj))]
+                           " \u00a0 "
+                           [:small (:_description obj)]]
+                          " (" (:_source obj) ")"]
+                         ))]])))))
   (defonce server
     (let [express (require "express")
           app (express)]

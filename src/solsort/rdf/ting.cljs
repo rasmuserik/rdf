@@ -23,7 +23,8 @@
         {"@context"
          ["http://rdf.solsort.com/schema/solsort.jsonld"
           "http://rdf.solsort.com/schema/ting.jsonld"]
-         :_id (str "ting:" (get obj "pid"))
+         :_id (str "ting:" (first (get obj "pid")))
+         :_source "Biblioteket"
          :_title (or (first (get obj "dcTitle" []))
                      (first (get obj "title" [])))
          :_description
@@ -80,8 +81,8 @@
           obj (transform obj)]
       obj)))
 
-(defn <search-ids [q]
-  (go (map #(str "ting:" (first (get % "pid")))
+(defn <search [q page]
+  (go (map transform
            (<! (<ting
                 :search
                 {:q
@@ -89,4 +90,4 @@
                   "\""
                   (string/join "\" AND \"" (string/split q #" +"))
                   "\"")
-                 :fields ["pid"]})))))
+                 })))))

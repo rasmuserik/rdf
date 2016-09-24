@@ -20,11 +20,22 @@
                   {"@context" ["http://rdf.solsort.com/schema/solsort.jsonld"
                                "http://rdf.solsort.com/schema/natmus.jsonld"]
                    :_id (str "natmus:" (:collection obj) ":" (:sourceId obj))
+                   :_source "Nationalmuseet"
                    :_title (or (:workDescription obj))
                    })]
     obj))
 
-(defn <search [q limit page]
+(defn <search
+  ([q page] (<search
+             (str
+              ""
+              (clojure.string/join
+               " AND "
+               (map #(str "_all:" %)
+                    (clojure.string/split q #" +")))
+              "")
+             10 page))
+  ([q limit page]
   (go
     ;(js/console.log "natmus-search" q)
     (->>
@@ -34,23 +45,11 @@
                       "&from=" (* limit page)
                       "&size=" limit)
                  :credentials false)))
-     (:hits) (:hits) (map #(get % :_source {})) (map transform))))
+     (:hits) (:hits) (map #(get % :_source {})) (map transform)))))
 
 (defn <obj [id]
   (go
     (let [[_ col src] (clojure.string/split id #":")
           [obj] (<! (<search (str "collection:" col " AND " "sourceId:" src) 1 0))]
       obj)))
-
-(defn <search-ids [q]
-  (go (map :_id (log (<! (<search (str
-                                   ""
-                                   (clojure.string/join
-                                    " AND "
-                                    (map #(str "_all:" %)
-                                         (clojure.string/split q #" +")))
-                                   "")
-                                  10 0))))))
-#_(go (log (<! (<search "hest" 5 0)))
-      (log (<! (<obj "natmus:DO:59102"))))
 
