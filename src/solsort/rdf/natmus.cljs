@@ -20,7 +20,8 @@
                   {"@context" ["http://rdf.solsort.com/schema/solsort.jsonld"
                                "http://rdf.solsort.com/schema/natmus.jsonld"]
                    :_id (str "natmus:" (:collection obj) ":" (:sourceId obj))
-                   :_title (or (:workDescription obj))})]
+                   :_title (or (:workDescription obj))
+                   })]
     obj))
 
 (defn <search [q limit page]

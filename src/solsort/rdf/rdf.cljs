@@ -17,6 +17,8 @@
    [clojure.string :as string :refer [replace split blank?]]
    [cljs.core.async :refer [>! <! chan put! take! timeout close! pipe]]))
 
+; nb: https://github.com/rasmuserik/solsort-util/blob/master/src/solsort/apps/hack4dk.cljs
+
 (when (and js/window.process js/window.process.versions js/window.process.versions.electron)
   (.push (.-globalPaths (js/require "module")) (str (js/process.cwd) "/node_modules")))
 

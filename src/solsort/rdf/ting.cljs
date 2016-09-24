@@ -18,32 +18,33 @@
 (when (and js/window.process js/window.process.versions js/window.process.versions.electron)
   (.push (.-globalPaths (js/require "module")) (str (js/process.cwd) "/node_modules")))
 
-(def request (js/require "request"))
-(def access_token "a4516e74f16b7b2d3f7f3eb6cac35b2b07575345")
-(defn <http [url]
-  (let [c (chan)]
-    (request url
-             (fn [err res data]
-               (if err (do (log err data) (close! c)) (put! c data))))
-    c))
+(when js/window.process
+  (def request (js/require "request"))
+  (def access_token "a4516e74f16b7b2d3f7f3eb6cac35b2b07575345")
+  (defn <http [url]
+    (let [c (chan)]
+      (request url
+               (fn [err res data]
+                 (if err (do (log err data) (close! c)) (put! c data))))
+      c))
 
-(defn <ting [endpoint o]
-  (go
-    (let [result (js->clj
-                  (js/JSON.parse
-                   (<!
-                    (<http
-                     (str "https://openplatform.dbc.dk/v1/" (name endpoint)
-                          "?"
-                          (clojure.string/join
-                           "&"
-                           (map #(str
-                                  (js/encodeURIComponent (name (first %)))
-                                  "="
-                                  (js/encodeURIComponent (second %)))
+  (defn <ting [endpoint o]
+    (go
+      (let [result (js->clj
+                    (js/JSON.parse
+                     (<!
+                      (<http
+                       (str "https://openplatform.dbc.dk/v1/" (name endpoint)
+                            "?"
+                            (clojure.string/join
+                             "&"
+                             (map #(str
+                                    (js/encodeURIComponent (name (first %)))
+                                    "="
+                                    (js/encodeURIComponent (second %)))
 
-                                (into o {:access_token access_token}))))))))]
-      (get result "data"))))
+                                  (into o {:access_token access_token}))))))))]
+        (get result "data")))))
 
 (defn transform [obj]
   (let [obj (into obj
