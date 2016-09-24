@@ -87,6 +87,6 @@
                 {:q
                  (str
                   "\""
-                  (string/join "\" or \"" (string/split q #" +"))
+                  (string/join "\" AND \"" (string/split q #" +"))
                   "\"")
                  :fields ["pid"]})))))

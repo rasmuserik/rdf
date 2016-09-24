@@ -46,7 +46,7 @@
   (go (map :_id (log (<! (<search (str
                                    ""
                                    (clojure.string/join
-                                    " OR "
+                                    " AND "
                                     (map #(str "_all:" %)
                                          (clojure.string/split q #" +")))
                                    "")
