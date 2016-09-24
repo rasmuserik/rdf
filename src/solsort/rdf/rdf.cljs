@@ -23,19 +23,80 @@
   (.push (.-globalPaths (js/require "module")) (str (js/process.cwd) "/node_modules")))
 
 (when js/window.process
+  (defn minpos [a b]
+    (bit-and 0x7fffff (.indexOf a b)))
+
   (def process js/process)
   (def require js/require)
   (def http (require "http"))
 
+  (defn html-doc [o]
+    (reagent/render-to-static-markup
+     [:html
+      [:head
+       [:link {:rel :stylesheet
+               :href "https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.css"}]
+      [:meta {:charset "utf-8"}]]
+      [:body
+       [:div.ui.container
+        o]]]))
+
+  (defn render-properties [obj ignore]
+    (into [:div]
+          (for [prop (->> obj
+                      (remove #((into #{} ignore) (first %)))
+                      (sort-by #(str (first %))))]
+            [:div
+             [:small (first prop) ": "]
+             " \u00a0 "
+             (let [val (second prop)]
+               (if (coll? val)
+                 (string/join ", \u00a0 " val)
+                 (str val))
+               )
+             ])))
+
+  (defn render-object [obj]
+    (log obj)
+    [:div
+     [:h1 (:_title obj)]
+     [:p [:em (string/join " & " (:_creators obj))]]
+     [:p (:_description obj)]
+     [render-properties obj [:_id :_creators :_description :_title "@context"]]
+     ]
+
+    )
   (defn show-object [req res]
     (go
-      (let [id (.-id (.-params req))
+      (js/console.log req)
+      (let [accept (aget (aget req "headers") "accept")
+            type 
+            (or (aget (log (.-params req)) "type")
+                (second
+                 (first
+                  (sort
+                    [[(minpos accept "text/html")
+                      "html"]
+                     [(min
+                       (minpos accept "application/rdf+xml")
+                       (minpos accept "application/cml"))
+                      "xml"]
+                     [(min
+                       (minpos accept "application/json")
+                       (minpos accept "application/ld+json"))
+                      "json"]]))))
+            id (.-id (.-params req))
             kind (log (first (clojure.string/split id #":")))
             obj (case kind
                   "natmus" (<! (natmus/<obj id))
                   "ting" (<! (ting/<obj id))
-                  {:_id id})]
-        (.end res (prn-str obj)))))
+                  {:_id id})
+            result
+            (case type
+              "json" (js/JSON.stringify (clj->js obj) nil 2)
+              "html" (html-doc [render-object obj])
+              "not implemented")]
+        (.end res result))))
 
   (defn search [req res]
     (go

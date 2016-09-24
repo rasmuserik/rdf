@@ -18,6 +18,23 @@
 (when (and js/window.process js/window.process.versions js/window.process.versions.electron)
   (.push (.-globalPaths (js/require "module")) (str (js/process.cwd) "/node_modules")))
 
+(defn transform [obj]
+  (into obj
+        {"@context"
+         ["http://rdf.solsort.com/schema/solsort.jsonld"
+          "http://rdf.solsort.com/schema/ting.jsonld"]
+         :_id (str "ting:" (get obj "pid"))
+         :_title (or (first (get obj "dcTitle" []))
+                     (first (get obj "title" [])))
+         :_description
+         (or (first (get obj "abstract" []))
+             (first (get obj "description" [])))
+         :_creators
+         (distinct (concat
+                    (get obj "dcCreator" [])
+                    (get obj "creator" [])
+                    (get obj "contributor" [])))})
+  )
 (when js/window.process
   (def request (js/require "request"))
   (def access_token "a4516e74f16b7b2d3f7f3eb6cac35b2b07575345")
@@ -30,29 +47,24 @@
 
   (defn <ting [endpoint o]
     (go
-      (let [result (js->clj
-                    (js/JSON.parse
-                     (<!
-                      (<http
-                       (str "https://openplatform.dbc.dk/v1/" (name endpoint)
-                            "?"
-                            (clojure.string/join
-                             "&"
-                             (map #(str
-                                    (js/encodeURIComponent (name (first %)))
-                                    "="
-                                    (js/encodeURIComponent (second %)))
+      (let [result
+            (js->clj
+             (js/JSON.parse
+              (<!
+               (<http
+                (str "https://openplatform.dbc.dk/v1/" (name endpoint)
+                     "?"
+                     (clojure.string/join
+                      "&"
+                      (map #(str
+                             (js/encodeURIComponent
+                              (name (first %)))
+                             "="
+                             (js/encodeURIComponent
+                              (second %)))
 
-                                  (into o {:access_token access_token}))))))))]
+                           (into o {:access_token access_token}))))))))]
         (get result "data")))))
-
-(defn transform [obj]
-  (let [obj (into obj
-                  {"@context" ["http://rdf.solsort.com/schema/solsort.jsonld"
-                               "http://rdf.solsort.com/schema/natmus.jsonld"]
-                   :_id (str "ting:" (:collection obj) ":" (:sourceId obj))
-                   :_title (or (:workDescription obj))})]
-    obj))
 
 (defn <obj [id]
   (go
@@ -63,24 +75,18 @@
                 (<ting :work {:pids [pid] :fields "collection"})
                 (<ting :recommend {:like [pid]
                                    :limit 20})]))
-          obj (into obj {:tingRelated (map #(get % "pid") recommend)
-                         :collection (get collection "collection")})
-          obj (into obj
-                    {"@context"
-                     ["http://rdf.solsort.com/schema/solsort.jsonld"
-                      "http://rdf.solsort.com/schema/ting.jsonld"]
-                     :_id id
-                     :_title (or (first (get obj "dcTitle" []))
-                                 (first (get obj "title" [])))
-                     :_description
-                     (or (first (get obj "abstract" []))
-                         (first (get obj "description" [])))
-                     :_creators
-                     (distinct (concat
-                                (get obj "dcCreator" [])
-                                (get obj "contributer" [])))})]
+          obj (into obj {"tingRelated" (map #(get % "pid") recommend)
+                         "collection" (get collection "collection")})
+          obj (transform obj)]
       obj)))
 
 (defn <search-ids [q]
   (go (map #(str "ting:" (first (get % "pid")))
-           (<! (<ting :search {:q q :fields ["pid"]})))))
+           (<! (<ting
+                :search
+                {:q
+                 (str
+                  "\""
+                  (string/join "\" or \"" (string/split q #" +"))
+                  "\"")
+                 :fields ["pid"]})))))
