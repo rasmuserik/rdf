@@ -18,7 +18,11 @@
    [cljs.core.async :refer [>! <! chan put! take! timeout close! pipe]]))
 
 ; nb: https://github.com/rasmuserik/solsort-util/blob/master/src/solsort/apps/hack4dk.cljs
-
+(defn header []
+  [:h1
+   [:img {:src "/assets/icon.png" :style {:height "1em" :margin-right "1ex"}}]
+   "Federated Linked Data Endpoint"]
+  )
 (when (and js/window.process js/window.process.versions js/window.process.versions.electron)
   (.push (.-globalPaths (js/require "module")) (str (js/process.cwd) "/node_modules")))
 
@@ -101,27 +105,58 @@
   (defn search [req res]
     (go
       (let [query (.-query (.-params req))
-            natmus (log (<! (natmus/<search query 0)))
-            ting (log (<! (ting/<search query 0)))
-            results (sort-by hash (concat natmus ting))]
+            page (log (js/parseInt (or (aget (.-params req) "page") 0) 10))
+            natmus (log (<! (natmus/<search query page)))
+            ting (log (<! (ting/<search query page)))
+            results (sort-by hash (concat natmus ting))
+            first-link (str "/search/" query)
+            next-link (str "/search/" query "/" (inc page))
+            prev-link (if (pos? page) (str "/search/" query "/" (dec page)) nil)
+            ]
         (.end res
-              (reagent/render-to-static-markup
-               [:html
-                [:head
-                 [:meta {:charset "utf-8"}]]
-                [:body
-                 [:p "\"" query "\" search results:"]
+              ;(reagent/render-to-static-markup
+              (html-doc
+                [:div
+                 [header]
+                 [:div.ui.grid
+                  [:div.ui.form.twelve.wide.column
+                   [:input {:id "query"}]
+                   ]
+                  [:div.four.wide.column
+                   {"dangerouslySetInnerHTML"
+                    {:__html"<button class=\"fluid ui button\" onclick=\"location.href='/search/'+query.value;\">Search</button>"}}]
+                  ]
+
+                 [:hr]
+                 [:p "\"" query "\" results:"]
                  (into [:ul]
                        (for [obj results]
                          [:li
-                          [:a {:href (str "/object/" (:_id obj))}
+                          [:a {:href (str "/object/" (:_id obj))
+                               :style {:text-decoration :none}}
                            [:strong (:_title obj)]
                            " \u00a0 "
                            [:em (string/join " & "(:_creators obj))]
                            " \u00a0 "
                            [:small (:_description obj)]]
                           " (" (:_source obj) ")"]
-                         ))]])))))
+                         ))
+                 [:div
+                  (if prev-link
+                    [:span
+                     (if (< 1 page )
+                       [:span  [:a {:href first-link} "First"]
+                        " \u00a0 "
+                        ]
+                       "")
+                     " << "
+                     [:a {:href prev-link} "Previous"]
+                     " \u00a0 "
+                     ]
+                    "")
+                  [:a {:href next-link} "Next"]
+                  " >>"]
+                 ])))))
   (defonce server
     (let [express (require "express")
           app (express)]
@@ -133,17 +168,20 @@
 
 (render
  [:div.ui.container
-  [:h1
-   [:img {:src "assets/icon.png" :style {:height "1em" :margin-right "1ex"}}]
-   "Linked Data Endpoint"]
-  [:p
-   "Made during " [:a {:href "http://hack4.dk"} "Hack4DK"]]
+  [header]
   [:div
-   "Sample pages:"
+   "Sample searches:"
    (into
     [:ul]
     (map
      (fn [s] [:li [:a {:href s} s]])
-     ["search/nefertiti"
-      "search/blicher"
-      "search/ærø"]))]])
+     ["search/Nefertiti"
+      "search/Blicher"
+      "search/Pink Floyd"
+      "search/Frogner"
+      "search/Tollund"
+      "search/Peder Wessel"
+      "search/Astrid Lindgren"
+      "search/Solvognen"
+      "search/Edvard Munch"
+      "search/Ærø"]))]])
