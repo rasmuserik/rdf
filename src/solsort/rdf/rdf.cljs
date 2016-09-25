@@ -174,6 +174,26 @@
 (render
  [:div.ui.container
   [header]
+  [:p
+   "This site wraps different APIs as " [:a {:href "https://en.wikipedia.org/wiki/Linked_data"} "Linked Data"] ", giving it the following properties:"
+   ]
+  [:ul
+   [:li [:strong "Unique url/name per object."] " Makes it possible to talk about the object, and be certain that it is the same object we talk about, independent of context. Makes a path to discover more information about the object, when you know the dereferential name/url." ]
+   [:li [:strong "Federated search."] " Makes it possible to search in several datasets at once,"]
+   [:li [:strong "Standard vocabularies, and common approach to access data."] " Makes it possible for robots(web-spiders, knowledge networks, etc.) to understand the data from the APIs, without human hand-holding. Makes it easier to use and build upon as a developer."]
+   ]
+  [:p "It is developed as " [:a {:href "https://github.com/solsort/rdf"} "open source"] " on top of open APIs. "
+
+   "RasmusErik / "
+   [:a {:href "http://solsort.com"} "solsort.com"]
+   " started and is hosting the project. "
+   "The first version was made during " [:a {:href "http://hack4.dk"} "Hack4DK 2016"] ", which is the yearly danish cultural heritage hackathon."]
+  [:div "It is easy to add more datasets/APIs. Currently the following datasets are exposed as link data here:"
+   [:ul
+    [:li [:a {:href "https://opendata.dbc.dk"} "Danish Libraries"] " - make library objects more accessible for search engines, and create a single derefentiable url/name per object."]
+    [:li [:a {:href "http://europeana.eu"} "Europeana"] " - which aggregates data from many cultural institutions around europe."]
+    [:li [:a {:href "http://natmus.dk"} "National Museum of Denmark"] " - this ¿might be? the first time we get the full collection data on the web, in a form that is discoverable by search engines and similar."]
+    ]]
   [:div
    "Sample searches:"
    (into
