@@ -61,10 +61,14 @@
                  (str val)))])))
 
   (defn render-object [obj]
-    [:div
-     [:h1 (:_title obj)]
-     [:p [:em (string/join " & " (:_creators obj))]]
-     [:p (:_description obj)]
+    [:div {:item-scope :itemscope
+           :item-type (str "http://schema.org/" (get obj :_type "Thing"))}
+     [:h1 {:item-prop "name"} (:_title obj)]
+     [:p (into [:em ]
+               (interpose " & " (map (fn [s] [:a {:href (str "/search/" s)}
+                                              [:span {:item-prop "creator"} s]])
+                                     (:_creators obj))))]
+     [:p {:item-prop "description"} (:_description obj)]
      [render-properties obj [:_id :_creators :_description :_title "@context"]]])
   (defn show-object [req res]
     (go
