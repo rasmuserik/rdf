@@ -29,26 +29,61 @@
   (.push (.-globalPaths (js/require "module")) (str (js/process.cwd) "/node_modules")))
 
 (when js/window.process
+  
   (defn minpos [a b]
     (bit-and 0x7fffff (.indexOf a b)))
 
   (def process js/process)
   (def require js/require)
+  (def fs (require "fs"))
   (def http (require "http"))
 
-  (defn html-doc [o]
-    (reagent/render-to-static-markup
-     [:html
-      [:head
-       [:link {:rel :stylesheet
-               :href "https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.css"}]
-       [:meta {:charset "utf-8"}]]
-      [:body
-       [:div.ui.container
-        o]]]))
+  (let [obj (into
+             (js->clj (js/JSON.parse (.readFileSync fs "../schema/ting.jsonld" "utf-8")))
+             (js->clj (js/JSON.parse (.readFileSync fs "../schema/solsort.jsonld" "utf-8"))))
+        prefixes (into {} (filter #(string? (second %)) obj))
+        types (into {} (remove #(string? (second %)) obj))
+        ]
+    (def prefixes prefixes)
+    (def types types))
 
+  (defn html-doc [o]
+    (str
+     "<!DOCTYPE html>
+<html>
+<head><link rel=\"stylesheet\" href=\"https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.css\"/><meta charset=\"utf-8\"/></head><body>
+<div
+xmlns:dc=\"http://purl.org/dc/elements/1.1/\"
+"
+     (string/join "\n"
+                  (map #(str "xmlns:" (first %) "=\"" (second %)"\"") prefixes)
+      )
+     "
+>
+"
+     "</div></body>"
+     (reagent/render-to-static-markup
+
+      [:div.ui.container
+       o]
+      #_[:html {:prefix (string/join " " (map #(str (name (first %)) ":" (second %)) prefixes))}
+       [:head
+        [:link {:rel :stylesheet
+                :href "https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.css"}]
+        [:meta {:charset "utf-8"}]]
+       [:body
+        ]])))
+
+  (defn render-property [key val]
+    (log types key (get types key))
+    (if (get types key)
+      [:span {:property (get-in types [key "@id"])
+              :style {:background-color :red}} (str val)]
+      (str val)
+      )
+    )
   (defn render-properties [obj ignore]
-    (into [:div]
+    (into [:div ]
           (for [prop (->> obj
                           (remove #((into #{} ignore) (first %)))
                           (sort-by #(str (first %))))]
@@ -56,14 +91,23 @@
              [:small (str (first prop)) ": "]
              " \u00a0 "
              (let [val (second prop)]
-               (if (coll? val)
-                 (string/join ", \u00a0 " val)
-                 (str val)))])))
+               #_(into [:span]
+                     (if (coll? val)
+                       (map render-property (map (fn [val] [(first prop) val]) val))
+                       ([(render-property (first prop) val)])))
+               (into [:span]
+                     (if (coll? val)
+                       (interpose ", \u00a0 " (map #(render-property (first prop) %) val))
+                       [(render-property (first prop) val)])))])))
 
   (defn render-object [obj]
-    [:div {:item-scope :itemscope
-           :item-type (str "http://schema.org/" (get obj :_type "Thing"))}
-     [:h1 {:item-prop "name"} (:_title obj)]
+    [:div 
+     {:vocab "http://rdf.solsort.com/"
+      :typeof "Thing"
+      :item-scope :item-scope
+     ; :item-type (str "http://schema.org/" (get obj :_type "Thing"))
+      }
+     [:h1 {:item-prop "title"} (:_title obj)]
      [:p (into [:em ]
                (interpose " & " (map (fn [s] [:a {:href (str "/search/" s)}
                                               [:span {:item-prop "creator"} s]])
@@ -181,7 +225,7 @@
    [:ul
     [:li [:a {:href "https://opendata.dbc.dk"} "Danish Libraries"] " - make library objects more accessible for search engines, and create a single derefentiable url/name per object."]
     [:li [:a {:href "http://europeana.eu"} "Europeana"] " - which aggregates data from many cultural institutions around europe."]
-    [:li [:a {:href "http://natmus.dk"} "National Museum of Denmark"] " - this ¿might be? the first time we the full collection is on the web, in a form that is discoverable by search engines and similar."]]]
+    [:li [:a {:href "http://natmus.dk"} "National Museum of Denmark"] " - this is the first time the full collection is on the web, in a form that is discoverable by search engines and similar."]]]
   [:div
    "Sample searches:"
    (into
@@ -203,3 +247,7 @@
       "search/Solvognen"
       "search/Edvard Munch"
       "search/Ærø"]))]])
+
+
+
+

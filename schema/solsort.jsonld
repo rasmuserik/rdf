@@ -1,4 +1,5 @@
 {
-"_id":"http://rdf.solsort.com/v1/#id",
-"_title": "http://schema.org/name"
+"dc":"http://purl.org/dc/elements/1.1/",
+
+"dcTitle":{"@id":"dc:title"}
 }
