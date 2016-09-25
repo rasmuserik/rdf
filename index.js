@@ -38298,8 +38298,8 @@ if (cljs.core.truth_(window.process)) {
   };
   solsort.rdf.rdf.render_property = function(a, b) {
     solsort.util.log.call(null, solsort.rdf.rdf.types, a, cljs.core.get.call(null, solsort.rdf.rdf.types, a));
-    return cljs.core.truth_(cljs.core.get.call(null, solsort.rdf.rdf.types, a)) ? new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "span", "span", 1394872991), new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null, "property", "property", -1114278232), cljs.core.get_in.call(null, solsort.rdf.rdf.types, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [a, "@id"], null)), new cljs.core.Keyword(null, 
-    "style", "style", -496642736), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "background-color", "background-color", 570434026), new cljs.core.Keyword(null, "red", "red", -969428204)], null)], null), "" + cljs.core.str(b)], null) : "" + cljs.core.str(b);
+    return cljs.core.truth_(cljs.core.get.call(null, solsort.rdf.rdf.types, a)) ? new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "span", "span", 1394872991), new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null, "property", "property", -1114278232), cljs.core.get_in.call(null, solsort.rdf.rdf.types, new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [a, "@id"], null))], null), "" + cljs.core.str(b)], 
+    null) : "" + cljs.core.str(b);
   };
   solsort.rdf.rdf.render_properties = function(a, b) {
     return cljs.core.into.call(null, new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null, "div", "div", 1057191632)], null), function() {

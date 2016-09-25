@@ -77,8 +77,7 @@ xmlns:dc=\"http://purl.org/dc/elements/1.1/\"
   (defn render-property [key val]
     (log types key (get types key))
     (if (get types key)
-      [:span {:property (get-in types [key "@id"])
-              :style {:background-color :red}} (str val)]
+      [:span {:property (get-in types [key "@id"]) } (str val)]
       (str val)
       )
     )
