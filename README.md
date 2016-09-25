@@ -13,6 +13,7 @@ It is online at https://rdf.solsort.com/.
 Tasks:
 
 - v0
+  - stability  / error handling - NB fejler for Peder Wessel
   - Better object presentation - semantic markup
   - Improve natmus data, ie. solvogn-bad
 
