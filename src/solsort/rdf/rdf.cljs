@@ -186,7 +186,7 @@
 
    "RasmusErik / "
    [:a {:href "http://solsort.com"} "solsort.com"]
-   " started and is hosting the project. "
+   " started the project, and is hosting it. "
    "The first version was made during " [:a {:href "http://hack4.dk"} "Hack4DK 2016"] ", which is the yearly danish cultural heritage hackathon."]
   [:div "It is easy to add more datasets/APIs. Currently the following datasets are exposed as linked data:"
    [:ul

@@ -19,9 +19,10 @@
   (let [obj (into obj
                   {"@context" ["http://rdf.solsort.com/schema/solsort.jsonld"
                                "http://rdf.solsort.com/schema/natmus.jsonld"]
-                   :_id (str "natmus:" (:collection obj) ":" (:sourceId obj))
+                   :_id (str "natmus:" (:collection obj) ":" (or (:id obj) (:sourceId obj)))
                    :_source "Nationalmuseet"
-                   :_title (or (:workDescription obj))
+                   :_title (or (:workDescription obj) (:shortTitle obj))
+                   :_description (or (:description obj))
                    })]
     obj))
 
@@ -45,11 +46,16 @@
                       "&from=" (* limit page)
                       "&size=" limit)
                  :credentials false)))
-     (:hits) (:hits) (map #(get % :_source {})) (map transform)))))
+     (:hits) (:hits) (map #(get % :_source {}))
+     (map transform)
+     (log)
+     ))))
 
 (defn <obj [id]
   (go
     (let [[_ col src] (clojure.string/split id #":")
-          [obj] (<! (<search (str "collection:" col " AND " "sourceId:" src) 1 0))]
+          [obj] (<! (<search (str "collection:" col
+                                  " AND (sourceId:" src
+                                  " OR id:" src ")") 1 0))]
       obj)))
 
