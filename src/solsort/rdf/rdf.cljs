@@ -188,11 +188,11 @@
    [:a {:href "http://solsort.com"} "solsort.com"]
    " started and is hosting the project. "
    "The first version was made during " [:a {:href "http://hack4.dk"} "Hack4DK 2016"] ", which is the yearly danish cultural heritage hackathon."]
-  [:div "It is easy to add more datasets/APIs. Currently the following datasets are exposed as link data here:"
+  [:div "It is easy to add more datasets/APIs. Currently the following datasets are exposed as linked data:"
    [:ul
     [:li [:a {:href "https://opendata.dbc.dk"} "Danish Libraries"] " - make library objects more accessible for search engines, and create a single derefentiable url/name per object."]
     [:li [:a {:href "http://europeana.eu"} "Europeana"] " - which aggregates data from many cultural institutions around europe."]
-    [:li [:a {:href "http://natmus.dk"} "National Museum of Denmark"] " - this ¿might be? the first time we get the full collection data on the web, in a form that is discoverable by search engines and similar."]
+    [:li [:a {:href "http://natmus.dk"} "National Museum of Denmark"] " - this ¿might be? the first time we the full collection is on the web, in a form that is discoverable by search engines and similar."]
     ]]
   [:div
    "Sample searches:"

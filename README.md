@@ -1,6 +1,6 @@
 # Federated linked data ![RDF](https://rdf.solsort.com/icon-small.png)
 
-This project federates the following data sources into a single endpoint:
+This project combines the following data sources into a single endpoint:
 
 - Danish Bibliographical Data
 - Europeana
