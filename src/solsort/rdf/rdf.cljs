@@ -24,8 +24,7 @@
    [:img {:src "/assets/icon.png" :style {:margin-top "1ex"
                                           :height "1.5em"
                                           :margin-right "1ex"}}]
-   "Federated Linked Data Endpoint"]
-  )
+   "Federated Linked Data Endpoint"])
 (when (and js/window.process js/window.process.versions js/window.process.versions.electron)
   (.push (.-globalPaths (js/require "module")) (str (js/process.cwd) "/node_modules")))
 
@@ -43,7 +42,7 @@
       [:head
        [:link {:rel :stylesheet
                :href "https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.css"}]
-      [:meta {:charset "utf-8"}]]
+       [:meta {:charset "utf-8"}]]
       [:body
        [:div.ui.container
         o]]]))
@@ -51,27 +50,22 @@
   (defn render-properties [obj ignore]
     (into [:div]
           (for [prop (->> obj
-                      (remove #((into #{} ignore) (first %)))
-                      (sort-by #(str (first %))))]
+                          (remove #((into #{} ignore) (first %)))
+                          (sort-by #(str (first %))))]
             [:div
              [:small (str (first prop)) ": "]
              " \u00a0 "
              (let [val (second prop)]
                (if (coll? val)
                  (string/join ", \u00a0 " val)
-                 (str val))
-               )
-             ])))
+                 (str val)))])))
 
   (defn render-object [obj]
     [:div
      [:h1 (:_title obj)]
      [:p [:em (string/join " & " (:_creators obj))]]
      [:p (:_description obj)]
-     [render-properties obj [:_id :_creators :_description :_title "@context"]]
-     ]
-
-    )
+     [render-properties obj [:_id :_creators :_description :_title "@context"]]])
   (defn show-object [req res]
     (go
       (let [accept (aget (aget req "headers") "accept")
@@ -80,16 +74,16 @@
                 (second
                  (first
                   (sort
-                    [[(minpos accept "text/html")
-                      "html"]
-                     [(min
-                       (minpos accept "application/rdf+xml")
-                       (minpos accept "application/cml"))
-                      "xml"]
-                     [(min
-                       (minpos accept "application/json")
-                       (minpos accept "application/ld+json"))
-                      "json"]]))))
+                   [[(minpos accept "text/html")
+                     "html"]
+                    [(min
+                      (minpos accept "application/rdf+xml")
+                      (minpos accept "application/cml"))
+                     "xml"]
+                    [(min
+                      (minpos accept "application/json")
+                      (minpos accept "application/ld+json"))
+                     "json"]]))))
             id (.-id (.-params req))
             kind (first (clojure.string/split id #":"))
             obj (case kind
@@ -114,54 +108,47 @@
             results (sort-by hash (concat natmus ting europeana))
             first-link (str "/search/" query)
             next-link (str "/search/" query "/" (inc page))
-            prev-link (if (pos? page) (str "/search/" query "/" (dec page)) nil)
-            ]
+            prev-link (if (pos? page) (str "/search/" query "/" (dec page)) nil)]
         (.end res
               ;(reagent/render-to-static-markup
               (html-doc
-                [:div
-                 [header]
-                 [:div.ui.grid
-                  [:div.ui.form.twelve.wide.column
-                   [:input {:id "query"}]
-                   ]
-                  [:div.four.wide.column
-                   {"dangerouslySetInnerHTML"
-                    {:__html"<button class=\"fluid ui primary button\" onclick=\"location.href='/search/'+query.value;\">Search</button>"}}]
-                  ]
+               [:div
+                [header]
+                [:div.ui.grid
+                 [:div.ui.form.twelve.wide.column
+                  [:input {:id "query"}]]
+                 [:div.four.wide.column
+                  {"dangerouslySetInnerHTML"
+                   {:__html "<button class=\"fluid ui primary button\" onclick=\"location.href='/search/'+query.value;\">Search</button>"}}]]
 
-                 [:hr]
-                 [:p "\"" query "\" results:"]
-                 (into [:ul]
-                       (for [obj results]
-                         [:li
-                          [:a {:href (str "/object/" (:_id obj))
-                               :style {:text-decoration :none}}
-                           [:strong (:_title obj)]
-                           " \u00a0 "
-                           [:em (string/join " & "(:_creators obj))]
-                           " \u00a0 "
-                           [:small (:_description obj)]]
-                          " (" (:_source obj) ")"]
-                         ))
-                 [:div
-                  (if prev-link
-                    [:span
-                     (if (< 1 page )
-                       [:span  [:a {:href first-link} "First"]
-                        " \u00a0 "
-                        ]
-                       "")
-                     " << "
-                     [:a {:href prev-link} "Previous"]
-                     " \u00a0 "
-                     ]
-                    "")
-                  (if (empty? results)
-                    ""
-                    [:span  [:a {:href next-link} "Next"]
-                     " >>"])]
-                 ])))))
+                [:hr]
+                [:p "\"" query "\" results:"]
+                (into [:ul]
+                      (for [obj results]
+                        [:li
+                         [:a {:href (str "/object/" (:_id obj))
+                              :style {:text-decoration :none}}
+                          [:strong (:_title obj)]
+                          " \u00a0 "
+                          [:em (string/join " & " (:_creators obj))]
+                          " \u00a0 "
+                          [:small (:_description obj)]]
+                         " (" (:_source obj) ")"]))
+                [:div
+                 (if prev-link
+                   [:span
+                    (if (< 1 page)
+                      [:span  [:a {:href first-link} "First"]
+                       " \u00a0 "]
+                      "")
+                    " << "
+                    [:a {:href prev-link} "Previous"]
+                    " \u00a0 "]
+                   "")
+                 (if (empty? results)
+                   ""
+                   [:span  [:a {:href next-link} "Next"]
+                    " >>"])]])))))
   (defonce server
     (let [express (require "express")
           app (express)]
@@ -175,13 +162,11 @@
  [:div.ui.container
   [header]
   [:p
-   "This site wraps different APIs as " [:a {:href "https://en.wikipedia.org/wiki/Linked_data"} "Linked Data"] ", giving it the following properties:"
-   ]
+   "This site wraps different APIs as " [:a {:href "https://en.wikipedia.org/wiki/Linked_data"} "Linked Data"] ", giving it the following properties:"]
   [:ul
-   [:li [:strong "Unique url/name per object."] " Makes it possible to talk about the object, and be certain that it is the same object we talk about, independent of context. Makes a path to discover more information about the object, when you know the dereferential name/url." ]
+   [:li [:strong "Unique url/name per object."] " Makes it possible to talk about the object, and be certain that it is the same object we talk about, independent of context. Makes a path to discover more information about the object, when you know the dereferential name/url."]
    [:li [:strong "Federated search."] " Makes it possible to search in several datasets at once,"]
-   [:li [:strong "Standard vocabularies, and common approach to access data."] " Makes it possible for robots(web-spiders, knowledge networks, etc.) to understand the data from the APIs, without human hand-holding. Makes it easier to use and build upon as a developer."]
-   ]
+   [:li [:strong "Standard vocabularies, and common approach to access data."] " Makes it possible for robots(web-spiders, knowledge networks, etc.) to understand the data from the APIs, without human hand-holding. Makes it easier to use and build upon as a developer."]]
   [:p "It is developed as " [:a {:href "https://github.com/solsort/rdf"} "open source"] " on top of open APIs. "
 
    "RasmusErik / "
@@ -192,8 +177,7 @@
    [:ul
     [:li [:a {:href "https://opendata.dbc.dk"} "Danish Libraries"] " - make library objects more accessible for search engines, and create a single derefentiable url/name per object."]
     [:li [:a {:href "http://europeana.eu"} "Europeana"] " - which aggregates data from many cultural institutions around europe."]
-    [:li [:a {:href "http://natmus.dk"} "National Museum of Denmark"] " - this ¿might be? the first time we the full collection is on the web, in a form that is discoverable by search engines and similar."]
-    ]]
+    [:li [:a {:href "http://natmus.dk"} "National Museum of Denmark"] " - this ¿might be? the first time we the full collection is on the web, in a form that is discoverable by search engines and similar."]]]
   [:div
    "Sample searches:"
    (into

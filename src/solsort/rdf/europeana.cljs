@@ -28,9 +28,9 @@
    obj
    {:_id
     (str "europeana" (string/replace (get obj "id" "") (js/RegExp. "/" "g") ":"))
-    :_title (or (uncoll (get obj "dcTitle" []))(-> obj (get "dcTitleLangAware" {}) (first) (second) (first)))
+    :_title (or (uncoll (get obj "dcTitle" [])) (-> obj (get "dcTitleLangAware" {}) (first) (second) (first)))
     :_creators (distinct (concat (get obj "dcCreator" [])))
-    :_description  (or (uncoll (get obj "dcDescription"))(uncoll (get obj "type")))
+    :_description  (or (uncoll (get obj "dcDescription")) (uncoll (get obj "type")))
     :_source "Europeana"}))
 (when js/window.process
   (def request (js/require "request"))
@@ -45,20 +45,18 @@
   (defn <europeana [action & args]
     (go
       (let [url (if (= :search action)
-                   (str "http://www.europeana.eu/api/v2/search.json"
-                             "?wskey=" wskey
-                             "&start=" (inc (* 12 (second args)))
-                             "&query=" (first args)
-                             )
-                   
-      (str "http://www.europeana.eu/portal/en/record/"
-                        (first args); "2058618/object_KUAS_22340808.json"
+                  (str "http://www.europeana.eu/api/v2/search.json"
+                       "?wskey=" wskey
+                       "&start=" (inc (* 12 (second args)))
+                       "&query=" (first args))
+
+                  (str "http://www.europeana.eu/portal/en/record/"
+                       (first args); "2058618/object_KUAS_22340808.json"
                                         ;"?wskey=zdanGC4Wc&query=blicher"
-                        ))
-              text (<! (<http url))
-              obj (js->clj (js/JSON.parse text))
-              ]
-          obj)))
+))
+            text (<! (<http url))
+            obj (js->clj (js/JSON.parse text))]
+        obj)))
   (defn mkvec [o]
     (if (vector? o)
       o
@@ -68,9 +66,7 @@
       (apply concat (map (fn [[k v]] (obj-flatten v)) o))
       (if (coll? o)
         (apply concat (map obj-flatten o))
-        [o])
-      )
-    )
+        [o])))
   (defn merge-objs [& objs]
     (->
      (->> objs
@@ -79,35 +75,31 @@
           (group-by first)
           (map (fn [[k v]] [k (map second v)]))
           (map (fn [[k v]] [k (distinct (apply obj-flatten v))]))
-          (into {})
-          )
+          (into {}))
      (dissoc "aggregations")
      (dissoc "agents")
      (dissoc "concepts")
      (dissoc "europeanaAggregation")
-     (transform)
-     ))
-  
+     (transform)))
+
   (defn <obj [id]
     (go
       (let [[_ collection id] (string/split id #":")
             obj (get-in (<! (<europeana
                              :record (str collection "/" id ".json")))
-                        ["response" "document"] )
+                        ["response" "document"])
             obj (apply merge-objs (dissoc obj "proxies")
-                        (mkvec (get obj "proxies" [])))
-            ]
+                       (mkvec (get obj "proxies" [])))]
         (assoc obj :_id id))))
   (defn <search [q page]
     (go
-     (map
-           transform
-           (get (<! (<europeana
-                     :search
-                     (str
-                      "\""
-                      (string/join "\" AND \""
-                                   (string/split q #" +"))
-                      "\"") page))
-                "items"))))
-  )
+      (map
+       transform
+       (get (<! (<europeana
+                 :search
+                 (str
+                  "\""
+                  (string/join "\" AND \""
+                               (string/split q #" +"))
+                  "\"") page))
+            "items")))))

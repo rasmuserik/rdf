@@ -34,8 +34,7 @@
          (distinct (concat
                     (get obj "dcCreator" [])
                     (get obj "creator" [])
-                    (get obj "contributor" [])))})
-  )
+                    (get obj "contributor" [])))}))
 (when js/window.process
   (def request (js/require "request"))
   (def access_token "a4516e74f16b7b2d3f7f3eb6cac35b2b07575345")

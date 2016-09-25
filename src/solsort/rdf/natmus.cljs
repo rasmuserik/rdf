@@ -22,8 +22,7 @@
                    :_id (str "natmus:" (:collection obj) ":" (or (:id obj) (:sourceId obj)))
                    :_source "Nationalmuseet"
                    :_title (or (:workDescription obj) (:shortTitle obj))
-                   :_description (or (:description obj))
-                   })]
+                   :_description (or (:description obj))})]
     obj))
 
 (defn <search
@@ -37,19 +36,18 @@
               "")
              10 page))
   ([q limit page]
-  (go
+   (go
     ;(js/console.log "natmus-search" q)
-    (->>
-     (clojure.walk/keywordize-keys
-      (<! (<ajax (str "http://samlinger.natmus.dk/api/all/_search"
-                      "?q=" q
-                      "&from=" (* limit page)
-                      "&size=" limit)
-                 :credentials false)))
-     (:hits) (:hits) (map #(get % :_source {}))
-     (map transform)
-     (log)
-     ))))
+     (->>
+      (clojure.walk/keywordize-keys
+       (<! (<ajax (str "http://samlinger.natmus.dk/api/all/_search"
+                       "?q=" q
+                       "&from=" (* limit page)
+                       "&size=" limit)
+                  :credentials false)))
+      (:hits) (:hits) (map #(get % :_source {}))
+      (map transform)
+      (log)))))
 
 (defn <obj [id]
   (go
