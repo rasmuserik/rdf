@@ -54,7 +54,7 @@
                       (remove #((into #{} ignore) (first %)))
                       (sort-by #(str (first %))))]
             [:div
-             [:small (first prop) ": "]
+             [:small (str (first prop)) ": "]
              " \u00a0 "
              (let [val (second prop)]
                (if (coll? val)
@@ -94,6 +94,7 @@
             kind (first (clojure.string/split id #":"))
             obj (case kind
                   "natmus" (<! (natmus/<obj id))
+                  "europeana" (<! (europeana/<obj id))
                   "ting" (<! (ting/<obj id))
                   {:_id id})
             result

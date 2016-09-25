@@ -13,7 +13,6 @@ It is online at https://rdf.solsort.com/.
 Tasks:
 
 - v0
-  - Europeana data source
   - Better object presentation - semantic markup
   - Improve natmus data, ie. solvogn-bad
 
@@ -24,7 +23,11 @@ Notes
 - Intro
   - What
   - Why / my motivation / value
-- Technical status
+- Technical Details
+  - Source code and deployment
+    - All source on github
+    - Deployment via docker
+    - Cached behind cloudflare CDN
 - Nordic challenge / criterias
   - value proposition (target group)
     - Institution
