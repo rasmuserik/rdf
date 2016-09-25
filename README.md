@@ -1,73 +1,15 @@
-# Linked data project, started at Hack4DK [[https://rdf.solsort.com/icon-small.png]]
+# Federated linked data ![RDF](https://rdf.solsort.com/icon-small.png)
 
+This project federates the following data sources into a single endpoint:
+
+- Danish Bibliographical Data
+- Europeana
+- National Museum of Denmark
 
 It is online at https://rdf.solsort.com/.
 
-# Potential datasources in prioritised order
+Feel free to add ideas/comments/etc. in the [Issue Tracker](https://github.com/solsort/rdf/issues).
 
-1. Natmus, http://samlinger.natmus.dk/api/all/_search?q=... http://samlinger.natmus.dk/api/assets/_mapping
-2. Openplatform.dbc.dk
-3. Europeana
+# Deployment
 
-
-Tasks:
-
-- v0
-  - stability  / error handling - NB fejler for Peder Wessel
-  - Better object presentation - semantic markup
-  - Improve natmus data, ie. solvogn-bad
-
-# Hack4Norden
-
-Notes
-
-- Intro
-  - What
-  - Why / my motivation / value
-- Technical Details
-  - Source code and deployment
-    - All source on github
-    - Deployment via docker
-    - Cached behind cloudflare CDN
-- Nordic challenge / criterias
-  - value proposition (target group)
-    - Institution
-      - Potential authorative url for object
-      - stepping stone towards spreading open data (connect to Europeana, wikidata, dbpedia, ...)
-      - leads users to the institution, by exposing the data in a form that robots and search engines can read (unlike just an api)
-    - Developer
-      - single simple uniform endpoint/structure to access different datasets
-    - User
-      - able to search / get inspirations from different sources (federated search)
-      - may find objects by normal web search
-  - solve challenge make nordic GLAM content more findable and hackable
-  - Innovation/creativity:
-    - new product: Explorable/Crawlable NatMus collection, and Danish Bibliography, and connection of url and object
-  - Nordic datasets:
-    - now: All the Nordic Institutions that deliver data to Europeana, as well as Natmus, and Danish Bibliography
-    - next: identify datasets in other nordic countries, 
-  - Business/commercial potential. I do this for fun, but if we have to make the business case:
-    - Making data more available is a service with a clear value, that can be offered to public and private institutions.
-    - When data is collected in a similar format, it also leads to other services, such as semi-automatic enrichment and linking between the data, etc.
-  - Nordic-wide issues: Making data better available, is relevant for many public and private institutions across all of the nordic countries.
-
-- authorative url for data
-- federated search
-- gøre data lettere tilgængelige
-- eksponere dem for søgemaskiner
-
-# Object types
-
-
-* Paths
-
-- /object/
-- ~/object/(natmus|ting|smk|dfi|..):id
-- /search/natmus/query
-- /search/ting/query
-
-* Schemas:
-
-- target schemas:
-  - dublin core
-  - schema.org
+It is hosted by https://solsort.com/. It is deployed via docker, and there are ready-built images here: https://hub.docker.com/r/solsort/rdf/ which you can deploy if you want to play around with it.
