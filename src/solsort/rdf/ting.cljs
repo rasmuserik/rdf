@@ -15,6 +15,7 @@
    [clojure.string :as string :refer [replace split blank?]]
    [cljs.core.async :refer [>! <! chan put! take! timeout close! pipe]]))
 
+(go (log (<! (<ajax "https://hack4.dk" :result :test))))
 (defn transform [obj]
   (into obj
         {"@context"
@@ -32,15 +33,8 @@
                     (get obj "dcCreator" [])
                     (get obj "creator" [])
                     (get obj "contributor" [])))}))
-(when js/window.process
-  (def request (js/require "request"))
   (def access_token "a4516e74f16b7b2d3f7f3eb6cac35b2b07575345")
-  (defn <http [url]
-    (let [c (chan)]
-      (request url
-               (fn [err res data]
-                 (if err (do (log err data) (close! c)) (put! c data))))
-      c))
+  (defn <http [url] (<ajax url :result :text))
 
   (defn <ting [endpoint o]
     (go
@@ -61,8 +55,7 @@
                               (second %)))
 
                            (into o {:access_token access_token}))))))))]
-        (get result "data")))))
-
+        (get result "data"))))
 (defn <obj [id]
   (go
     (let [pid (.slice id 5)
@@ -76,7 +69,6 @@
                          "collection" (get collection "collection")})
           obj (transform obj)]
       obj)))
-
 (defn <search [q page]
   (go (map transform
            (<! (<ting

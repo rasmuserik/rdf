@@ -1,7 +1,9 @@
 const {app, BrowserWindow} = require('electron')
 let w;
 app.on('ready', function() {
-    w = new BrowserWindow({"web-preferences": {"web-security": false}});
+    w = new BrowserWindow({
+      "webPreferences": {"webSecurity": false}
+    });
     w.loadURL(`http://localhost:3449/?` + Math.random());
     /*
     w.webContents.executeJavaScript(`

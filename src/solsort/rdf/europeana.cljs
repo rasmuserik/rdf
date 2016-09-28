@@ -29,15 +29,9 @@
     :_creators (distinct (concat (get obj "dcCreator" [])))
     :_description  (or (uncoll (get obj "dcDescription")) (uncoll (get obj "type")))
     :_source "Europeana"}))
-(when js/window.process
-  (def request (js/require "request"))
   (def access_token "a4516e74f16b7b2d3f7f3eb6cac35b2b07575345")
-  (defn <http [url]
-    (let [c (chan)]
-      (request url
-               (fn [err res data]
-                 (if err (do (log err data) (close! c)) (put! c data))))
-      c))
+  (defn <http [url] (<ajax url :result :text))
+
 
   (defn <europeana [action & args]
     (go
@@ -99,4 +93,4 @@
                   (string/join "\" AND \""
                                (string/split q #" +"))
                   "\"") page))
-            "items")))))
+            "items"))))
