@@ -9738,23 +9738,23 @@ cljs.core.fnil.cljs$core$IFn$_invoke$arity$3 = function(a, b, c) {
 cljs.core.fnil.cljs$core$IFn$_invoke$arity$4 = function(a, b, c, d) {
   return function() {
     var e = null, f = function(d, e) {
-      var f = null == d ? b : d, g = null == e ? c : e;
-      return a.cljs$core$IFn$_invoke$arity$2 ? a.cljs$core$IFn$_invoke$arity$2(f, g) : a.call(null, f, g);
-    }, g = function(e, f, g) {
+      var f = null == d ? b : d, h = null == e ? c : e;
+      return a.cljs$core$IFn$_invoke$arity$2 ? a.cljs$core$IFn$_invoke$arity$2(f, h) : a.call(null, f, h);
+    }, g = function(e, f, h) {
       e = null == e ? b : e;
       f = null == f ? c : f;
-      g = null == g ? d : g;
-      return a.cljs$core$IFn$_invoke$arity$3 ? a.cljs$core$IFn$_invoke$arity$3(e, f, g) : a.call(null, e, f, g);
+      h = null == h ? d : h;
+      return a.cljs$core$IFn$_invoke$arity$3 ? a.cljs$core$IFn$_invoke$arity$3(e, f, h) : a.call(null, e, f, h);
     }, h = function() {
-      var e = function(e, f, g, h) {
-        return cljs.core.apply.cljs$core$IFn$_invoke$arity$5(a, null == e ? b : e, null == f ? c : f, null == g ? d : g, h);
+      var e = function(e, f, h, g) {
+        return cljs.core.apply.cljs$core$IFn$_invoke$arity$5(a, null == e ? b : e, null == f ? c : f, null == h ? d : h, g);
       }, f = function(a, b, c, d) {
         var f = null;
         if (3 < arguments.length) {
-          for (var f = 0, g = Array(arguments.length - 3);f < g.length;) {
-            g[f] = arguments[f + 3], ++f;
+          for (var f = 0, h = Array(arguments.length - 3);f < h.length;) {
+            h[f] = arguments[f + 3], ++f;
           }
-          f = new cljs.core.IndexedSeq(g, 0);
+          f = new cljs.core.IndexedSeq(h, 0);
         }
         return e.call(this, a, b, c, f);
       };
@@ -10248,8 +10248,8 @@ cljs.core.every_pred.cljs$core$IFn$_invoke$arity$1 = function(a) {
     }, f = function() {
       var c = function(c, d, e, f) {
         return cljs.core.boolean$(function() {
-          var g = b.cljs$core$IFn$_invoke$arity$3(c, d, e);
-          return cljs.core.truth_(g) ? cljs.core.every_QMARK_(a, f) : g;
+          var h = b.cljs$core$IFn$_invoke$arity$3(c, d, e);
+          return cljs.core.truth_(h) ? cljs.core.every_QMARK_(a, f) : h;
         }());
       }, d = function(a, b, d, e) {
         var f = null;
@@ -38704,17 +38704,17 @@ if (cljs.core.truth_(window.process)) {
   solsort.rdf.rdf.require = require;
   solsort.rdf.rdf.fs = solsort.rdf.rdf.require.call(null, "fs");
   solsort.rdf.rdf.http = solsort.rdf.rdf.require.call(null, "http");
-  var obj_18319 = cljs.core.into.call(null, cljs.core.js__GT_clj.call(null, JSON.parse(solsort.rdf.rdf.fs.readFileSync("../schema/ting.jsonld", "utf-8"))), cljs.core.js__GT_clj.call(null, JSON.parse(solsort.rdf.rdf.fs.readFileSync("../schema/solsort.jsonld", "utf-8")))), prefixes_18320 = cljs.core.into.call(null, cljs.core.PersistentArrayMap.EMPTY, cljs.core.filter.call(null, function(a) {
+  var obj_18337 = cljs.core.into.call(null, cljs.core.js__GT_clj.call(null, JSON.parse(solsort.rdf.rdf.fs.readFileSync("../schema/ting.jsonld", "utf-8"))), cljs.core.js__GT_clj.call(null, JSON.parse(solsort.rdf.rdf.fs.readFileSync("../schema/solsort.jsonld", "utf-8")))), prefixes_18338 = cljs.core.into.call(null, cljs.core.PersistentArrayMap.EMPTY, cljs.core.filter.call(null, function(a) {
     return function(a) {
       return "string" === typeof cljs.core.second.call(null, a);
     };
-  }(obj_18319), obj_18319)), types_18321 = cljs.core.into.call(null, cljs.core.PersistentArrayMap.EMPTY, cljs.core.remove.call(null, function(a, b) {
+  }(obj_18337), obj_18337)), types_18339 = cljs.core.into.call(null, cljs.core.PersistentArrayMap.EMPTY, cljs.core.remove.call(null, function(a, b) {
     return function(a) {
       return "string" === typeof cljs.core.second.call(null, a);
     };
-  }(obj_18319, prefixes_18320), obj_18319));
-  solsort.rdf.rdf.prefixes = prefixes_18320;
-  solsort.rdf.rdf.types = types_18321;
+  }(obj_18337, prefixes_18338), obj_18337));
+  solsort.rdf.rdf.prefixes = prefixes_18338;
+  solsort.rdf.rdf.types = types_18339;
   solsort.rdf.rdf.html_doc = function(a) {
     return [cljs.core.str('\x3c!DOCTYPE html\x3e\n\x3chtml\x3e\n\x3chead\x3e\x3clink rel\x3d"stylesheet" href\x3d"https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.css"/\x3e\x3cmeta charset\x3d"utf-8"/\x3e\x3c/head\x3e\x3cbody\x3e\n\x3cdiv\nxmlns:dc\x3d"http://purl.org/dc/elements/1.1/"\n'), cljs.core.str(clojure.string.join.call(null, "\n", cljs.core.map.call(null, function(a) {
       return [cljs.core.str("xmlns:"), cljs.core.str(cljs.core.first.call(null, a)), cljs.core.str('\x3d"'), cljs.core.str(cljs.core.second.call(null, a)), cljs.core.str('"')].join("");
@@ -38796,7 +38796,7 @@ if (cljs.core.truth_(window.process)) {
           return function(a, b) {
             return function() {
               var b = null, c = function() {
-                var a = [null, null, null, null, null, null, null, null, null, null, null, null, null];
+                var a = [null, null, null, null, null, null, null, null, null, null, null, null, null, null];
                 a[0] = b;
                 a[1] = 1;
                 return a;
@@ -38841,92 +38841,114 @@ if (cljs.core.truth_(window.process)) {
             return function(c) {
               var d = c[1];
               if (7 === d) {
-                return c[2] = c[2], c[1] = 5, new cljs.core.Keyword(null, "recur", "recur", -437573268);
-              }
-              if (1 === d) {
-                var d = c[7], e = a.headers.accept[""], d = a.params.type;
-                c[7] = d;
-                c[8] = e;
-                cljs.core.truth_(d) ? c[1] = 2 : c[1] = 3;
-                return new cljs.core.Keyword(null, "recur", "recur", -437573268);
-              }
-              if (4 === d) {
-                var d = c[9], d = c[10], d = c[2], e = a.params.id, f = clojure.string.split.call(null, e, /:/), f = cljs.core.first.call(null, f);
-                c[9] = f;
-                c[11] = d;
-                c[10] = e;
+                var d = c[7], d = c[8], d = c[2], e = a.params.id, f = clojure.string.split.call(null, e, /:/), f = cljs.core.first.call(null, f);
+                c[9] = d;
+                c[7] = e;
+                c[8] = f;
                 switch(f) {
                   case "natmus":
-                    c[1] = 6;
+                    c[1] = 9;
                     break;
                   case "europeana":
-                    c[1] = 8;
+                    c[1] = 11;
                     break;
                   case "ting":
-                    c[1] = 10;
+                    c[1] = 13;
                     break;
                   default:
-                    c[1] = 12;
+                    c[1] = 15;
                 }
                 return new cljs.core.Keyword(null, "recur", "recur", -437573268);
+              }
+              if (20 === d) {
+                return e = c[10], d = solsort.rdf.ting.render.call(null, e), c[2] = d, c[1] = 19, new cljs.core.Keyword(null, "recur", "recur", -437573268);
+              }
+              if (1 === d) {
+                return d = c[11], d = a.headers.accept, c[11] = d, cljs.core.truth_(d) ? c[1] = 2 : c[1] = 3, new cljs.core.Keyword(null, "recur", "recur", -437573268);
+              }
+              if (4 === d) {
+                return d = c[12], e = c[2], d = a.params.type, c[13] = e, c[12] = d, cljs.core.truth_(d) ? c[1] = 5 : c[1] = 6, new cljs.core.Keyword(null, "recur", "recur", -437573268);
               }
               if (15 === d) {
-                d = c[9];
-                switch(d) {
-                  case "ting":
-                    c[1] = 17;
-                    break;
-                  default:
-                    c[1] = 18;
-                }
-                return new cljs.core.Keyword(null, "recur", "recur", -437573268);
+                return d = c[7], e = [new cljs.core.Keyword(null, "_id", "_id", -789960287)], d = cljs.core.PersistentHashMap.fromArrays(e, [d]), c[2] = d, c[1] = 8, new cljs.core.Keyword(null, "recur", "recur", -437573268);
+              }
+              if (21 === d) {
+                return e = c[10], d = new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [solsort.rdf.rdf.render_object, e], null), c[2] = d, c[1] = 19, new cljs.core.Keyword(null, "recur", "recur", -437573268);
               }
               if (13 === d) {
-                return d = b.end(c[2]), cljs.core.async.impl.ioc_helpers.return_chan.call(null, c, d);
+                return d = c[7], d = solsort.rdf.ting._LT_obj.call(null, d), cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, c, 14, d);
+              }
+              if (22 === d) {
+                return c[2] = "not implemented", c[1] = 16, new cljs.core.Keyword(null, "recur", "recur", -437573268);
               }
               if (6 === d) {
-                return d = c[10], d = solsort.rdf.natmus._LT_obj.call(null, d), cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, c, 7, d);
-              }
-              if (17 === d) {
-                return e = c[12], d = solsort.rdf.ting.render.call(null, e), c[2] = d, c[1] = 16, new cljs.core.Keyword(null, "recur", "recur", -437573268);
-              }
-              if (3 === d) {
-                var e = c[8], f = d = cljs.core.PersistentVector.EMPTY_NODE, g = [solsort.rdf.rdf.minpos.call(null, e, "text/html"), "html"], f = new cljs.core.PersistentVector(null, 2, 5, f, g, null), g = cljs.core.PersistentVector.EMPTY_NODE, p = solsort.rdf.rdf.minpos.call(null, e, "application/rdf+xml"), q = solsort.rdf.rdf.minpos.call(null, e, "application/cml"), g = new cljs.core.PersistentVector(null, 2, 5, g, [p < q ? p : q, "xml"], null), p = cljs.core.PersistentVector.EMPTY_NODE, q = solsort.rdf.rdf.minpos.call(null, 
+                var e = c[13], f = d = cljs.core.PersistentVector.EMPTY_NODE, g = [solsort.rdf.rdf.minpos.call(null, e, "text/html"), "html"], f = new cljs.core.PersistentVector(null, 2, 5, f, g, null), g = cljs.core.PersistentVector.EMPTY_NODE, p = solsort.rdf.rdf.minpos.call(null, e, "application/rdf+xml"), q = solsort.rdf.rdf.minpos.call(null, e, "application/cml"), g = new cljs.core.PersistentVector(null, 2, 5, g, [p < q ? p : q, "xml"], null), p = cljs.core.PersistentVector.EMPTY_NODE, q = solsort.rdf.rdf.minpos.call(null, 
                 e, "application/json"), e = solsort.rdf.rdf.minpos.call(null, e, "application/ld+json"), e = new cljs.core.PersistentVector(null, 2, 5, p, [q < e ? q : e, "json"], null), d = new cljs.core.PersistentVector(null, 3, 5, d, [f, g, e], null), d = cljs.core.sort.call(null, d), d = cljs.core.first.call(null, d), d = cljs.core.second.call(null, d);
                 c[2] = d;
-                c[1] = 4;
+                c[1] = 7;
                 return new cljs.core.Keyword(null, "recur", "recur", -437573268);
               }
+              if (17 === d) {
+                return e = c[10], d = cljs.core.clj__GT_js.call(null, e), d = JSON.stringify(d, null, 2), c[2] = d, c[1] = 16, new cljs.core.Keyword(null, "recur", "recur", -437573268);
+              }
+              if (3 === d) {
+                return c[2] = "", c[1] = 4, new cljs.core.Keyword(null, "recur", "recur", -437573268);
+              }
               if (12 === d) {
-                return d = c[10], e = [new cljs.core.Keyword(null, "_id", "_id", -789960287)], d = cljs.core.PersistentHashMap.fromArrays(e, [d]), c[2] = d, c[1] = 5, new cljs.core.Keyword(null, "recur", "recur", -437573268);
+                return c[2] = c[2], c[1] = 8, new cljs.core.Keyword(null, "recur", "recur", -437573268);
               }
               if (2 === d) {
-                return d = c[7], c[2] = d, c[1] = 4, new cljs.core.Keyword(null, "recur", "recur", -437573268);
+                return d = c[11], c[2] = d, c[1] = 4, new cljs.core.Keyword(null, "recur", "recur", -437573268);
               }
               if (19 === d) {
-                return c[2] = "not implemented", c[1] = 13, new cljs.core.Keyword(null, "recur", "recur", -437573268);
+                return d = solsort.rdf.rdf.html_doc.call(null, c[2]), c[2] = d, c[1] = 16, new cljs.core.Keyword(null, "recur", "recur", -437573268);
               }
-              if (11 === d || 9 === d) {
-                return c[2] = c[2], c[1] = 5, new cljs.core.Keyword(null, "recur", "recur", -437573268);
+              if (11 === d) {
+                return d = c[7], d = solsort.rdf.europeana._LT_obj.call(null, d), cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, c, 12, d);
+              }
+              if (9 === d) {
+                return d = c[7], d = solsort.rdf.natmus._LT_obj.call(null, d), cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, c, 10, d);
               }
               if (5 === d) {
-                d = c[11];
-                e = c[2];
-                c[12] = e;
+                return d = c[12], c[2] = d, c[1] = 7, new cljs.core.Keyword(null, "recur", "recur", -437573268);
+              }
+              if (14 === d) {
+                return c[2] = c[2], c[1] = 8, new cljs.core.Keyword(null, "recur", "recur", -437573268);
+              }
+              if (16 === d) {
+                return d = b.end(c[2]), cljs.core.async.impl.ioc_helpers.return_chan.call(null, c, d);
+              }
+              if (10 === d) {
+                return c[2] = c[2], c[1] = 8, new cljs.core.Keyword(null, "recur", "recur", -437573268);
+              }
+              if (18 === d) {
+                d = c[8];
                 switch(d) {
-                  case "json":
-                    c[1] = 14;
-                    break;
-                  case "html":
-                    c[1] = 15;
+                  case "ting":
+                    c[1] = 20;
                     break;
                   default:
-                    c[1] = 19;
+                    c[1] = 21;
                 }
                 return new cljs.core.Keyword(null, "recur", "recur", -437573268);
               }
-              return 14 === d ? (e = c[12], d = cljs.core.clj__GT_js.call(null, e), d = JSON.stringify(d, null, 2), c[2] = d, c[1] = 13, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 16 === d ? (d = solsort.rdf.rdf.html_doc.call(null, c[2]), c[2] = d, c[1] = 13, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 10 === d ? (d = c[10], d = solsort.rdf.ting._LT_obj.call(null, d), cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, c, 11, d)) : 18 === d ? (e = c[12], d = 
-              new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [solsort.rdf.rdf.render_object, e], null), c[2] = d, c[1] = 16, new cljs.core.Keyword(null, "recur", "recur", -437573268)) : 8 === d ? (d = c[10], d = solsort.rdf.europeana._LT_obj.call(null, d), cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, c, 9, d)) : null;
+              if (8 === d) {
+                d = c[9];
+                e = c[2];
+                c[10] = e;
+                switch(d) {
+                  case "json":
+                    c[1] = 17;
+                    break;
+                  case "html":
+                    c[1] = 18;
+                    break;
+                  default:
+                    c[1] = 22;
+                }
+                return new cljs.core.Keyword(null, "recur", "recur", -437573268);
+              }
+              return null;
             };
           }(c), c);
         }(), f = function() {
@@ -38992,10 +39014,10 @@ if (cljs.core.truth_(window.process)) {
             return function(d) {
               var e = d[1];
               if (7 === e) {
-                var f = d[7], l = d[8], n = d[9], p = d[10], q = d[11], r = d[2], t = cljs.core.concat.call(null, f, n, r), u = cljs.core.sort_by.call(null, cljs.core.hash, t), v = [cljs.core.str("/search/"), cljs.core.str(p)].join(""), w = l + 1, x = [cljs.core.str("/search/"), cljs.core.str(p), cljs.core.str("/"), cljs.core.str(w)].join(""), z = 0 < l, y;
-                d[12] = v;
-                d[11] = r;
-                d[13] = x;
+                var f = d[7], l = d[8], n = d[9], p = d[10], q = d[11], r = d[2], t = cljs.core.concat.call(null, n, f, r), u = cljs.core.sort_by.call(null, cljs.core.hash, t), v = [cljs.core.str("/search/"), cljs.core.str(p)].join(""), w = q + 1, x = [cljs.core.str("/search/"), cljs.core.str(p), cljs.core.str("/"), cljs.core.str(w)].join(""), z = 0 < q, y;
+                d[8] = r;
+                d[12] = x;
+                d[13] = v;
                 d[14] = u;
                 y = d;
                 cljs.core.truth_(z) ? y[1] = 8 : y[1] = 9;
@@ -39010,8 +39032,8 @@ if (cljs.core.truth_(window.process)) {
                 return new cljs.core.Keyword(null, "recur", "recur", -437573268);
               }
               if (4 === e) {
-                var l = d[8], p = d[10], B = parseInt(d[2], 10), C = solsort.rdf.natmus._LT_search.call(null, p, B);
-                d[8] = B;
+                var p = d[10], q = d[11], B = parseInt(d[2], 10), C = solsort.rdf.natmus._LT_search.call(null, p, B);
+                d[11] = B;
                 y = d;
                 return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, y, 5, C);
               }
@@ -39029,8 +39051,8 @@ if (cljs.core.truth_(window.process)) {
                 return new cljs.core.Keyword(null, "recur", "recur", -437573268);
               }
               if (6 === e) {
-                var l = d[8], p = d[10], n = d[2], G = solsort.rdf.europeana._LT_search.call(null, p, l);
-                d[9] = n;
+                var p = d[10], q = d[11], f = d[2], G = solsort.rdf.europeana._LT_search.call(null, p, q);
+                d[7] = f;
                 y = d;
                 return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, y, 7, G);
               }
@@ -39059,12 +39081,12 @@ if (cljs.core.truth_(window.process)) {
                 return new cljs.core.Keyword(null, "recur", "recur", -437573268);
               }
               if (19 === e) {
-                var L = d[17], E = d[16], M = d[18], N = d[19], Q = d[20], O = d[21], P = d[22], R = d[23], S = d[2], T = [new cljs.core.Keyword(null, "div", "div", 1057191632), E, S], U = new cljs.core.PersistentVector(null, 3, 5, M, T, null), Y = [new cljs.core.Keyword(null, "div", "div", 1057191632), P, N, L, R, O, U], Ya = new cljs.core.PersistentVector(null, 7, 5, Q, Y, null), ba = solsort.rdf.rdf.html_doc.call(null, Ya), Za = b.end(ba);
+                var L = d[17], E = d[16], M = d[18], N = d[19], Q = d[20], O = d[21], P = d[22], R = d[23], S = d[2], T = [new cljs.core.Keyword(null, "div", "div", 1057191632), E, S], U = new cljs.core.PersistentVector(null, 3, 5, O, T, null), Y = [new cljs.core.Keyword(null, "div", "div", 1057191632), N, Q, R, M, L, U], Ya = new cljs.core.PersistentVector(null, 7, 5, P, Y, null), ba = solsort.rdf.rdf.html_doc.call(null, Ya), Za = b.end(ba);
                 y = d;
                 return cljs.core.async.impl.ioc_helpers.return_chan.call(null, y, Za);
               }
               if (11 === e) {
-                var l = d[8], da = cljs.core.PersistentVector.EMPTY_NODE, $a = 1 < l;
+                var q = d[11], da = cljs.core.PersistentVector.EMPTY_NODE, $a = 1 < q;
                 d[24] = da;
                 y = d;
                 cljs.core.truth_($a) ? y[1] = 14 : y[1] = 15;
@@ -39077,30 +39099,30 @@ if (cljs.core.truth_(window.process)) {
                 return new cljs.core.Keyword(null, "recur", "recur", -437573268);
               }
               if (5 === e) {
-                var l = d[8], p = d[10], f = d[2], ab = solsort.rdf.ting._LT_search.call(null, p, l);
-                d[7] = f;
+                var p = d[10], q = d[11], n = d[2], ab = solsort.rdf.ting._LT_search.call(null, p, q);
+                d[9] = n;
                 y = d;
                 return cljs.core.async.impl.ioc_helpers.take_BANG_.call(null, y, 6, ab);
               }
               if (14 === e) {
-                var v = d[12], xa = cljs.core.PersistentVector.EMPTY_NODE, bb = cljs.core.PersistentVector.EMPTY_NODE, cb = [new cljs.core.Keyword(null, "href", "href", -793805698)], ya = cljs.core.PersistentHashMap.fromArrays(cb, [v]), V = [new cljs.core.Keyword(null, "a", "a", -2123407586), ya, "First"], W = new cljs.core.PersistentVector(null, 3, 5, bb, V, null), db = [new cljs.core.Keyword(null, "span", "span", 1394872991), W, "   "], eb = new cljs.core.PersistentVector(null, 3, 5, xa, db, null), 
+                var v = d[13], xa = cljs.core.PersistentVector.EMPTY_NODE, bb = cljs.core.PersistentVector.EMPTY_NODE, cb = [new cljs.core.Keyword(null, "href", "href", -793805698)], ya = cljs.core.PersistentHashMap.fromArrays(cb, [v]), V = [new cljs.core.Keyword(null, "a", "a", -2123407586), ya, "First"], W = new cljs.core.PersistentVector(null, 3, 5, bb, V, null), db = [new cljs.core.Keyword(null, "span", "span", 1394872991), W, "   "], eb = new cljs.core.PersistentVector(null, 3, 5, xa, db, null), 
                 za = y = d;
                 za[2] = eb;
                 za[1] = 16;
                 return new cljs.core.Keyword(null, "recur", "recur", -437573268);
               }
               if (16 === e) {
-                var fa = d[25], da = d[24], Aa = d[2], Ba = cljs.core.PersistentVector.EMPTY_NODE, fb = [new cljs.core.Keyword(null, "href", "href", -793805698)], gb = cljs.core.PersistentHashMap.fromArrays(fb, [fa]), Ca = [new cljs.core.Keyword(null, "a", "a", -2123407586), gb, "Previous"], X = new cljs.core.PersistentVector(null, 3, 5, Ba, Ca, null), hb = [new cljs.core.Keyword(null, "span", "span", 1394872991), Aa, " \x3c\x3c ", X, "   "], ga = new cljs.core.PersistentVector(null, 5, 5, da, hb, 
+                var da = d[24], fa = d[25], Aa = d[2], Ba = cljs.core.PersistentVector.EMPTY_NODE, fb = [new cljs.core.Keyword(null, "href", "href", -793805698)], gb = cljs.core.PersistentHashMap.fromArrays(fb, [fa]), Ca = [new cljs.core.Keyword(null, "a", "a", -2123407586), gb, "Previous"], X = new cljs.core.PersistentVector(null, 3, 5, Ba, Ca, null), hb = [new cljs.core.Keyword(null, "span", "span", 1394872991), Aa, " \x3c\x3c ", X, "   "], ga = new cljs.core.PersistentVector(null, 5, 5, da, hb, 
                 null), Da = y = d;
                 Da[2] = ga;
                 Da[1] = 13;
                 return new cljs.core.Keyword(null, "recur", "recur", -437573268);
               }
               if (10 === e) {
-                var f = d[7], l = d[8], n = d[9], v = d[12], p = d[10], q = d[11], fa = d[25], x = d[13], u = d[14], aa = d[2], Ea = Q = cljs.core.PersistentVector.EMPTY_NODE, ha = [solsort.rdf.rdf.header], P = new cljs.core.PersistentVector(null, 1, 5, Ea, ha, null), ia = cljs.core.PersistentVector.EMPTY_NODE, Fa = cljs.core.PersistentVector.EMPTY_NODE, Ga = cljs.core.PersistentVector.EMPTY_NODE, ja = [new cljs.core.Keyword(null, "id", "id", -1388402092)], Ha = ["query"], ka = cljs.core.PersistentHashMap.fromArrays(ja, 
+                var f = d[7], fa = d[25], l = d[8], n = d[9], x = d[12], v = d[13], u = d[14], p = d[10], q = d[11], aa = d[2], Ea = P = cljs.core.PersistentVector.EMPTY_NODE, ha = [solsort.rdf.rdf.header], N = new cljs.core.PersistentVector(null, 1, 5, Ea, ha, null), ia = cljs.core.PersistentVector.EMPTY_NODE, Fa = cljs.core.PersistentVector.EMPTY_NODE, Ga = cljs.core.PersistentVector.EMPTY_NODE, ja = [new cljs.core.Keyword(null, "id", "id", -1388402092)], Ha = ["query"], ka = cljs.core.PersistentHashMap.fromArrays(ja, 
                 Ha), la = [new cljs.core.Keyword(null, "input", "input", 556931961), ka], Ia = new cljs.core.PersistentVector(null, 2, 5, Ga, la, null), ma = [new cljs.core.Keyword(null, "div.ui.form.twelve.wide.column", "div.ui.form.twelve.wide.column", -1298344213), Ia], na = new cljs.core.PersistentVector(null, 2, 5, Fa, ma, null), oa = cljs.core.PersistentVector.EMPTY_NODE, Ja = ["dangerouslySetInnerHTML"], ca = [new cljs.core.Keyword(null, "__html", "__html", 674048345)], Ka = ['\x3cbutton class\x3d"fluid ui primary button" onclick\x3d"location.href\x3d\'/search/\'+query.value;"\x3eSearch\x3c/button\x3e'], 
-                La = cljs.core.PersistentHashMap.fromArrays(ca, Ka), pa = [La], qa = cljs.core.PersistentHashMap.fromArrays(Ja, pa), Ma = [new cljs.core.Keyword(null, "div.four.wide.column", "div.four.wide.column", 1151509492), qa], ra = new cljs.core.PersistentVector(null, 2, 5, oa, Ma, null), sa = [new cljs.core.Keyword(null, "div.ui.grid", "div.ui.grid", 271546981), na, ra], N = new cljs.core.PersistentVector(null, 3, 5, ia, sa, null), Na = cljs.core.PersistentVector.EMPTY_NODE, Oa = [new cljs.core.Keyword(null, 
-                "hr", "hr", 1377740067)], L = new cljs.core.PersistentVector(null, 1, 5, Na, Oa, null), ta = cljs.core.PersistentVector.EMPTY_NODE, ua = [new cljs.core.Keyword(null, "p", "p", 151049309), '"', p, '" results:'], R = new cljs.core.PersistentVector(null, 4, 5, ta, ua, null), Pa = cljs.core.PersistentVector.EMPTY_NODE, va = [new cljs.core.Keyword(null, "ul", "ul", -1349521403)], wa = new cljs.core.PersistentVector(null, 1, 5, Pa, va, null), ib = function() {
+                La = cljs.core.PersistentHashMap.fromArrays(ca, Ka), pa = [La], qa = cljs.core.PersistentHashMap.fromArrays(Ja, pa), Ma = [new cljs.core.Keyword(null, "div.four.wide.column", "div.four.wide.column", 1151509492), qa], ra = new cljs.core.PersistentVector(null, 2, 5, oa, Ma, null), sa = [new cljs.core.Keyword(null, "div.ui.grid", "div.ui.grid", 271546981), na, ra], Q = new cljs.core.PersistentVector(null, 3, 5, ia, sa, null), Na = cljs.core.PersistentVector.EMPTY_NODE, Oa = [new cljs.core.Keyword(null, 
+                "hr", "hr", 1377740067)], R = new cljs.core.PersistentVector(null, 1, 5, Na, Oa, null), ta = cljs.core.PersistentVector.EMPTY_NODE, ua = [new cljs.core.Keyword(null, "p", "p", 151049309), '"', p, '" results:'], M = new cljs.core.PersistentVector(null, 4, 5, ta, ua, null), Pa = cljs.core.PersistentVector.EMPTY_NODE, va = [new cljs.core.Keyword(null, "ul", "ul", -1349521403)], wa = new cljs.core.PersistentVector(null, 1, 5, Pa, va, null), ib = function() {
                   return function(a, b, c, d, e, f, g, h, k, l, m, n, p, q, r, t, u, v, w, x, y, z, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, aa, ba, ca, da, ea, fa, ga) {
                     return function sb(ha) {
                       return new cljs.core.LazySeq(null, function(a, b, c, d, e, f, g, h, k, l, m, n, p, q, r, t, u, v, w, x, y, z, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, aa, ba, ca, da, ea, fa, ga) {
@@ -39138,12 +39160,12 @@ if (cljs.core.truth_(window.process)) {
                         };
                       }(a, b, c, d, e, f, g, h, k, l, m, n, p, q, r, t, u, v, w, x, y, z, A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, aa, ba, ca, da, ea, fa, ga), null, null);
                     };
-                  }(p, l, f, n, q, u, v, x, aa, f, l, n, v, p, q, fa, x, u, aa, Q, Ea, ha, P, ia, Fa, Ga, ja, Ha, ka, la, Ia, ma, na, oa, Ja, ca, Ka, La, pa, qa, Ma, ra, sa, N, Na, Oa, L, ta, ua, R, Pa, va, wa, e, c);
-                }().call(null, u), O = cljs.core.into.call(null, wa, ib), M = cljs.core.PersistentVector.EMPTY_NODE;
+                  }(p, q, n, f, l, u, v, x, aa, f, fa, l, n, x, v, u, p, q, aa, P, Ea, ha, N, ia, Fa, Ga, ja, Ha, ka, la, Ia, ma, na, oa, Ja, ca, Ka, La, pa, qa, Ma, ra, sa, Q, Na, Oa, R, ta, ua, M, Pa, va, wa, e, c);
+                }().call(null, u), L = cljs.core.into.call(null, wa, ib), O = cljs.core.PersistentVector.EMPTY_NODE;
                 d[17] = L;
                 d[18] = M;
-                d[19] = N;
                 d[25] = aa;
+                d[19] = N;
                 d[20] = Q;
                 d[21] = O;
                 d[22] = P;
@@ -39153,14 +39175,14 @@ if (cljs.core.truth_(window.process)) {
                 return new cljs.core.Keyword(null, "recur", "recur", -437573268);
               }
               if (18 === e) {
-                var x = d[13], jb = cljs.core.PersistentVector.EMPTY_NODE, Qa = cljs.core.PersistentVector.EMPTY_NODE, Ra = [new cljs.core.Keyword(null, "href", "href", -793805698)], kb = cljs.core.PersistentHashMap.fromArrays(Ra, [x]), Sa = [new cljs.core.Keyword(null, "a", "a", -2123407586), kb, "Next"], lb = new cljs.core.PersistentVector(null, 3, 5, Qa, Sa, null), Ta = [new cljs.core.Keyword(null, "span", "span", 1394872991), lb, " \x3e\x3e"], Ua = new cljs.core.PersistentVector(null, 3, 5, jb, 
+                var x = d[12], jb = cljs.core.PersistentVector.EMPTY_NODE, Qa = cljs.core.PersistentVector.EMPTY_NODE, Ra = [new cljs.core.Keyword(null, "href", "href", -793805698)], kb = cljs.core.PersistentHashMap.fromArrays(Ra, [x]), Sa = [new cljs.core.Keyword(null, "a", "a", -2123407586), kb, "Next"], lb = new cljs.core.PersistentVector(null, 3, 5, Qa, Sa, null), Ta = [new cljs.core.Keyword(null, "span", "span", 1394872991), lb, " \x3e\x3e"], Ua = new cljs.core.PersistentVector(null, 3, 5, jb, 
                 Ta, null), Va = y = d;
                 Va[2] = Ua;
                 Va[1] = 19;
                 return new cljs.core.Keyword(null, "recur", "recur", -437573268);
               }
               if (8 === e) {
-                var l = d[8], p = d[10], Wa = l - 1, mb = [cljs.core.str("/search/"), cljs.core.str(p), cljs.core.str("/"), cljs.core.str(Wa)].join(""), Xa = y = d;
+                var p = d[10], q = d[11], Wa = q - 1, mb = [cljs.core.str("/search/"), cljs.core.str(p), cljs.core.str("/"), cljs.core.str(Wa)].join(""), Xa = y = d;
                 Xa[2] = mb;
                 Xa[1] = 10;
                 return new cljs.core.Keyword(null, "recur", "recur", -437573268);
