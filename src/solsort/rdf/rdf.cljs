@@ -72,7 +72,6 @@ xmlns:dc=\"http://purl.org/dc/elements/1.1/\"
          [:body]])))
 
   (defn render-property [key val]
-    (log types key (get types key))
     (if (get types key)
       [:span {:property (get-in types [key "@id"])} (str val)]
       (str val)))
@@ -141,6 +140,7 @@ xmlns:dc=\"http://purl.org/dc/elements/1.1/\"
                         "ting" (ting/render obj)
                         [render-object obj]))
               "not implemented")]
+        (js/console.log 'show-obj id)
         (.end res result))))
 
   (defn search [req res]

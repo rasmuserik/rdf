@@ -47,7 +47,7 @@
                   :credentials false)))
       (:hits) (:hits) (map #(get % :_source {}))
       (map transform)
-      (log)))))
+      ))))
 
 (defn <obj [id]
   (go
