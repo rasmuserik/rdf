@@ -20,15 +20,14 @@
  ahref-fn
  (fn [route obj]
    (assoc (or obj {}) "href"
-    (if (= "search" (:page route))
-             (str "/search/"
-                  (.trim (string/join
-                          " "
-                          (concat (if (:q route) [(:q route)] [])
-                                  (map :term
-                                       (get route :facets [])))
-                          )))
-             (str "http://mobibl.solsort.com/?" (JSON.stringify (clj->js route)))))))
+          (if (= "search" (:page route))
+            (str "/search/"
+                 (.trim (string/join
+                         " "
+                         (concat (if (:q route) [(:q route)] [])
+                                 (map :term
+                                      (get route :facets []))))))
+            (str "http://mobibl.solsort.com/?" (JSON.stringify (clj->js route)))))))
 (defn render [obj]
   (reset! get-work-fn
           (fn [id]
@@ -51,29 +50,29 @@
                     (get obj "dcCreator" [])
                     (get obj "creator" [])
                     (get obj "contributor" [])))}))
-  (def access_token "a4516e74f16b7b2d3f7f3eb6cac35b2b07575345")
-  (defn <http [url] (<ajax url :result :text))
+(def access_token "a4516e74f16b7b2d3f7f3eb6cac35b2b07575345")
+(defn <http [url] (<ajax url :result :text))
 
-  (defn <ting [endpoint o]
-    (go
-      (let [result
-            (js->clj
-             (js/JSON.parse
-              (<!
-               (<http
-                (str "https://openplatform.dbc.dk/v1/" (name endpoint)
-                     "?"
-                     (clojure.string/join
-                      "&"
-                      (map #(str
-                             (js/encodeURIComponent
-                              (name (first %)))
-                             "="
-                             (js/encodeURIComponent
-                              (second %)))
+(defn <ting [endpoint o]
+  (go
+    (let [result
+          (js->clj
+           (js/JSON.parse
+            (<!
+             (<http
+              (str "https://openplatform.dbc.dk/v1/" (name endpoint)
+                   "?"
+                   (clojure.string/join
+                    "&"
+                    (map #(str
+                           (js/encodeURIComponent
+                            (name (first %)))
+                           "="
+                           (js/encodeURIComponent
+                            (second %)))
 
-                           (into o {:access_token access_token}))))))))]
-        (get result "data"))))
+                         (into o {:access_token access_token}))))))))]
+      (get result "data"))))
 (defn <obj [id]
   (go
     (let [pid (.slice id 5)

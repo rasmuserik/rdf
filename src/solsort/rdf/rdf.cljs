@@ -29,7 +29,7 @@
   (.push (.-globalPaths (js/require "module")) (str (js/process.cwd) "/node_modules")))
 
 (when js/window.process
-  
+
   (defn minpos [a b]
     (bit-and 0x7fffff (.indexOf a b)))
 
@@ -42,8 +42,7 @@
              (js->clj (js/JSON.parse (.readFileSync fs "../schema/ting.jsonld" "utf-8")))
              (js->clj (js/JSON.parse (.readFileSync fs "../schema/solsort.jsonld" "utf-8"))))
         prefixes (into {} (filter #(string? (second %)) obj))
-        types (into {} (remove #(string? (second %)) obj))
-        ]
+        types (into {} (remove #(string? (second %)) obj))]
     (def prefixes prefixes)
     (def types types))
 
@@ -56,8 +55,7 @@
 xmlns:dc=\"http://purl.org/dc/elements/1.1/\"
 "
      (string/join "\n"
-                  (map #(str "xmlns:" (first %) "=\"" (second %)"\"") prefixes)
-      )
+                  (map #(str "xmlns:" (first %) "=\"" (second %) "\"") prefixes))
      "
 >
 "
@@ -67,22 +65,19 @@ xmlns:dc=\"http://purl.org/dc/elements/1.1/\"
       [:div.ui.container
        o]
       #_[:html {:prefix (string/join " " (map #(str (name (first %)) ":" (second %)) prefixes))}
-       [:head
-        [:link {:rel :stylesheet
-                :href "https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.css"}]
-        [:meta {:charset "utf-8"}]]
-       [:body
-        ]])))
+         [:head
+          [:link {:rel :stylesheet
+                  :href "https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.css"}]
+          [:meta {:charset "utf-8"}]]
+         [:body]])))
 
   (defn render-property [key val]
     (log types key (get types key))
     (if (get types key)
-      [:span {:property (get-in types [key "@id"]) } (str val)]
-      (str val)
-      )
-    )
+      [:span {:property (get-in types [key "@id"])} (str val)]
+      (str val)))
   (defn render-properties [obj ignore]
-    (into [:div ]
+    (into [:div]
           (for [prop (->> obj
                           (remove #((into #{} ignore) (first %)))
                           (sort-by #(str (first %))))]
@@ -91,9 +86,9 @@ xmlns:dc=\"http://purl.org/dc/elements/1.1/\"
              " \u00a0 "
              (let [val (second prop)]
                #_(into [:span]
-                     (if (coll? val)
-                       (map render-property (map (fn [val] [(first prop) val]) val))
-                       ([(render-property (first prop) val)])))
+                       (if (coll? val)
+                         (map render-property (map (fn [val] [(first prop) val]) val))
+                         ([(render-property (first prop) val)])))
                (into [:span]
                      (if (coll? val)
                        (interpose ", \u00a0 " (map #(render-property (first prop) %) val))
@@ -105,9 +100,9 @@ xmlns:dc=\"http://purl.org/dc/elements/1.1/\"
       :typeof "Thing"
       :item-scope :item-scope
      ; :item-type (str "http://schema.org/" (get obj :_type "Thing"))
-      }
+}
      [:h1 {:item-prop "title"} (:_title obj)]
-     [:p (into [:em ]
+     [:p (into [:em]
                (interpose " & " (map (fn [s] [:a {:href (str "/search/" s)}
                                               [:span {:item-prop "creator"} s]])
                                      (:_creators obj))))]
@@ -249,7 +244,3 @@ xmlns:dc=\"http://purl.org/dc/elements/1.1/\"
       "search/Solvognen"
       "search/Edvard Munch"
       "search/Ærø"]))]])
-
-
-
-
