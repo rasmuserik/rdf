@@ -115,7 +115,7 @@ xmlns:dc=\"http://purl.org/dc/elements/1.1/\"
      [render-properties obj [:_id :_creators :_description :_title "@context"]]])
   (defn show-object [req res]
     (go
-      (let [accept (aget (aget req "headers") "accept")
+      (let [accept (aget (aget req "headers") "accept" "")
             type 
             (or (aget (.-params req) "type")
                 (second
