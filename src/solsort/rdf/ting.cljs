@@ -16,13 +16,24 @@
    [clojure.string :as string :refer [replace split blank?]]
    [cljs.core.async :refer [>! <! chan put! take! timeout close! pipe]]))
 
-(go (log (<! (<ajax "https://hack4.dk" :result :test))))
+(reset!
+ ahref-fn
+ (fn [route obj]
+   (assoc (or obj {}) "href"
+    (if (= "search" (:page route))
+             (str "/search/"
+                  (.trim (string/join
+                          " "
+                          (concat (if (:q route) [(:q route)] [])
+                                  (map :term
+                                       (get route :facets [])))
+                          )))
+             (str "http://mobibl.solsort.com/?" (JSON.stringify (clj->js route)))))))
 (defn render [obj]
   (reset! get-work-fn
           (fn [id]
             obj))
-  [work-view (get obj "pid")]
-  )
+  [work-view (get obj "pid")])
 (defn transform [obj]
   (into obj
         {"@context"
