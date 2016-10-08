@@ -140,7 +140,7 @@ xmlns:dc=\"http://purl.org/dc/elements/1.1/\"
                         "ting" (ting/render obj)
                         [render-object obj]))
               "not implemented")]
-        (js/console.log 'show-obj id)
+        (js/console.log "show-obj" id)
         (.end res result))))
 
   (defn search [req res]
