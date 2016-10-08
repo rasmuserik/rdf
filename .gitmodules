@@ -1,3 +1,6 @@
 [submodule "util"]
 	path = util
 	url = https://github.com/rasmuserik/util.git
+[submodule "mobibl"]
+	path = mobibl 
+	url = https://github.com/solsort/mobibl.git

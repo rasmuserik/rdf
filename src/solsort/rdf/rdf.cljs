@@ -141,7 +141,10 @@ xmlns:dc=\"http://purl.org/dc/elements/1.1/\"
             result
             (case type
               "json" (js/JSON.stringify (clj->js obj) nil 2)
-              "html" (html-doc [render-object obj])
+              "html" (html-doc
+                      (case kind
+                        "ting" (ting/render obj)
+                        [render-object obj]))
               "not implemented")]
         (.end res result))))
 

@@ -15,7 +15,7 @@
    [lein-bikeshed "0.2.0"]
    [lein-kibit "0.1.2"]]
 
-  :source-paths ["src/" "util/src/"]
+  :source-paths ["src/" "util/src/" "mobibl/src/"]
 
   :clean-targets ^{:protect false}
   ["resources/public/out"
@@ -39,7 +39,7 @@
   :cljsbuild
   {:builds
    [{:id "dev"
-      :source-paths ["src/" "util/src/"]
+      :source-paths ["src/" "util/src/" "mobibl/src/"]
       :figwheel
       {
        :websocket-host :js-client-host
@@ -51,7 +51,7 @@
        :output-dir "resources/public/out"
        :source-map-timestamp true }}
     {:id "dist"
-     :source-paths ["src" "util/src/"]
+     :source-paths ["src" "util/src/" "mobibl/src/"]
      :compiler
      {:output-to "index.js"
       :main solsort.rdf.rdf

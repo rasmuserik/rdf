@@ -4,18 +4,25 @@
    [reagent.ratom :as ratom :refer  [reaction]])
   (:require
    [cljs.reader]
+   [solsort.mobibl.work :refer [get-work-fn ahref-fn work-view]]
    [solsort.toolbox.setup]
    [solsort.toolbox.appdb :refer [db db! db-async!]]
    [solsort.toolbox.ui :refer [input select]]
    [solsort.util
     :refer
     [<ajax <seq<! js-seq load-style! put!close! <p
-     parse-json-or-nil log page-ready render dom->clj]]
+     parse-json-or-nil log page-ready dom->clj]]
    [reagent.core :as reagent :refer []]
    [clojure.string :as string :refer [replace split blank?]]
    [cljs.core.async :refer [>! <! chan put! take! timeout close! pipe]]))
 
 (go (log (<! (<ajax "https://hack4.dk" :result :test))))
+(defn render [obj]
+  (reset! get-work-fn
+          (fn [id]
+            obj))
+  [work-view (get obj "pid")]
+  )
 (defn transform [obj]
   (into obj
         {"@context"
