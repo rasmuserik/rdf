@@ -38844,7 +38844,7 @@ if (cljs.core.truth_(window.process)) {
                 return c[2] = c[2], c[1] = 5, new cljs.core.Keyword(null, "recur", "recur", -437573268);
               }
               if (1 === d) {
-                var d = c[7], e = a.headers.accept, d = a.params.type;
+                var d = c[7], e = a.headers.accept[""], d = a.params.type;
                 c[7] = d;
                 c[8] = e;
                 cljs.core.truth_(d) ? c[1] = 2 : c[1] = 3;
