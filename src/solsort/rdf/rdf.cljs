@@ -249,6 +249,27 @@ xmlns:dc=\"http://purl.org/dc/elements/1.1/\"
     [:li [:a {:href "http://europeana.eu"} "Europeana"] " - which aggregates data from many cultural institutions around europe."]
     [:li [:a {:href "http://natmus.dk"} "National Museum of Denmark"] " - this is the first time the full collection is on the web, in a form that is discoverable by search engines and similar."]]]
   [:div
+   "Sample library materials:"
+   (into
+    [:ul]
+    (map
+     (fn [s] [:li [:a {:href (str "object/ting:" s)} s]])
+     ["870970-basis:28349203"
+      "870970-basis:27326730"
+      "870970-basis:27857892"
+      "870970-basis:27546951"
+      "870970-basis:20457058"
+      "870970-basis:22629344"
+      "870970-basis:26944236"
+      "810010-katalog:006047890"
+      "870970-basis:29423172"
+      "870970-basis:06186726"
+      "820010-katalog:2929862"
+      "870970-basis:22824139"
+      "870970-basis:23471752"
+      ]))
+   ]
+  [:div
    "Sample searches:"
    (into
     [:ul]
