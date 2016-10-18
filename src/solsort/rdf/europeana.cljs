@@ -23,12 +23,12 @@
 (defn transform [obj]
   (into
    obj
-   {:_id
+   {"_id"
     (str "europeana" (string/replace (get obj "id" "") (js/RegExp. "/" "g") ":"))
-    :_title (or (uncoll (get obj "dcTitle" [])) (-> obj (get "dcTitleLangAware" {}) (first) (second) (first)))
-    :_creators (distinct (concat (get obj "dcCreator" [])))
-    :_description  (or (uncoll (get obj "dcDescription")) (uncoll (get obj "type")))
-    :_source "Europeana"}))
+    "solsortTitle" (or (uncoll (get obj "dcTitle" [])) (-> obj (get "dcTitleLangAware" {}) (first) (second) (first)))
+    "solsortCreators" (distinct (concat (get obj "dcCreator" [])))
+    "solsortDescription"  (or (uncoll (get obj "dcDescription")) (uncoll (get obj "type")))
+    "solsortSource" "Europeana"}))
   (def access_token "a4516e74f16b7b2d3f7f3eb6cac35b2b07575345")
   (defn <http [url] (<ajax url :result :text))
 
@@ -81,7 +81,7 @@
                         ["response" "document"])
             obj (apply merge-objs (dissoc obj "proxies")
                        (mkvec (get obj "proxies" [])))]
-        (assoc obj :_id id))))
+        (assoc obj "_id" id))))
   (defn <search [q page]
     (go
       (map

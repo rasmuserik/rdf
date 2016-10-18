@@ -38,14 +38,14 @@
         {"@context"
          ["http://rdf.solsort.com/schema/solsort.jsonld"
           "http://rdf.solsort.com/schema/ting.jsonld"]
-         :_id (str "ting:" (first (get obj "pid")))
-         :_source "Biblioteket"
-         :_title (or (first (get obj "dcTitle" []))
+         "_id" (str "ting:" (first (get obj "pid")))
+         "solsortSource" "Biblioteket"
+         "solsortTitle" (or (first (get obj "dcTitle" []))
                      (first (get obj "title" [])))
-         :_description
+         "solsortDescription"
          (or (first (get obj "abstract" []))
              (first (get obj "description" [])))
-         :_creators
+         "solsortCreators"
          (distinct (concat
                     (get obj "dcCreator" [])
                     (get obj "creator" [])
@@ -76,14 +76,17 @@
 (defn <obj [id]
   (go
     (let [pid (.slice id 5)
-          [[obj] [collection] recommend]
+          [[obj] [collection] [cover] recommend]
           (<! (<seq<!
                [(<ting :work {:pids [pid]})
-                (<ting :work {:pids [pid] :fields "collection"})
+                (<ting :work {:pids [pid] :fields ["collection"]})
+                (<ting :work {:pids [pid] :fields ["coverDataUrlThumbnail" ]})
                 (<ting :recommend {:like [pid]
                                    :limit 20})]))
           obj (into obj {"tingRelated" (map #(get % "pid") recommend)
-                         "collection" (get collection "collection")})
+                         "collection" (get collection "collection")
+                         "coverDataUrlThumbnail" (get cover "coverDataUrlThumbnail")
+                         })
           obj (transform obj)]
       obj)))
 (defn <search [q page]

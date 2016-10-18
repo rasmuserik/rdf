@@ -19,10 +19,10 @@
   (let [obj (into obj
                   {"@context" ["http://rdf.solsort.com/schema/solsort.jsonld"
                                "http://rdf.solsort.com/schema/natmus.jsonld"]
-                   :_id (str "natmus:" (:collection obj) ":" (or (:id obj) (:sourceId obj)))
-                   :_source "Nationalmuseet"
-                   :_title (or (:workDescription obj) (:shortTitle obj))
-                   :_description (or (:description obj))})]
+                   "_id" (str "natmus:" (:collection obj) ":" (or (:id obj) (:sourceId obj)))
+                   "solsortSource" "Nationalmuseet"
+                   "solsortTitle" (or (:workDescription obj) (:shortTitle obj))
+                   "solsortDescription" (or (:description obj))})]
     obj))
 
 (defn <search

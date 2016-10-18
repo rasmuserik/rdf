@@ -106,7 +106,27 @@ xmlns:dc=\"http://purl.org/dc/elements/1.1/\"
                                               [:span {:item-prop "creator"} s]])
                                      (:_creators obj))))]
      [:p {:item-prop "description"} (:_description obj)]
-     [render-properties obj [:_id :_creators :_description :_title "@context"]]])
+     [render-properties obj ["_id" "solsortCreators" "solsortDescription" "solsortTitle" "@context"]]])
+  (defn <fetch-object [id]
+    (go (let [kind (first (clojure.string/split id #":"))
+           obj
+           (into
+            (case kind
+              "natmus" (<! (natmus/<obj id))
+              "europeana" (<! (europeana/<obj id))
+              "ting" (<! (ting/<obj id))
+              {})
+            {"_id" id
+             "solsortFetched" (.toISOString (js/Date.))}
+            )]
+          (<ajax (str js/process.env.COUCH_DB "/" id)
+                 :method "PUT"
+                 :data (clj->js obj)
+                 :headers
+                 {:Authorization (str "Basic " (js/btoa js/process.env.COUCH_USER))}
+                 )
+          obj))
+    )
   (defn show-object [req res]
     (go
       (let [accept (or (aget (aget req "headers") "accept"))
@@ -127,11 +147,16 @@ xmlns:dc=\"http://purl.org/dc/elements/1.1/\"
                      "json"]]))))
             id (.-id (.-params req))
             kind (first (clojure.string/split id #":"))
-            obj (case kind
-                  "natmus" (<! (natmus/<obj id))
-                  "europeana" (<! (europeana/<obj id))
-                  "ting" (<! (ting/<obj id))
-                  {:_id id})
+            obj (if js/process.env.COUCH_DB
+                       (<! (<ajax (str js/process.env.COUCH_DB "/" id)
+                                  :headers
+                                  {:Authorization (str "Basic " (js/btoa js/process.env.COUCH_USER))}
+                                  ))
+                   nil)
+            obj (if (get obj "_id" false)
+                  obj
+                  (<! (<fetch-object id))
+                  )
             result
             (case type
               "json" (js/JSON.stringify (clj->js obj) nil 2)
@@ -171,14 +196,14 @@ xmlns:dc=\"http://purl.org/dc/elements/1.1/\"
                 (into [:ul]
                       (for [obj results]
                         [:li
-                         [:a {:href (str "/object/" (:_id obj))
+                         [:a {:href (str "/object/" (get obj "_id"))
                               :style {:text-decoration :none}}
-                          [:strong (:_title obj)]
+                          [:strong (get obj "solsortTitle")]
                           " \u00a0 "
-                          [:em (string/join " & " (:_creators obj))]
+                          [:em (string/join " & " (get obj "solsortCreators"))]
                           " \u00a0 "
-                          [:small (:_description obj)]]
-                         " (" (:_source obj) ")"]))
+                          [:small (get obj "solsortDescription")]]
+                         " (" (get obj "solsortSource") ")"]))
                 [:div
                  (if prev-link
                    [:span
