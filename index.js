@@ -38217,7 +38217,7 @@ solsort.rdf.ting.transform = function(a) {
     return cljs.core.truth_(b) ? b : cljs.core.first.call(null, cljs.core.get.call(null, a, "description", cljs.core.PersistentVector.EMPTY));
   }(), "solsortCreators", cljs.core.distinct.call(null, cljs.core.concat.call(null, cljs.core.get.call(null, a, "dcCreator", cljs.core.PersistentVector.EMPTY), cljs.core.get.call(null, a, "creator", cljs.core.PersistentVector.EMPTY), cljs.core.get.call(null, a, "contributor", cljs.core.PersistentVector.EMPTY)))], null));
 };
-solsort.rdf.ting.access_token = "a4516e74f16b7b2d3f7f3eb6cac35b2b07575345";
+solsort.rdf.ting.access_token = "b7297740ffd56dea53b1e573dfc7cf7177ae3375";
 solsort.rdf.ting._LT_http = function(a) {
   return solsort.util._LT_ajax.call(null, a, new cljs.core.Keyword(null, "result", "result", 1415092211), new cljs.core.Keyword(null, "text", "text", -1790561697));
 };
