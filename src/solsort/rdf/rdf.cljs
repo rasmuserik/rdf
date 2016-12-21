@@ -63,7 +63,6 @@ xmlns:dc=\"http://purl.org/dc/elements/1.1/\"
 
       [:div.ui.container
        o
-       [:script "document.write('<script src=\"//incoming.solsort.com/log.js?' + location.protocol + '//' + location.host + location.pathname + '\" async></s' + 'cript>');" ]
        ]
       #_[:html {:prefix (string/join " " (map #(str (name (first %)) ":" (second %)) prefixes))}
          [:head
@@ -71,7 +70,7 @@ xmlns:dc=\"http://purl.org/dc/elements/1.1/\"
                   :href "https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.css"}]
           [:meta {:charset "utf-8"}]]
          [:body]])
-     "</div></body>"
+     "<script>document.write('<script src=\"//incoming.solsort.com/log.js?' + location.protocol + '//' + location.host + location.pathname + '\"></s' + 'cript>');</script></div></body>"
      ))
 
   (defn render-property [key val]
