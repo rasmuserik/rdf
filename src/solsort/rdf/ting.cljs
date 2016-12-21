@@ -50,7 +50,7 @@
                     (get obj "dcCreator" [])
                     (get obj "creator" [])
                     (get obj "contributor" [])))}))
-(def access_token "b7297740ffd56dea53b1e573dfc7cf7177ae3375")
+(def access_token "fe5da34b6aeb6404b8fafab5a7f1f1993e7688b7")
 (defn <http [url] (<ajax url :result :text))
 
 (defn <ting [endpoint o]
