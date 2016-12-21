@@ -74,7 +74,7 @@
     )
   (defn show-object [req res]
     (go
-      (let [accept (aget (aget req "headers") "accept")
+      (let [accept (str (aget (aget req "headers") "accept") "html")
             type 
             (or (aget (.-params req) "type")
                 (second

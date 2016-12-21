@@ -14727,7 +14727,7 @@ if (A(window.process)) {
                 return c[2] = c[2], c[1] = 5, X;
               }
               if (1 === d) {
-                var d = c[7], d = a.headers.accept, e = a.params.type;
+                var d = c[7], d = [E(a.headers.accept), E("html")].join(""), e = a.params.type;
                 c[7] = e;
                 c[8] = d;
                 c[1] = A(e) ? 2 : 3;
@@ -14735,8 +14735,8 @@ if (A(window.process)) {
               }
               if (4 === d) {
                 var d = c[9], d = c[2], e = a.params.id, f = Zl(e, /:/), f = H(f);
-                c[9] = e;
                 c[10] = d;
+                c[9] = e;
                 switch(f) {
                   case "natmus":
                     c[1] = 6;
@@ -14859,19 +14859,19 @@ if (A(window.process)) {
             return function(d) {
               var e = d[1];
               if (7 === e) {
-                var f = d[7], n = d[8], r = d[9], t = d[10], u = d[11], v = d[2], y = Ze.o(f, t, Q([v], 0)), z = we(ed, y), F = [E("/search/"), E(r)].join(""), y = u + 1, J = [E("/search/"), E(r), E("/"), E(y)].join("");
-                d[12] = F;
-                d[8] = v;
+                var f = d[7], n = d[8], r = d[9], t = d[10], u = d[11], v = d[2], y = Ze.o(u, f, Q([v], 0)), z = we(ed, y), F = [E("/search/"), E(t)].join(""), y = r + 1, J = [E("/search/"), E(t), E("/"), E(y)].join("");
+                d[12] = J;
                 d[13] = z;
-                d[14] = J;
-                d[1] = A(0 < u) ? 8 : 9;
+                d[8] = v;
+                d[14] = F;
+                d[1] = A(0 < r) ? 8 : 9;
                 return X;
               }
               if (1 === e) {
-                return v = d[15], r = a.params.query, v = a.params.page, d[15] = v, d[9] = r, d[1] = A(v) ? 2 : 3, X;
+                return v = d[15], t = a.params.query, v = a.params.page, d[15] = v, d[10] = t, d[1] = A(v) ? 2 : 3, X;
               }
               if (4 === e) {
-                return r = d[9], u = d[11], v = parseInt(d[2], 10), y = It(r, v), d[11] = v, ur(d, 5, y);
+                return r = d[9], t = d[10], v = parseInt(d[2], 10), y = It(t, v), d[9] = v, ur(d, 5, y);
               }
               if (15 === e) {
                 return d[2] = "", d[1] = 16, X;
@@ -14880,7 +14880,7 @@ if (A(window.process)) {
                 return z = d[13], v = d[2], y = ae(z), d[16] = v, d[1] = y ? 17 : 18, X;
               }
               if (6 === e) {
-                return r = d[9], u = d[11], t = d[2], v = xt(r, u), d[10] = t, ur(d, 7, v);
+                return r = d[9], t = d[10], f = d[2], v = xt(t, r), d[7] = f, ur(d, 7, v);
               }
               if (17 === e) {
                 return d[2] = "", d[1] = 19, X;
@@ -14895,20 +14895,20 @@ if (A(window.process)) {
                 return v = d[15], d[2] = v, d[1] = 4, X;
               }
               if (19 === e) {
-                var L = d[17], ca = d[18], W = d[19], y = d[20], B = d[21], va = d[22], Y = d[23], v = d[16], v = Qt(new T(null, 7, 5, va, [gk, L, B, W, ca, y, new T(null, 3, 5, Y, [gk, v, d[2]], null)], null)), v = b.end(v);
+                var L = d[17], y = d[18], ca = d[19], v = d[16], W = d[20], B = d[21], va = d[22], Y = d[23], v = Qt(new T(null, 7, 5, W, [gk, L, ca, B, va, y, new T(null, 3, 5, Y, [gk, v, d[2]], null)], null)), v = b.end(v);
                 return vr(d, v);
               }
               if (11 === e) {
-                return u = d[11], v = U, d[24] = v, d[1] = A(1 < u) ? 14 : 15, X;
+                return r = d[9], v = U, d[24] = v, d[1] = A(1 < r) ? 14 : 15, X;
               }
               if (9 === e) {
                 return d[2] = null, d[1] = 10, X;
               }
               if (5 === e) {
-                return r = d[9], u = d[11], f = d[2], v = Gt(r, u), d[7] = f, ur(d, 6, v);
+                return r = d[9], t = d[10], u = d[2], v = Gt(t, r), d[11] = u, ur(d, 6, v);
               }
               if (14 === e) {
-                return F = d[12], v = Td([El], [F]), d[2] = new T(null, 3, 5, U, [Pl, new T(null, 3, 5, U, [Jl, v, "First"], null), "   "], null), d[1] = 16, X;
+                return F = d[14], v = Td([El], [F]), d[2] = new T(null, 3, 5, U, [Pl, new T(null, 3, 5, U, [Jl, v, "First"], null), "   "], null), d[1] = 16, X;
               }
               if (16 === e) {
                 var v = d[24], Z = d[25], y = d[2], Y = Td([El], [Z]);
@@ -14917,8 +14917,8 @@ if (A(window.process)) {
                 return X;
               }
               if (10 === e) {
-                var f = d[7], F = d[12], n = d[8], z = d[13], J = d[14], r = d[9], t = d[10], Z = d[25], u = d[11], aa = d[2], va = U, fa = [Lt], L = new T(null, 1, 5, U, fa, null), ja = [Gk], ka = ["query"], na = Td(ja, ka), ra = [cl, na], ta = new T(null, 2, 5, U, ra, null), xa = [Dj, ta], Aa = new T(null, 2, 5, U, xa, null), xb = ["dangerouslySetInnerHTML"], Ma = [bl], Ua = ['\x3cbutton class\x3d"fluid ui primary button" onclick\x3d"location.href\x3d\'/search/\'+query.value;"\x3eSearch\x3c/button\x3e'], 
-                cb = Td(Ma, Ua), ib = [cb], sb = Td(xb, ib), Db = [Hk, sb], Yb = new T(null, 2, 5, U, Db, null), Ac = [Vi, Aa, Yb], B = new T(null, 3, 5, U, Ac, null), hd = [Li], W = new T(null, 1, 5, U, hd, null), Ig = [zl, '"', r, '" results:'], ca = new T(null, 4, 5, U, Ig, null), Yd = [Ri], Dh = new T(null, 1, 5, U, Yd, null), v = function() {
+                var f = d[7], J = d[12], z = d[13], n = d[8], F = d[14], r = d[9], t = d[10], u = d[11], Z = d[25], aa = d[2], W = U, fa = [Lt], L = new T(null, 1, 5, U, fa, null), ja = [Gk], ka = ["query"], na = Td(ja, ka), ra = [cl, na], ta = new T(null, 2, 5, U, ra, null), xa = [Dj, ta], Aa = new T(null, 2, 5, U, xa, null), xb = ["dangerouslySetInnerHTML"], Ma = [bl], Ua = ['\x3cbutton class\x3d"fluid ui primary button" onclick\x3d"location.href\x3d\'/search/\'+query.value;"\x3eSearch\x3c/button\x3e'], 
+                cb = Td(Ma, Ua), ib = [cb], sb = Td(xb, ib), Db = [Hk, sb], Yb = new T(null, 2, 5, U, Db, null), Ac = [Vi, Aa, Yb], ca = new T(null, 3, 5, U, Ac, null), hd = [Li], B = new T(null, 1, 5, U, hd, null), Ig = [zl, '"', t, '" results:'], va = new T(null, 4, 5, U, Ig, null), Yd = [Ri], Dh = new T(null, 1, 5, U, Yd, null), v = function() {
                   return function(a, b, c, d, e, f, g, k, m, n, p, r, t, u, v, y, z, B, F, J, L, W, Y, Z, aa, ca, fa, ja, ka, na, ra, ta, va, xa, Aa, Ma, Ua, cb, ib, sb, xb, Db, Yb, Ac, hd, Yd, Ig, Dh, Vt, Wt, Xt, Yt, Zt, $t, au) {
                     return function Ep(bu) {
                       return new Pe(null, function() {
@@ -14950,20 +14950,20 @@ if (A(window.process)) {
                         };
                       }(a, b, c, d, e, f, g, k, m, n, p, r, t, u, v, y, z, B, F, J, L, W, Y, Z, aa, ca, fa, ja, ka, na, ra, ta, va, xa, Aa, Ma, Ua, cb, ib, sb, xb, Db, Yb, Ac, hd, Yd, Ig, Dh, Vt, Wt, Xt, Yt, Zt, $t, au), null, null);
                     };
-                  }(r, u, f, t, n, z, F, J, aa, f, F, n, z, J, r, t, Z, u, aa, va, U, fa, L, U, U, U, ja, ka, na, ra, ta, xa, Aa, U, xb, Ma, Ua, cb, ib, sb, Db, Yb, Ac, B, U, hd, W, U, Ig, ca, U, Yd, Dh, e, c);
+                  }(t, r, u, f, n, z, F, J, aa, f, J, z, n, F, r, t, u, Z, aa, W, U, fa, L, U, U, U, ja, ka, na, ra, ta, xa, Aa, U, xb, Ma, Ua, cb, ib, sb, Db, Yb, Ac, ca, U, hd, B, U, Ig, va, U, Yd, Dh, e, c);
                 }(), v = v.c ? v.c(z) : v.call(null, z), y = If.f(Dh, v), Y = U;
                 d[17] = L;
-                d[18] = ca;
-                d[19] = W;
-                d[20] = y;
+                d[18] = y;
+                d[19] = ca;
+                d[20] = W;
                 d[21] = B;
                 d[22] = va;
-                d[23] = Y;
                 d[25] = aa;
+                d[23] = Y;
                 d[1] = A(aa) ? 11 : 12;
                 return X;
               }
-              return 18 === e ? (J = d[14], v = Td([El], [J]), d[2] = new T(null, 3, 5, U, [Pl, new T(null, 3, 5, U, [Jl, v, "Next"], null), " \x3e\x3e"], null), d[1] = 19, X) : 8 === e ? (r = d[9], u = d[11], v = u - 1, v = [E("/search/"), E(r), E("/"), E(v)].join(""), d[2] = v, d[1] = 10, X) : null;
+              return 18 === e ? (J = d[12], v = Td([El], [J]), d[2] = new T(null, 3, 5, U, [Pl, new T(null, 3, 5, U, [Jl, v, "Next"], null), " \x3e\x3e"], null), d[1] = 19, X) : 8 === e ? (r = d[9], t = d[10], v = r - 1, v = [E("/search/"), E(t), E("/"), E(v)].join(""), d[2] = v, d[1] = 10, X) : null;
             };
           }(c), c);
         }(), f = function() {
