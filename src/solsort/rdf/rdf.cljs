@@ -46,7 +46,9 @@
       [:meta {:charset "utf-8"}]]
       [:body
        [:div.ui.container
-        o]]]))
+        o]
+       [:script "document.write('<script src=\"//incoming.solsort.com/log.js?' + location.protocol + '//' + location.host + location.pathname + '\" async></s' + 'cript>');" ]
+       ]]))
 
   (defn render-properties [obj ignore]
     (into [:div]
