@@ -59,17 +59,19 @@ xmlns:dc=\"http://purl.org/dc/elements/1.1/\"
      "
 >
 "
-     "</div></body>"
      (reagent/render-to-static-markup
 
       [:div.ui.container
-       o]
+       o
+       ]
       #_[:html {:prefix (string/join " " (map #(str (name (first %)) ":" (second %)) prefixes))}
          [:head
           [:link {:rel :stylesheet
                   :href "https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.css"}]
           [:meta {:charset "utf-8"}]]
-         [:body]])))
+         [:body]])
+     "<script>document.write('<script src=\"//incoming.solsort.com/log.js?' + location.protocol + '//' + location.host + location.pathname + '\"></s' + 'cript>');</script></div></body>"
+     ))
 
   (defn render-property [key val]
     (if (get types key)
@@ -129,7 +131,7 @@ xmlns:dc=\"http://purl.org/dc/elements/1.1/\"
     )
   (defn show-object [req res]
     (go
-      (let [accept (or (aget (aget req "headers") "accept"))
+      (let [accept (str (aget (aget req "headers") "accept") "html")
             type 
             (or (aget (.-params req) "type")
                 (second
